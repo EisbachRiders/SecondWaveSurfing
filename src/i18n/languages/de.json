@@ -1,0 +1,67 @@
+{
+  "links": {
+    "terms": "Geschäftsbedingungen",
+    "imprint": "Impressum",
+    "data": "Datenschutz",
+    "credit": "Anerkennung",
+    "explore": "erkunden",
+    "eisbach": "eisbach",
+    "brands": "Marken",
+    "about": "Über",
+    "blog": "blog",
+    "shop": "Geschäft",
+    "rapid": "schnelles Surfen",
+    "fins": "fins",
+    "sup": "SUP",
+    "leashes": "Leinen",
+    "apparel": "Kleidung",
+    "accessories": "accessories",
+    "customerService": "kundenservice",
+    "faq": "faq",
+    "contact": "kontakt",
+    "payment": "Bezahlung",
+    "shipping": "Versand",
+    "returns": "Rücksendung"
+  },
+  "tracking": {
+    "consent": "Eisbach Riders verwendet Cookies auf seinen Seiten, damit Sie die Seite optimal nutzen können. Wenn Sie damit einverstanden sind, besuchen Sie die Website einfach weiter. Um mehr zu erfahren, lesen Sie unsere ",
+    "dataPrivacy": "Datenschutz",
+    "accept": "akzeptieren",
+    "decline": "opt-out"
+  },
+  "homepage": {
+    "heroSubtitle": "Surf Equipment und Zubehör aus München",
+    "sustainable": "Nachhaltigkeit",
+    "community": "Gemeinschaft",
+    "surf": "Surfausrüstung",
+    "ourStory": "Unsere Geschichte",
+    "mission": "Unsere Mission ist es, unsere Spielplätze - das Meer und die Flüsse, die uns so viel Freude bereiten - zu schützen, indem wir lokale Gemeinschaften unterstützen und uns bemühen, unsere Wasserquellen zu erhalten."
+  },
+  "newsletter": {
+    "stayintouch1": "Bleiben Sie mit den neuesten ",
+    "stayintouch2": "Nachrichten und Produkten in Kontakt!",
+    "signup": "Anmelden",
+    "consent": "Ja, ich möchte E-Mails von Eisbach Riders erhalten!",
+    "subscribe": "Trag dich ein",
+    "cancel": "stornieren"
+  },
+  "form": {
+    "email": "email",
+    "name": "name"
+  },
+  "shop": {
+    "viewCollection": "Sammlung anzeigen",
+    "leashes": "Leinen",
+    "fins": "Finne",
+    "accessories": "accessories",
+    "apparel": "kleidung",
+    "sup": "SUP",
+    "rapidSurfing": "rapid surfing",
+    "leashesTagline": "Holen Sie sich die beste Passform",
+    "finsTagline": "für jedes Board",
+    "accessoriesTagline": "schlank & stilvoll",
+    "apparelTagline": "Alles, was du brauchst",
+    "supTagline": "alle Ausrüstung zum Paddeln",
+    "rapidSurfingTagline": "ausgelegt für Flüsse oder Wellenpools"
+  }
+}

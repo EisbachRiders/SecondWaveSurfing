@@ -1,0 +1,75 @@
+{
+  "links": {
+    "terms": "terms & conditions",
+    "imprint": "imprint",
+    "data": "data privacy",
+    "credit": "credit",
+    "explore": "explore",
+    "eisbach": "eisbach",
+    "brands": "brands",
+    "about": "about",
+    "blog": "blog",
+    "shop": "shop",
+    "rapid": "rapid surfing",
+    "fins": "fins",
+    "sup": "SUP",
+    "leashes": "leashes",
+    "apparel": "apparel",
+    "accessories": "accessories",
+    "customerService": "customer service",
+    "faq": "faq",
+    "contact": "contact",
+    "payment": "payment",
+    "shipping": "shipping",
+    "returns": "returns"
+  },
+  "tracking": {
+    "consent": "Eisbach Riders uses cookies on its pages to enable you to make optimal use of the page. If you agree, just continue visiting the site. To learn more read our ",
+    "dataPrivacy": "data privacy policy",
+    "accept": "accept",
+    "decline": "opt-out"
+  },
+  "homepage": {
+    "heroSubtitle": "Surf Equipment from Munich",
+    "sustainable": "sustainability",
+    "community": "community",
+    "surf": "surf equipment",
+    "ourStory": "Our Story",
+    "mission": "Our mission is to protect our playgrounds - the ocean and rivers that provide us so much enjoyment - by supporting local communities and efforts to preserve our water sources."
+  },
+  "newsletter": {
+    "stayintouch1": "Stay in touch with all the ",
+    "stayintouch2": "latest news and products!",
+    "signup": "sign up",
+    "consent": "Yes, I would like to receive emails from Eisbach Riders!",
+    "subscribe": "subscribe",
+    "cancel": "cancel"
+  },
+  "form": {
+    "email": "email",
+    "name": "name"
+  },
+  "footer": {
+    "emailSupport": "email support",
+    "emailSupportText": "contact us at support@eisbach-riders.com",
+    "30dayReturns": "30 day returns",
+    "30dayReturnsText": "return any items within 30 days",
+    "freeShipping": "free shipping",
+    "freeShippingText": "Free Shipping on Orders Over 15€ within Germany"
+  },
+  "shop": {
+    "viewCollection": "view collection",
+    "leashes": "leashes",
+    "fins": "fins",
+    "accessories": "accessories",
+    "apparel": "apparel",
+    "sup": "SUP",
+    "rapidSurfing": "rapid surfing",
+    "leashesTagline": "get the best fit",
+    "finsTagline": "for every board",
+    "accessoriesTagline": "sleek & stylish",
+    "apparelTagline": "everything you need",
+    "supTagline": "all gear for paddling",
+    "rapidSurfingTagline": "designed for rivers or wavepools"
+  }
+}
