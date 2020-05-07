@@ -4,7 +4,6 @@ import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Brands from "../components/about/Brands"
 import About from "../components/about/About"
-import MissionStatement from "../components/about/MissionStatement"
 
 const Homepage = () => {
   return (
@@ -12,8 +11,7 @@ const Homepage = () => {
       <SEO />
       <Hero />
       <Brands />
-      {/* <About /> */}
-      <MissionStatement />
+      <About />
     </Layout>
   )
 }

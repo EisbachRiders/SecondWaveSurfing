@@ -90,9 +90,9 @@ function Hero() {
   const { t } = useTranslation()
   const data = useStaticQuery(graphql`
     query {
-      fileName: file(relativePath: { eq: "hero.png" }) {
+      fileName: file(relativePath: { eq: "hero.jpg" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }

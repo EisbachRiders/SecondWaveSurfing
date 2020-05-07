@@ -45,6 +45,13 @@
     "subscribe": "Trag dich ein",
     "cancel": "stornieren"
   },
+  "footer": {
+    "message": "Schreib uns",
+    "your message": "Deine Nachricht",
+    "send": "Senden",
+    "questions": "Fragen",
+    "questionsMessage": "Wenn Du Fragen zu unseren Produkten, Versand oder einfach wissen möchtest, wann und wo Du in München surfen gehen solltest, schreib uns einfach.  Wir freuen uns von Dir zu hören!"
+  },
   "form": {
     "email": "email",
     "name": "name"
@@ -63,5 +70,10 @@
     "apparelTagline": "Alles, was du brauchst",
     "supTagline": "alle Ausrüstung zum Paddeln",
     "rapidSurfingTagline": "ausgelegt für Flüsse oder Wellenpools"
+  },
+  "about": {
+    "about": "Über uns",
+    "tagline": "Nachhaltigkeit, Community, Surfausrüstung",
+    "content": "Wir sind ein leidenschaftliches Team von Surfern und Wassersportlern mit Sitz in München. Im Second Wave Surfing Shop finden Sie unsere handverlesenen Marken, die sich auf nachhaltige Surfprodukte konzentrieren. Bitte zögern Sie nicht, uns zu kontaktieren, wenn Sie entweder Händler für eine dieser Marken werden möchten oder wenn Sie möchten, dass Ihre Marke durch Second Wave Surfing vertreten wird."
   }
 }

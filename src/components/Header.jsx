@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
-import clsx from "clsx"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/styles"
 import IconButton from "@material-ui/core/IconButton"
@@ -13,25 +12,15 @@ import Toolbar from "@material-ui/core/Toolbar"
 import Hidden from "@material-ui/core/Hidden"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import LanguageIcon from "@material-ui/icons/Language"
-import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import MenuIcon from "@material-ui/icons/Menu"
-import FacebookIcon from "@material-ui/icons/Facebook"
-import InstagramIcon from "@material-ui/icons/Instagram"
-import PinterestIcon from "@material-ui/icons/Pinterest"
 import Container from "./ui/Container"
 import logo from "../assets/logos/logo.svg"
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
     zIndex: 200,
-    background: "transparent",
+    background: theme.palette.primary.main,
     boxShadow: "none",
-  },
-  transparentBackground: {
-    background: "transparent",
-  },
-  colorBackground: {
-    background: theme.color.white,
   },
   toolbar: {
     width: "100%",
@@ -55,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     color: theme.color.black,
     "&:hover": {
-      color: theme.palette.primary.main,
+      color: theme.color.white,
       textDecoration: "none",
     },
     [theme.breakpoints.up("md")]: {
@@ -65,14 +54,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    color: theme.color.white,
-    width: 18,
-    height: 18,
+    color: theme.color.black,
+    width: 32,
+    height: 32,
     marginTop: 5,
     marginBottom: 5,
-    marginLeft: 10,
     "&:hover": {
-      color: theme.palette.primary.main,
+      color: theme.color.white,
     },
   },
   menuIcon: {
@@ -118,66 +106,11 @@ function Header({ handleSetLang }) {
     setDrawer(open)
   }
 
-  const trigger = useScrollTrigger()
-
   const links = ["brands", "about", "contact"]
   const mobileLinks = []
 
   return (
-    <AppBar
-      position="sticky"
-      className={clsx(
-        classes.appbar,
-        trigger ? classes.colorBackground : classes.transparentBackground
-      )}
-    >
-      <Container
-        alignItems="center"
-        justifyContent="flexEnd"
-        background="black"
-        padding="none"
-      >
-        <IconButton
-          href="https://www.facebook.com/EisbachRiders/"
-          aria-label="facebook"
-          size="small"
-        >
-          <FacebookIcon className={classes.icon} />
-        </IconButton>
-        <IconButton
-          href="https://www.instagram.com/eisbachriders/"
-          aria-label="instagram"
-          size="small"
-        >
-          <InstagramIcon className={classes.icon} />
-        </IconButton>
-        <IconButton
-          href="https://www.pinterest.com/eisbachriders/"
-          aria-label="pinterest"
-          size="small"
-        >
-          <PinterestIcon className={classes.icon} />
-        </IconButton>
-        <IconButton
-          aria-controls="simple-menu"
-          aria-label="language"
-          aria-haspopup="true"
-          onClick={handleClick}
-          size="small"
-        >
-          <LanguageIcon className={classes.icon} alt="language" />
-        </IconButton>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={() => handleClose("en")}>EN</MenuItem>
-          <MenuItem onClick={() => handleClose("de")}>DE</MenuItem>
-        </Menu>
-      </Container>
+    <AppBar position="sticky" className={classes.appbar}>
       <Container padding="none">
         <Toolbar className={classes.toolbar} disableGutters>
           <Link to="/">
@@ -204,6 +137,25 @@ function Header({ handleSetLang }) {
                   </Link>
                 </ListItem>
               ))}
+              <IconButton
+                aria-controls="simple-menu"
+                aria-label="language"
+                aria-haspopup="true"
+                onClick={handleClick}
+                size="small"
+              >
+                <LanguageIcon className={classes.icon} alt="language" />
+              </IconButton>
+              <Menu
+                id="simple-menu"
+                anchorEl={anchorEl}
+                keepMounted
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={() => handleClose("en")}>EN</MenuItem>
+                <MenuItem onClick={() => handleClose("de")}>DE</MenuItem>
+              </Menu>
             </List>
           </Hidden>
           <Hidden mdUp>

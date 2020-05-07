@@ -55,7 +55,12 @@
     "30dayReturns": "30 day returns",
     "30dayReturnsText": "return any items within 30 days",
     "freeShipping": "free shipping",
-    "freeShippingText": "Free Shipping on Orders Over 15€ within Germany"
+    "freeShippingText": "Free Shipping on Orders Over 15€ within Germany",
+    "message": "send us a message",
+    "your message": "your message",
+    "send": "send",
+    "questions": "any questions",
+    "questionsMessage": "If you have any question about our products, fulfillment or what is the best time to go surfing in Munich, drop us a message. We are happy to help!"
   },
   "shop": {
     "viewCollection": "view collection",
@@ -71,5 +76,10 @@
     "apparelTagline": "everything you need",
     "supTagline": "all gear for paddling",
     "rapidSurfingTagline": "designed for rivers or wavepools"
+  },
+  "about": {
+    "about": "about us",
+    "tagline": "sustainability, community, surf equipment",
+    "content": "We are a passionate team of surfers and water sport enthusiasts based in Munich, Germany. In the Second Wave Surfing shop you will find our hand-selected brands focusing on sustainable surf products. Please feel free to contact us if you either want to become a dealer for any of these brands or if you want your brand to be represented by Second Wave Surfing."
   }
 }
