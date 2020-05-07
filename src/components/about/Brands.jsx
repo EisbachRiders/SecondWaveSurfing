@@ -50,16 +50,30 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "row-reverse",
   },
   textContainer: {
-    flexBasis: "60%",
-    padding: 60,
+    flexBasis: "100%",
+    padding: 15,
+    [theme.breakpoints.up("sm")]: {
+      flexBasis: "50%",
+      padding: 30,
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "60%",
+      padding: 60,
+    },
   },
   gridContainer: {
-    flexBasis: "40%",
-    background: theme.color.white,
+    flexBasis: "100%",
     overflow: "hidden",
+    [theme.breakpoints.up("sm")]: {
+      flexBasis: "50%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "40%",
+    },
   },
   gridList: {
     flexWrap: "wrap",
+    background: theme.color.white,
   },
   title: {
     textTransform: "uppercase",
@@ -183,7 +197,6 @@ function Brands() {
           </div>
           <div className={classes.gridContainer}>
             <GridList
-              cellHeight={160}
               className={classes.gridList}
               spacing={0}
               cols={idx === 4 ? 2 : 3}

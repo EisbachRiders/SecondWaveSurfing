@@ -16,16 +16,18 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   innerContainer: {
-    // flexBasis: "50%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     height: 500,
-    width: 800,
+    width: 600,
     borderRadius: "50%",
     backgroundImage:
       "radial-gradient(#fff,rgba(255,255,255, .8),rgba(255,255,255, .7),rgba(255,255,255, 0.6),rgba(255,255,255, 0.3),rgba(255,255,255, 0),rgba(255,255,255, 0),rgba(255,255,255, 0))",
     padding: 150,
+    [theme.breakpoints.up("sm")]: {
+      width: 800,
+    },
   },
   title: {
     textTransform: "uppercase",
