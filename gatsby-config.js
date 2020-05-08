@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: "Eisbach Riders: Surf Equipment from Munich",
+    title: "Second Wave Surfing: Surf Equipment from Munich",
     titleTemplate: "",
     description:
       "Local brand from Munich that offers sustainably packaged surf accessories and equipment for SUP, River Surfing, Ocean Surfing, Kite Surfing and more!",
-    url: "https://www.eisbach-riders.com", // No trailing slash allowed!
-    siteUrl: "https://www.eisbach-riders.com",
+    url: "https://www.secondwavesurfing.com", // No trailing slash allowed!
+    siteUrl: "https://www.www.secondwavesurfing.com",
     image: "/src/assets/logos/logo.png", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@EisbachRiders",
+    twitterUsername: "@SecondWaveSurfing",
   },
   plugins: [
     {
@@ -79,7 +79,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `eisbachriders`,
+        username: `secondwavesurfing`,
       },
     },
     {
@@ -113,7 +113,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Eisbach Riders`,
+        name: `SecondWaveSurfing`,
         short_name: `ER`,
         start_url: `/`,
         background_color: `#ffffff`,

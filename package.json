@@ -1,5 +1,5 @@
 {
-  "name": "eisbach-riders",
+  "name": "secondwavesurfing",
   "private": true,
   "description": "Munich based online shop and lifestyle blog for surf accessories",
   "version": "1.0.0",
@@ -45,7 +45,7 @@
   "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "homepage": "https://eisbach-riders.com/",
+  "homepage": "https://secondwavesurfing.com/",
   "keywords": [
     "ecommerce",
     "surf",
