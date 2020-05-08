@@ -1,5 +1,5 @@
 import React from "react"
-import clsx from "clsx"
+import { Element } from "react-scroll"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
@@ -52,6 +52,7 @@ function About() {
   const { t } = useTranslation()
   return (
     <div className={classes.root}>
+      <Element name="about"></Element>
       <Container>
         <div className={classes.innerContainer}>
           <p className={classes.title}>{t("about.about")}</p>

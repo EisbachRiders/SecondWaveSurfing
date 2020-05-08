@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Element } from "react-scroll"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
@@ -180,6 +181,7 @@ function Contact() {
           }
         />
       </Snackbar>
+      <Element name="contact"></Element>
       <form noValidate autoComplete="off">
         <Typography className={classes.textHeading} variant="h5">
           {t("footer.message")}

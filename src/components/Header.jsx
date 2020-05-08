@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link } from "gatsby-theme-material-ui"
+import { Link, animateScroll as scroll } from "react-scroll"
 import { makeStyles } from "@material-ui/styles"
 import IconButton from "@material-ui/core/IconButton"
 import Menu from "@material-ui/core/Menu"
@@ -14,7 +14,6 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import LanguageIcon from "@material-ui/icons/Language"
 import MenuIcon from "@material-ui/icons/Menu"
 import Container from "./ui/Container"
-import logo from "../assets/logos/logo.svg"
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -27,10 +26,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   logo: {
-    width: 100,
-    [theme.breakpoints.up("xs")]: {
-      width: 50,
-    },
+    fontWeight: 700,
+    fontSize: 20,
   },
   linkContainer: {
     display: "flex",
@@ -40,11 +37,37 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
     },
   },
+  home: {
+    color: theme.color.white,
+    cursor: "pointer",
+    "&:hover": {
+      color: theme.color.black,
+      textDecoration: "none",
+    },
+    [theme.breakpoints.up("md")]: {
+      letterSpacing: 2,
+      fontSize: 24,
+      fontWeight: 700,
+    },
+  },
   link: {
     textTransform: "uppercase",
     color: theme.color.black,
     "&:hover": {
       color: theme.color.white,
+      textDecoration: "none",
+    },
+    [theme.breakpoints.up("md")]: {
+      letterSpacing: 2,
+      fontSize: 24,
+      fontWeight: 700,
+    },
+  },
+  linkActive: {
+    textTransform: "uppercase",
+    color: theme.color.white,
+    "&:hover": {
+      color: theme.color.black,
       textDecoration: "none",
     },
     [theme.breakpoints.up("md")]: {
@@ -73,6 +96,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       margin: "0 30px 0 0",
     },
+    "&:hover": {
+      background: "transparent",
+    },
   },
   listItemMobile: {
     borderBottom: `1px solid ${theme.color.gray}`,
@@ -83,6 +109,7 @@ const useStyles = makeStyles((theme) => ({
 function Header({ handleSetLang }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const [drawer, setDrawer] = useState(false)
+  const [active, setActive] = useState("home")
   const classes = useStyles()
   const { t } = useTranslation()
 
@@ -93,6 +120,15 @@ function Header({ handleSetLang }) {
   const handleClose = (lang) => {
     setAnchorEl(null)
     handleSetLang(lang)
+  }
+
+  const handleScrollToTop = () => {
+    scroll.scrollToTop()
+    setActive("home")
+  }
+
+  const handleScroll = (to) => {
+    setActive(to)
   }
 
   const toggleDrawer = (open) => (event) => {
@@ -113,13 +149,9 @@ function Header({ handleSetLang }) {
     <AppBar position="sticky" className={classes.appbar}>
       <Container padding="none">
         <Toolbar className={classes.toolbar} disableGutters>
-          <Link to="/">
-            <img
-              src={logo}
-              className={classes.logo}
-              alt="eisbach riders logo"
-            />
-          </Link>
+          <a onClick={handleScrollToTop} className={classes.home}>
+            <p className={classes.logo}>Second Wave Surfing</p>
+          </a>
           <Hidden smDown>
             <List
               component="nav"
@@ -132,7 +164,17 @@ function Header({ handleSetLang }) {
                   key={`navItem${idx}`}
                   className={classes.listItem}
                 >
-                  <Link to={`/${elem}`} className={classes.link}>
+                  <Link
+                    to={elem}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    onClick={() => handleScroll(elem)}
+                    className={
+                      active === elem ? classes.linkActive : classes.link
+                    }
+                  >
                     {t(`links.${elem}`)}
                   </Link>
                 </ListItem>

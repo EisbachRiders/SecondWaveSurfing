@@ -1,5 +1,6 @@
 import React from "react"
 import clsx from "clsx"
+import { Element } from "react-scroll"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
@@ -182,6 +183,7 @@ function Brands() {
   ]
   return (
     <Container variant="center" className={classes.container} background="gray">
+      <Element name="brands"></Element>
       <h1 className={classes.header}>{t("links.brands")}</h1>
       {brands.map((elem, idx) => (
         <div
