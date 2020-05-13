@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const classes = useStyles()
   const { i18n, t } = useTranslation()
 
@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className={classes.root}>
-      <Header handleSetLang={handleSetLang} />
+      <Header handleSetLang={handleSetLang} location={location} />
       <main className={classes.main}>{children}</main>
       <CookieConsent
         location="bottom"

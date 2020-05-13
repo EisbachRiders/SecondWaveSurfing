@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ children, data: { mdx }, pageContext }) => {
   const { previous, next } = pageContext
 
   return (
-    <Layout>
+    <Layout location="other">
       {/* <SEO
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description || mdx.excerpt}

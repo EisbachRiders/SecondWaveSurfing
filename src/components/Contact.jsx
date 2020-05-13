@@ -253,7 +253,7 @@ function Contact() {
         <Button
           data-testid="footer_submit"
           variant="contained"
-          color="primary"
+          color="secondary"
           className={classes.buttonSend}
           fullWidth
           onClick={handleSubmit}

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
+import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/styles"
 import IconButton from "@material-ui/core/IconButton"
 import Menu from "@material-ui/core/Menu"
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     fontWeight: 700,
     fontSize: 20,
+    color: theme.color.black,
   },
   linkContainer: {
     display: "flex",
@@ -38,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   home: {
-    color: theme.color.white,
+    color: theme.palette.secondary.main,
     cursor: "pointer",
     "&:hover": {
       color: theme.color.black,
@@ -54,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     color: theme.color.black,
     "&:hover": {
-      color: theme.color.white,
+      color: theme.palette.secondary.main,
       textDecoration: "none",
     },
     [theme.breakpoints.up("md")]: {
@@ -65,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
   linkActive: {
     textTransform: "uppercase",
-    color: theme.color.white,
+    color: theme.palette.secondary.main,
     "&:hover": {
       color: theme.color.black,
       textDecoration: "none",
@@ -83,7 +85,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 5,
     marginBottom: 5,
     "&:hover": {
-      color: theme.color.white,
+      color: theme.palette.secondary.main,
+      background: "transparent",
     },
   },
   menuIcon: {
@@ -106,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Header({ handleSetLang }) {
+function Header({ handleSetLang, location }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const [drawer, setDrawer] = useState(false)
   const [active, setActive] = useState("home")
@@ -149,9 +152,15 @@ function Header({ handleSetLang }) {
     <AppBar position="sticky" className={classes.appbar}>
       <Container padding="none">
         <Toolbar className={classes.toolbar} disableGutters>
-          <a onClick={handleScrollToTop} className={classes.home}>
-            <p className={classes.logo}>Second Wave Surfing</p>
-          </a>
+          {location === "other" ? (
+            <Link to="/" className={classes.home}>
+              <p className={classes.logo}>Second Wave Surfing</p>
+            </Link>
+          ) : (
+            <a onClick={handleScrollToTop} className={classes.home}>
+              <p className={classes.logo}>Second Wave Surfing</p>
+            </a>
+          )}
           <Hidden smDown>
             <List
               component="nav"
@@ -164,19 +173,29 @@ function Header({ handleSetLang }) {
                   key={`navItem${idx}`}
                   className={classes.listItem}
                 >
-                  <Link
-                    to={elem}
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    onClick={() => handleScroll(elem)}
-                    className={
-                      active === elem ? classes.linkActive : classes.link
-                    }
-                  >
-                    {t(`links.${elem}`)}
-                  </Link>
+                  {location === "other" ? (
+                    <Link
+                      to="/"
+                      className={classes.link}
+                      onClick={() => handleScroll(elem)}
+                    >
+                      {t(`links.${elem}`)}
+                    </Link>
+                  ) : (
+                    <ScrollLink
+                      to={elem}
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
+                      onClick={() => handleScroll(elem)}
+                      className={
+                        active === elem ? classes.linkActive : classes.link
+                      }
+                    >
+                      {t(`links.${elem}`)}
+                    </ScrollLink>
+                  )}
                 </ListItem>
               ))}
               <IconButton
@@ -221,7 +240,11 @@ function Header({ handleSetLang }) {
                     key={`navItem${idx}`}
                     className={classes.listItem}
                   >
-                    <Link to="/" className={classes.link}>
+                    <Link
+                      to="/"
+                      className={classes.link}
+                      onClick={() => handleScroll(elem)}
+                    >
                       {t(`links.${elem}`)}
                     </Link>
                   </ListItem>
