@@ -117,14 +117,15 @@ function Hero() {
           gutterBottom
           className={clsx(classes.text, classes.title)}
         >
-          <span className={classes.textBig}>E</span>isbach
+          <span className={classes.textBig}>S</span>econd{" "}
+          <span className={classes.textBig}>W</span>ave
         </Typography>
         <Typography
           variant="h1"
           gutterBottom
           className={clsx(classes.text, classes.title, classes.indent)}
         >
-          <span className={classes.textBig}>R</span>iders
+          <span className={classes.textBig}>S</span>urfing
         </Typography>
 
         <Typography

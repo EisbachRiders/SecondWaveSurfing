@@ -19,7 +19,7 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import PinterestIcon from "@material-ui/icons/Pinterest"
 import Container from "./ui/Container"
-import logo from "../assets/logos/logo.svg"
+import logo from "../assets/logos/logo.png"
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -129,7 +129,7 @@ function Header({ handleSetLang }) {
     threshold: 0,
   })
 
-  const links = ["eisbach", "blog", "shop", "about"]
+  const links = ["brands", "blog", "shop", "about"]
   const mobileLinks = ["contact", "customerService"]
 
   return (
@@ -147,16 +147,20 @@ function Header({ handleSetLang }) {
         padding="none"
       >
         <IconButton
-          href="https://www.facebook.com/EisbachRiders/"
+          href="https://www.facebook.com/secondwavesurfing"
           aria-label="facebook"
           size="small"
+          rel="noopener"
+          target="_blank"
         >
           <FacebookIcon className={classes.icon} />
         </IconButton>
         <IconButton
-          href="https://www.instagram.com/eisbachriders/"
+          href="https://www.instagram.com/second_wave_surfing/"
           aria-label="instagram"
           size="small"
+          rel="noopener"
+          target="_blank"
         >
           <InstagramIcon className={classes.icon} />
         </IconButton>
@@ -164,6 +168,8 @@ function Header({ handleSetLang }) {
           href="https://www.pinterest.com/eisbachriders/"
           aria-label="pinterest"
           size="small"
+          rel="noopener"
+          target="_blank"
         >
           <PinterestIcon className={classes.icon} />
         </IconButton>
@@ -193,7 +199,7 @@ function Header({ handleSetLang }) {
             <img
               src={logo}
               className={classes.logo}
-              alt="eisbach riders logo"
+              alt="second wave surfing logo"
             />
           </Link>
           <Hidden smDown>

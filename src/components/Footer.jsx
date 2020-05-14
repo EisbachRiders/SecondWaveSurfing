@@ -14,7 +14,7 @@ import LocalShippingIcon from "@material-ui/icons/LocalShipping"
 import Newsletter from "./newsletter/Newsletter"
 import Container from "./ui/Container"
 import Contact from "./Contact"
-import fullLogo from "../assets/logos/ER_full_black.svg"
+import logo from "../assets/logos/logo.png"
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -209,19 +209,23 @@ function Footer() {
 
       <Container alignItems="flexStart" className={classes.container}>
         <div className={classes.imgContainer}>
-          <img src={fullLogo} alt="logo" className={classes.img} />
+          <img src={logo} alt="logo" className={classes.img} />
           <div className={classes.socialContainer}>
             <IconButton
-              href="https://www.facebook.com/EisbachRiders/"
+              href="https://www.facebook.com/secondwavesurfing"
               aria-label="facebook"
               size="small"
+              rel="noopener"
+              target="_blank"
             >
               <FacebookIcon className={classes.iconSocial} />
             </IconButton>
             <IconButton
-              href="https://www.instagram.com/eisbachriders/"
+              href="https://www.instagram.com/second_wave_surfing/"
               aria-label="instagram"
               size="small"
+              rel="noopener"
+              target="_blank"
             >
               <InstagramIcon className={classes.iconSocial} />
             </IconButton>
@@ -229,6 +233,8 @@ function Footer() {
               href="https://www.pinterest.com/eisbachriders/"
               aria-label="pinterest"
               size="small"
+              rel="noopener"
+              target="_blank"
             >
               <PinterestIcon className={classes.iconSocial} />
             </IconButton>
@@ -311,7 +317,7 @@ function Footer() {
           </Link>
         </div>
         <p className={clsx(classes.textSmall, classes.copyright)}>
-          &copy; Eisbach Riders
+          &copy; SecondWaveSurfing
         </p>
       </Container>
     </footer>

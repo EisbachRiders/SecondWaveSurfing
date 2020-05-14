@@ -1,11 +1,11 @@
 {
-  "name": "eisbach-riders",
+  "name": "secondwavesurfing",
   "private": true,
   "description": "Munich based online shop and lifestyle blog for surf accessories",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Alyssa Butler <ca.butler10@gmail.com>",
   "bugs": {
-    "url": "https://github.com/cabutler10/website_EisbachRidersGatsby/issues"
+    "url": "https://github.com/EisbachRiders/secondwavesurfing/issues"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.14",
@@ -40,27 +40,26 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-i18next": "^11.4.0",
+    "react-scroll": "^1.7.16",
     "typeface-open-sans": "^0.0.75",
-    "typeface-raleway": "^0.0.75",
-    "victory": "^34.3.3"
+    "typeface-raleway": "^0.0.75"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
   },
-  "homepage": "https://eisbach-riders.com/",
+  "homepage": "https://www.secondwavesurfing.com/",
   "keywords": [
     "ecommerce",
     "surf accessories",
     "blog",
     "react",
     "gatsby"
-
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cabutler10/website_EisbachRidersGatsby.git"
+    "url": "git+https://github.com/EisbachRiders/secondwavesurfing.git"
   },
   "scripts": {
     "build": "gatsby build",

@@ -31,7 +31,7 @@ const SEO = ({ description, lang, meta }) => {
       htmlAttributes={{
         lang,
       }}
-      title={"EisbachRiders"}
+      title={"Second Wave Surfing"}
       titleTemplate={title ? `%s | ${title}` : ""}
       meta={[
         {
