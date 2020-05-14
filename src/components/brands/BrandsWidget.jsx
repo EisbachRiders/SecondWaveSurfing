@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     flexBasis: "20%",
     textAlign: "center",
+    cursor: "pointer",
   },
   logo: {
     height: 75,
