@@ -1,18 +1,40 @@
 const path = require("path")
+const _ = require("lodash")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // Destructure the createPage function from the actions object
   const { createPage } = actions
+
+  const pageTemplate = path.resolve("src/templates/page.js")
+  const blogPostTemplate = path.resolve("src/templates/blogPost.js")
+  const blogListTemplate = path.resolve("src/templates/blogList.js")
+  const tagTemplate = path.resolve("src/templates/tags.js")
 
   const result = await graphql(`
     query {
-      allMdx {
+      pagesRemark: allMdx(
+        filter: { frontmatter: { label: { nin: "article" } } }
+      ) {
         edges {
           node {
             id
             fields {
               slug
+            }
+          }
+        }
+      }
+      postsRemark: allMdx(
+        filter: { frontmatter: { label: { in: "article" } } }
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
             }
           }
           next {
@@ -27,46 +49,88 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      tagsGroup: allMdx {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `)
-
+  // handle errors
   if (result.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
   }
 
-  // Create blog post pages.
-  const posts = result.data.allMdx.edges
+  const posts = result.data.postsRemark.edges
+  const pages = result.data.pagesRemark.edges
+  const tags = result.data.tagsGroup.group
 
-  // you'll call `createPage` for each result
-  posts.forEach(({ node, previous, next }, index) => {
+  // Create pages, posts, and tags
+  pages.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: pageTemplate,
+      context: { id: node.id },
+    })
+  })
+
+  posts.forEach(({ node, previous, next }) => {
     const previousSlug = previous ? previous.fields.slug : null
     const nextSlug = next ? next.fields.slug : null
     createPage({
-      // This is the slug you created before
-      // (or `node.frontmatter.slug`)
       path: node.fields.slug,
-      // This component will wrap our MDX content
-      component: path.resolve(`./src/templates/post-layout.js`),
-      // You can use the values in this context in
-      // our page layout component
+      component: blogPostTemplate,
       context: { id: node.id, previous: previousSlug, next: nextSlug },
+    })
+  })
+
+  // create pagination on blog
+  const postsPerPage = 5
+  const numPages = Math.ceil(posts.length / postsPerPage)
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: blogListTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
+  tags.forEach((tag) => {
+    let postLen = posts.filter(
+      (elem) => elem.node.frontmatter.tags[0] === tag.fieldValue
+    ).length
+    let numPages = Math.ceil(postLen / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path:
+          i === 0
+            ? `/tags/${tag.fieldValue}`
+            : `/tags/${tag.fieldValue}/${i + 1}`,
+        component: tagTemplate,
+        context: {
+          tag: tag.fieldValue,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
     })
   })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
-  // you only want to operate on `Mdx` nodes. If you had content from a
-  // remote CMS you could also check to see if the parent node was a
-  // `File` node here
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode })
-
     createNodeField({
-      // Name of the field you are adding
       name: "slug",
-      // Individual MDX node
       node,
       // Generated value based on filepath with "blog" prefix. you
       // don't need a separating "/" before the value because

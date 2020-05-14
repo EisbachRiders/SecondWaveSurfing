@@ -28,22 +28,24 @@ const color = {
   almostBlack: "#363738", // typography
   textLight: "#838588",
   gray: "#ebedee",
-  blueLt1: "#0062f0",
-  blueLt2: "#3f8eff",
+  primaryBlue: "#0062f0",
+  primaryBlueLt: "#3f8eff",
+  gold: "#E6C55E",
+  goldLt: "#f0dda0",
 }
 
 const theme = createMuiTheme({
   palette: {
     type: "light",
     primary: {
-      light: "#ebedee",
-      main: "#F3F8FC",
-      dark: "#ebedee",
+      light: color.goldLt,
+      main: color.gold,
+      dark: color.goldLt,
     },
     secondary: {
-      light: "#00d7a2",
-      main: "#00d7a2",
-      dark: "#00d7a2",
+      light: color.primaryBlueLt,
+      main: color.primaryBlue,
+      dark: color.primaryBlueLt,
     },
     error: { main: color.red },
   },

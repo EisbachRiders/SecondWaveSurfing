@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"
+import clsx from "clsx"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/styles"
 import IconButton from "@material-ui/core/IconButton"
@@ -13,23 +13,35 @@ import Toolbar from "@material-ui/core/Toolbar"
 import Hidden from "@material-ui/core/Hidden"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 import LanguageIcon from "@material-ui/icons/Language"
+import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import MenuIcon from "@material-ui/icons/Menu"
+import FacebookIcon from "@material-ui/icons/Facebook"
+import InstagramIcon from "@material-ui/icons/Instagram"
+import PinterestIcon from "@material-ui/icons/Pinterest"
 import Container from "./ui/Container"
+import logo from "../assets/logos/logo.svg"
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
     zIndex: 200,
-    background: theme.palette.primary.main,
+    background: "transparent",
     boxShadow: "none",
+  },
+  transparentBackground: {
+    background: "transparent",
+  },
+  colorBackground: {
+    background: theme.color.white,
   },
   toolbar: {
     width: "100%",
     justifyContent: "space-between",
   },
   logo: {
-    fontWeight: 700,
-    fontSize: 20,
-    color: theme.color.black,
+    width: 100,
+    [theme.breakpoints.up("xs")]: {
+      width: 50,
+    },
   },
   linkContainer: {
     display: "flex",
@@ -39,37 +51,11 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
     },
   },
-  home: {
-    color: theme.palette.secondary.main,
-    cursor: "pointer",
-    "&:hover": {
-      color: theme.color.black,
-      textDecoration: "none",
-    },
-    [theme.breakpoints.up("md")]: {
-      letterSpacing: 2,
-      fontSize: 24,
-      fontWeight: 700,
-    },
-  },
   link: {
     textTransform: "uppercase",
     color: theme.color.black,
     "&:hover": {
-      color: theme.palette.secondary.main,
-      textDecoration: "none",
-    },
-    [theme.breakpoints.up("md")]: {
-      letterSpacing: 2,
-      fontSize: 24,
-      fontWeight: 700,
-    },
-  },
-  linkActive: {
-    textTransform: "uppercase",
-    color: theme.palette.secondary.main,
-    "&:hover": {
-      color: theme.color.black,
+      color: theme.palette.primary.main,
       textDecoration: "none",
     },
     [theme.breakpoints.up("md")]: {
@@ -79,14 +65,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    color: theme.color.black,
-    width: 32,
-    height: 32,
+    color: theme.color.white,
+    width: 18,
+    height: 18,
     marginTop: 5,
     marginBottom: 5,
+    marginLeft: 10,
     "&:hover": {
-      color: theme.palette.secondary.main,
-      background: "transparent",
+      color: theme.palette.primary.main,
     },
   },
   menuIcon: {
@@ -99,8 +85,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       margin: "0 30px 0 0",
     },
-    "&:hover": {
-      background: "transparent",
+  },
+  listItemLast: {
+    margin: 15,
+    [theme.breakpoints.up("md")]: {
+      margin: 0,
     },
   },
   listItemMobile: {
@@ -109,10 +98,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Header({ handleSetLang, location }) {
+function Header({ handleSetLang }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const [drawer, setDrawer] = useState(false)
-  const [active, setActive] = useState("home")
   const classes = useStyles()
   const { t } = useTranslation()
 
@@ -123,15 +111,6 @@ function Header({ handleSetLang, location }) {
   const handleClose = (lang) => {
     setAnchorEl(null)
     handleSetLang(lang)
-  }
-
-  const handleScrollToTop = () => {
-    scroll.scrollToTop()
-    setActive("home")
-  }
-
-  const handleScroll = (to) => {
-    setActive(to)
   }
 
   const toggleDrawer = (open) => (event) => {
@@ -145,22 +124,78 @@ function Header({ handleSetLang, location }) {
     setDrawer(open)
   }
 
-  const links = ["brands", "about", "contact"]
-  const mobileLinks = []
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  })
+
+  const links = ["eisbach", "blog", "shop", "about"]
+  const mobileLinks = ["contact", "customerService"]
 
   return (
-    <AppBar position="sticky" className={classes.appbar}>
+    <AppBar
+      position="sticky"
+      className={clsx(
+        classes.appbar,
+        trigger ? classes.colorBackground : classes.transparentBackground
+      )}
+    >
+      <Container
+        alignItems="center"
+        justifyContent="flexEnd"
+        background="black"
+        padding="none"
+      >
+        <IconButton
+          href="https://www.facebook.com/EisbachRiders/"
+          aria-label="facebook"
+          size="small"
+        >
+          <FacebookIcon className={classes.icon} />
+        </IconButton>
+        <IconButton
+          href="https://www.instagram.com/eisbachriders/"
+          aria-label="instagram"
+          size="small"
+        >
+          <InstagramIcon className={classes.icon} />
+        </IconButton>
+        <IconButton
+          href="https://www.pinterest.com/eisbachriders/"
+          aria-label="pinterest"
+          size="small"
+        >
+          <PinterestIcon className={classes.icon} />
+        </IconButton>
+        <IconButton
+          aria-controls="simple-menu"
+          aria-label="language"
+          aria-haspopup="true"
+          onClick={handleClick}
+          size="small"
+        >
+          <LanguageIcon className={classes.icon} alt="language" />
+        </IconButton>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={() => handleClose("en")}>EN</MenuItem>
+          <MenuItem onClick={() => handleClose("de")}>DE</MenuItem>
+        </Menu>
+      </Container>
       <Container padding="none">
         <Toolbar className={classes.toolbar} disableGutters>
-          {location === "other" ? (
-            <Link to="/" className={classes.home}>
-              <p className={classes.logo}>Second Wave Surfing</p>
-            </Link>
-          ) : (
-            <a onClick={handleScrollToTop} className={classes.home}>
-              <p className={classes.logo}>Second Wave Surfing</p>
-            </a>
-          )}
+          <Link to="/">
+            <img
+              src={logo}
+              className={classes.logo}
+              alt="eisbach riders logo"
+            />
+          </Link>
           <Hidden smDown>
             <List
               component="nav"
@@ -171,52 +206,17 @@ function Header({ handleSetLang, location }) {
                 <ListItem
                   button
                   key={`navItem${idx}`}
-                  className={classes.listItem}
+                  className={
+                    idx === links.length - 1
+                      ? classes.listItemLast
+                      : classes.listItem
+                  }
                 >
-                  {location === "other" ? (
-                    <Link
-                      to="/"
-                      className={classes.link}
-                      onClick={() => handleScroll(elem)}
-                    >
-                      {t(`links.${elem}`)}
-                    </Link>
-                  ) : (
-                    <ScrollLink
-                      to={elem}
-                      spy={true}
-                      smooth={true}
-                      offset={-100}
-                      duration={500}
-                      onClick={() => handleScroll(elem)}
-                      className={
-                        active === elem ? classes.linkActive : classes.link
-                      }
-                    >
-                      {t(`links.${elem}`)}
-                    </ScrollLink>
-                  )}
+                  <Link to={`/${elem}`} className={classes.link}>
+                    {t(`links.${elem}`)}
+                  </Link>
                 </ListItem>
               ))}
-              <IconButton
-                aria-controls="simple-menu"
-                aria-label="language"
-                aria-haspopup="true"
-                onClick={handleClick}
-                size="small"
-              >
-                <LanguageIcon className={classes.icon} alt="language" />
-              </IconButton>
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={() => handleClose("en")}>EN</MenuItem>
-                <MenuItem onClick={() => handleClose("de")}>DE</MenuItem>
-              </Menu>
             </List>
           </Hidden>
           <Hidden mdUp>
@@ -240,11 +240,7 @@ function Header({ handleSetLang, location }) {
                     key={`navItem${idx}`}
                     className={classes.listItem}
                   >
-                    <Link
-                      to="/"
-                      className={classes.link}
-                      onClick={() => handleScroll(elem)}
-                    >
+                    <Link to="/" className={classes.link}>
                       {t(`links.${elem}`)}
                     </Link>
                   </ListItem>

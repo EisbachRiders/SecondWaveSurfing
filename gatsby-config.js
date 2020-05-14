@@ -5,9 +5,9 @@ module.exports = {
     description:
       "Local brand from Munich that offers sustainably packaged surf accessories and equipment for SUP, River Surfing, Ocean Surfing, Kite Surfing and more!",
     url: "https://www.secondwavesurfing.com", // No trailing slash allowed!
-    siteUrl: "https://www.www.secondwavesurfing.com",
+    siteUrl: "https://www.secondwavesurfing.com",
     image: "/src/assets/logos/logo.png", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@SecondWaveSurfing",
+    twitterUsername: "@SecondSurfing",
   },
   plugins: [
     {
@@ -79,26 +79,26 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `secondwavesurfing`,
+        username: `eisbachriders`,
       },
     },
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
-        googleAnalytics: {
-          trackingId: "UA-130658859-1", // leave empty if you want to disable the tracker
-          cookieName: "gatsby-gdpr-google-analytics", // default
-          anonymize: true, // default
-        },
+        // googleAnalytics: {
+        //   trackingId: "UA-130658859-1", // leave empty if you want to disable the tracker
+        //   cookieName: "gatsby-gdpr-google-analytics", // default
+        //   anonymize: true, // default
+        // },
         googleTagManager: {
-          trackingId: "", // leave empty if you want to disable the tracker
+          trackingId: "GTM-WNTQC2R", // leave empty if you want to disable the tracker
           cookieName: "gatsby-gdpr-google-tagmanager", // default
           dataLayerName: "dataLayer", // default
         },
-        facebookPixel: {
-          pixelId: "203659477338999", // leave empty if you want to disable the tracker
-          cookieName: "gatsby-gdpr-facebook-pixel", // default
-        },
+        // facebookPixel: {
+        //   pixelId: "203659477338999", // leave empty if you want to disable the tracker
+        //   cookieName: "gatsby-gdpr-facebook-pixel", // default
+        // },
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ["production", "development"],
       },
@@ -113,8 +113,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `SecondWaveSurfing`,
-        short_name: `ER`,
+        name: `Second Wave Surfing`,
+        short_name: `SecondWaveSurfing`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#00d7a2`,

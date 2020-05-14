@@ -1,15 +1,20 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { useTranslation } from "react-i18next"
+import { Link } from "gatsby-theme-material-ui"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/styles"
+import IconButton from "@material-ui/core/IconButton"
 import Hidden from "@material-ui/core/Hidden"
-import Container from "./ui/Container"
-import { Link } from "gatsby-theme-material-ui"
+import FacebookIcon from "@material-ui/icons/Facebook"
+import InstagramIcon from "@material-ui/icons/Instagram"
+import PinterestIcon from "@material-ui/icons/Pinterest"
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer"
 import ReplyIcon from "@material-ui/icons/Reply"
 import LocalShippingIcon from "@material-ui/icons/LocalShipping"
+import Newsletter from "./newsletter/Newsletter"
+import Container from "./ui/Container"
 import Contact from "./Contact"
-import Paper from "@material-ui/core/Paper"
+import fullLogo from "../assets/logos/ER_full_black.svg"
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -63,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
       width: "fit-content",
     },
   },
-
   link: {
     "&:hover": {
       textDecoration: "none",
@@ -163,20 +167,118 @@ const useStyles = makeStyles((theme) => ({
       width: "fit-content",
     },
   },
-  margin: {
-    marginTop: 30,
-    marginBottom: 30,
-  },
 }))
 
 function Footer() {
   const classes = useStyles()
   const { t } = useTranslation()
-
+  const blog = ["lifestyle", "travel", "gear", "community"]
+  const shop = ["rapid", "fins", "sup", "leashes", "accessories", "apparel"]
+  const customerService = ["faq", "contact", "shipping", "returns"]
+  const features = [
+    {
+      title: "emailSupport",
+      icon: <QuestionAnswerIcon className={classes.icon} />,
+    },
+    {
+      title: "30dayReturns",
+      icon: <ReplyIcon className={classes.icon} />,
+    },
+    {
+      title: "freeShipping",
+      icon: <LocalShippingIcon className={classes.icon} />,
+    },
+  ]
   return (
     <footer className={classes.footer}>
-      <Container justifyContent="center" className={classes.margin}>
-        <Contact />
+      <Container justifyContent="spaceAround">
+        {features.map((elem, idx) => (
+          <div className={classes.iconContainer} key={`feature${idx}`}>
+            {elem.icon}
+            <div>
+              <p className={classes.feature}>{t(`footer.${elem.title}`)}</p>
+              <p className={classes.featureText}>
+                {t(`footer.${elem.title}Text`)}
+              </p>
+            </div>
+          </div>
+        ))}
+      </Container>
+
+      <Newsletter />
+
+      <Container alignItems="flexStart" className={classes.container}>
+        <div className={classes.imgContainer}>
+          <img src={fullLogo} alt="logo" className={classes.img} />
+          <div className={classes.socialContainer}>
+            <IconButton
+              href="https://www.facebook.com/EisbachRiders/"
+              aria-label="facebook"
+              size="small"
+            >
+              <FacebookIcon className={classes.iconSocial} />
+            </IconButton>
+            <IconButton
+              href="https://www.instagram.com/eisbachriders/"
+              aria-label="instagram"
+              size="small"
+            >
+              <InstagramIcon className={classes.iconSocial} />
+            </IconButton>
+            <IconButton
+              href="https://www.pinterest.com/eisbachriders/"
+              aria-label="pinterest"
+              size="small"
+            >
+              <PinterestIcon className={classes.iconSocial} />
+            </IconButton>
+          </div>
+        </div>
+        <Hidden xsDown>
+          <div className={classes.linksContainer}>
+            <div className={classes.list}>
+              <p className={classes.title}>{t("links.blog")}</p>
+              {blog.map((elem, idx) => (
+                <Link
+                  key={`blog${idx}`}
+                  to={`/tags/${elem}`}
+                  className={clsx(classes.text, classes.link)}
+                >
+                  {t(`links.${elem}`)}
+                </Link>
+              ))}
+            </div>
+            <div className={classes.list}>
+              <p className={classes.title}>{t("links.shop")}</p>
+              {shop.map((elem, idx) => (
+                <Link
+                  key={`shop${idx}`}
+                  to={`/${elem}`}
+                  className={clsx(classes.text, classes.link)}
+                >
+                  {t(`links.${elem}`)}
+                </Link>
+              ))}
+            </div>
+            <div className={classes.list}>
+              <p className={classes.title}>{t("links.customerService")}</p>
+              {customerService.map((elem, idx) => (
+                <Fragment key={`customerService${idx}`}>
+                  {elem === "contact" ? (
+                    <Contact variant="link" />
+                  ) : (
+                    <Link
+                      to={`/${elem}`}
+                      className={clsx(classes.text, classes.link)}
+                    >
+                      {t(`links.${elem}`)}
+                    </Link>
+                  )}
+                </Fragment>
+              ))}
+            </div>
+          </div>
+        </Hidden>
       </Container>
 
       <Container
@@ -209,7 +311,7 @@ function Footer() {
           </Link>
         </div>
         <p className={clsx(classes.textSmall, classes.copyright)}>
-          &copy; Second Wave Surfing
+          &copy; Eisbach Riders
         </p>
       </Container>
     </footer>
