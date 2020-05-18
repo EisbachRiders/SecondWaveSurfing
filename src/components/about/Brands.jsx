@@ -150,7 +150,7 @@ function Brands() {
 
     {
       name: "shepps gnarwall",
-      website: "https://eisbach-riders.com/",
+      website: "https://sheppsolutions.com/",
       category_en: "Surfboard & Wetsuit Hangers",
       category_de: "Surfbrett & Neoprenanzug Kleiderbügel",
       location: "Toronto, Canada",
@@ -167,7 +167,7 @@ function Brands() {
     },
     {
       name: "bee swell",
-      website: "https://eisbach-riders.com/",
+      website: "https://www.beeswell.com/",
       category_en: "Organic Wax",
       category_de: "Bio-Wachs",
       location: "Idaho, USA",
@@ -184,7 +184,7 @@ function Brands() {
     },
     {
       name: "van der waal",
-      website: "https://eisbach-riders.com/",
+      website: "https://www.waal.co/",
       category_en: "Surfboard Grip",
       category_de: "Surfbrettgriff",
       location: "Lisbon, Portugal",
@@ -200,7 +200,7 @@ function Brands() {
     },
     {
       name: "green fix",
-      website: "https://eisbach-riders.com/",
+      website: "https://www.greenfix.fr/",
       category_en: "Wax",
       category_de: "Wachs",
       location: "Bayonne, France",
