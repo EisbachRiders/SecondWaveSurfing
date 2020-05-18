@@ -21,7 +21,8 @@
     "contact": "contact",
     "payment": "payment",
     "shipping": "shipping",
-    "returns": "returns"
+    "returns": "returns",
+    "officialWebsite": "Official Website"
   },
   "tracking": {
     "consent": "Second Wave Surfing uses cookies on its pages to enable you to make optimal use of the page. If you agree, just continue visiting the site. To learn more read our ",

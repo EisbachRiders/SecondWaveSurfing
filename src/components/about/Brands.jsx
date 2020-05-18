@@ -8,7 +8,7 @@ import ERlogo from "../../assets/logos/logoWithName.png"
 import GreenFixLogo from "../../assets/logos/greenfix.png"
 import BeeSwellLogo from "../../assets/logos/beeSwellLogo.jpg"
 import SheppsGnarwallLogo from "../../assets/logos/sheppsgnarwall.png"
-import VanDerWaalLogo from "../../assets/logos/vanderwaal.png"
+import VanDerWaalLogo from "../../assets/logos/van-der-waal-logo.png"
 // import GridList from "@material-ui/core/GridList"
 // import GridListTile from "@material-ui/core/GridListTile"
 import er2 from "../../assets/websiteImages/er2.jpg"
@@ -80,16 +80,25 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontWeight: 700,
     fontSize: 14,
-    color: theme.palette.secondary.main,
     margin: 0,
     marginBottom: 5,
+  },
+  titleHolder: {
+    display: "flex",
+    alignItems: "flex-end",
   },
   title2: {
     textTransform: "capitalize",
     fontWeight: 700,
     fontSize: 18,
     margin: 0,
-    marginBottom: 15,
+  },
+  title3: {
+    color: theme.palette.secondary.main,
+    textTransform: "lowercase",
+    fontSize: 14,
+    margin: 0,
+    paddingLeft: 5,
   },
   img: {
     width: "100%",
@@ -123,6 +132,7 @@ function Brands() {
   const brands = [
     {
       name: "eisbach riders",
+      website: "https://eisbach-riders.com/",
       category_en: "Fins & Leashes",
       category_de: "Flossen & Leinen",
       location: "Munich, Germany",
@@ -140,6 +150,7 @@ function Brands() {
 
     {
       name: "shepps gnarwall",
+      website: "https://eisbach-riders.com/",
       category_en: "Surfboard & Wetsuit Hangers",
       category_de: "Surfbrett & Neoprenanzug Kleiderbügel",
       location: "Toronto, Canada",
@@ -156,6 +167,7 @@ function Brands() {
     },
     {
       name: "bee swell",
+      website: "https://eisbach-riders.com/",
       category_en: "Organic Wax",
       category_de: "Bio-Wachs",
       location: "Idaho, USA",
@@ -172,6 +184,7 @@ function Brands() {
     },
     {
       name: "van der waal",
+      website: "https://eisbach-riders.com/",
       category_en: "Surfboard Grip",
       category_de: "Surfbrettgriff",
       location: "Lisbon, Portugal",
@@ -187,6 +200,7 @@ function Brands() {
     },
     {
       name: "green fix",
+      website: "https://eisbach-riders.com/",
       category_en: "Wax",
       category_de: "Wachs",
       location: "Bayonne, France",
@@ -248,7 +262,17 @@ function Brands() {
                 <p className={classes.title}>
                   {elem[`category_${i18n.language}`]}
                 </p>
-                <p className={classes.title2}>{elem.name}</p>
+                <div className={classes.titleHolder}>
+                  <p className={classes.title2}>{`${elem.name} - `}</p>
+                  <a
+                    className={classes.title3}
+                    href={elem.website}
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    {t("links.officialWebsite")}
+                  </a>
+                </div>
               </div>
             </div>
             <p>{elem[`content_${i18n.language}`]}</p>
