@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
         declineButtonText={t("tracking.decline")}
         setDeclineCookie
         declineButtonStyle={{
-          color: "#00d7a2",
+          color: "#E6C55E",
           fontSize: "14px",
           textTransform: "uppercase",
           background: "transparent",
@@ -53,9 +53,9 @@ const Layout = ({ children }) => {
         }}
         buttonText={t("tracking.accept")}
         cookieName="gatsby-gdpr-google-analytics"
-        style={{ background: "#e2f9ef", color: "#00130e" }}
+        style={{ background: "#f0dda0", color: "#00130e" }}
         buttonStyle={{
-          background: "#00d7a2",
+          background: "#E6C55E",
           color: "#00130e",
           fontSize: "14px",
           padding: "14px 24px",
@@ -71,7 +71,7 @@ const Layout = ({ children }) => {
         {t("tracking.consent")}
         <Link
           to="/dataProtection/"
-          style={{ color: "#00d7a2", textDecoration: "underline" }}
+          style={{ color: "#E6C55E", textDecoration: "underline" }}
         >
           {t("tracking.dataPrivacy")}.
         </Link>
