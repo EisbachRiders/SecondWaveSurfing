@@ -1,32 +1,32 @@
 {
   "links": {
-    "terms": "Geschäftsbedingungen",
+    "terms": "AGBs",
     "imprint": "Impressum",
     "data": "Datenschutz",
-    "credit": "Anerkennung",
-    "explore": "erkunden",
+    "credit": "Credit",
+    "explore": "explore",
     "eisbach": "eisbach",
-    "brands": "Marken",
-    "about": "Über",
-    "blog": "blog",
-    "shop": "Geschäft",
-    "rapid": "schnelles Surfen",
-    "fins": "fins",
+    "brands": "Brands",
+    "about": "About",
+    "blog": "Blog",
+    "shop": "Ahop",
+    "rapid": "rapid",
+    "fins": "Finnen",
     "sup": "SUP",
-    "leashes": "Leinen",
+    "leashes": "Leashes",
     "apparel": "Kleidung",
-    "accessories": "accessories",
-    "customerService": "kundenservice",
-    "faq": "faq",
-    "contact": "kontakt",
+    "accessories": "Accessories",
+    "customerService": "Service",
+    "faq": "FAQ",
+    "contact": "Kontakt",
     "payment": "Bezahlung",
     "shipping": "Versand",
-    "returns": "Rücksendung",
+    "returns": "Rückgabe",
     "officialWebsite": "offizielle Website"
   },
   "tracking": {
     "consent": "Second Wave Surfing verwendet Cookies auf seinen Seiten, damit Sie die Seite optimal nutzen können. Wenn Sie damit einverstanden sind, besuchen Sie die Website einfach weiter. Um mehr zu erfahren, lesen Sie unsere ",
-    "dataPrivacy": "Datenschutz",
+    "dataPrivacy": "Datenschutzerklärung",
     "accept": "akzeptieren",
     "decline": "opt-out"
   },
@@ -36,15 +36,15 @@
     "community": "Gemeinschaft",
     "surf": "Surfausrüstung",
     "ourStory": "Unsere Geschichte",
-    "mission": "Unsere Mission ist es, unsere Spielplätze - das Meer und die Flüsse, die uns so viel Freude bereiten - zu schützen, indem wir lokale Gemeinschaften unterstützen und uns bemühen, unsere Wasserquellen zu erhalten."
+    "mission": "Unsere Mission ist es das Meer und die Flüsse, die uns so viel Freude bereiten, zu schützen. Durch die Unterstützung von lokale Vereine und Organisationen versuchen wir unsere Spielplätze im Wasser zu erhalten."
   },
   "newsletter": {
-    "stayintouch1": "Bleiben Sie mit den neuesten ",
-    "stayintouch2": "Nachrichten und Produkten in Kontakt!",
+    "stayintouch1": "Bleib auf dem neusten Stand ",
+    "stayintouch2": "mit Infos zu Produkten und Evenets!",
     "signup": "Anmelden",
     "consent": "Ja, ich möchte E-Mails von Second Wave Surfing erhalten!",
     "subscribe": "Trag dich ein",
-    "cancel": "stornieren"
+    "cancel": "Austragen"
   },
   "footer": {
     "message": "Schreib uns",
@@ -54,27 +54,27 @@
     "questionsMessage": "Wenn Du Fragen zu unseren Produkten, Versand oder einfach wissen möchtest, wann und wo Du in München surfen gehen solltest, schreib uns einfach.  Wir freuen uns von Dir zu hören!"
   },
   "form": {
-    "email": "email",
-    "name": "name"
+    "email": "eMail",
+    "name": "Name"
   },
   "shop": {
-    "viewCollection": "Sammlung anzeigen",
-    "leashes": "Leinen",
-    "fins": "Finne",
-    "accessories": "accessories",
-    "apparel": "kleidung",
+    "viewCollection": "Mehr Anzeigen",
+    "leashes": "Leashes",
+    "fins": "Finnen",
+    "accessories": "Accessories",
+    "apparel": "Kleidung",
     "sup": "SUP",
-    "rapidSurfing": "rapid surfing",
-    "leashesTagline": "Holen Sie sich die beste Passform",
-    "finsTagline": "für jedes Board",
-    "accessoriesTagline": "schlank & stilvoll",
-    "apparelTagline": "Alles, was du brauchst",
-    "supTagline": "alle Ausrüstung zum Paddeln",
-    "rapidSurfingTagline": "ausgelegt für Flüsse oder Wellenpools"
+    "rapidSurfing": "Rapid Surfing",
+    "leashesTagline": "Beste Passform",
+    "finsTagline": "Für jedes Board",
+    "accessoriesTagline": "Funktional & stilvoll",
+    "apparelTagline": "Alles was du brauchst",
+    "supTagline": "Ausrüstung zum Paddeln",
+    "rapidSurfingTagline": "Für Flüsse oder Wave Pools"
   },
   "about": {
     "about": "Über uns",
     "tagline": "Nachhaltigkeit, Community, Surfausrüstung",
-    "content": "Wir sind ein leidenschaftliches Team von Surfern und Wassersportlern mit Sitz in München. Im Second Wave Surfing Shop finden Sie unsere handverlesenen Marken, die sich auf nachhaltige Surfprodukte konzentrieren. Bitte zögern Sie nicht, uns zu kontaktieren, wenn Sie entweder Händler für eine dieser Marken werden möchten oder wenn Sie möchten, dass Ihre Marke durch Second Wave Surfing vertreten wird."
+    "content": "Wir sind ein leidenschaftliches Team von Surfern und Wassersportlern mit Sitz in München. Im Second Wave Surfing Shop findest Du handverlesene Surf-Marken, die sich auf nachhaltige Surfprodukte konzentrieren. Bitte zögert nicht uns zu kontaktieren, wenn Ihr die Marken in Eurem Shop anbieten möchtet oder wenn wir Euch beim Vertrieb Euren eigenen Produkte unterstützen können."
   }
 }
