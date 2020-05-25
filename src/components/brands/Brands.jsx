@@ -61,11 +61,14 @@ const useStyles = makeStyles((theme) => ({
       flexBasis: "40%",
     },
   },
+  titleHolder: {
+    display: "flex",
+    alignItems: "flex-end",
+  },
   title: {
     textTransform: "uppercase",
     fontWeight: 700,
     fontSize: 14,
-    color: theme.palette.secondary.main,
     margin: 0,
     marginBottom: 5,
   },
@@ -74,7 +77,14 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     fontSize: 18,
     margin: 0,
-    marginBottom: 15,
+  },
+  title3: {
+    color: theme.palette.primary.main,
+    fontWeight: 700,
+    textTransform: "lowercase",
+    fontSize: 14,
+    margin: 0,
+    paddingLeft: 5,
   },
   img: {
     width: "100%",
@@ -112,6 +122,7 @@ function Brands() {
     {
       name: "eisbach riders",
       img: er,
+      website: "https://eisbach-riders.com/",
       imgLifestyle: erLifestyle,
       category_en: "Fins & Leashes",
       category_de: "Flossen & Leinen",
@@ -122,6 +133,7 @@ function Brands() {
     },
     {
       name: "shepps gnarwall",
+      website: "https://sheppsolutions.com/",
       img: shepps,
       imgLifestyle: sheppsLifestyle,
       category_en: "Surfboard & Wetsuit Hangers",
@@ -133,6 +145,7 @@ function Brands() {
     },
     {
       name: "bee swell",
+      website: "https://www.beeswell.com/",
       img: beeSwell,
       imgLifestyle: beeSwellLifestyle,
       category_en: "Organic Wax",
@@ -144,6 +157,7 @@ function Brands() {
     },
     {
       name: "van der waal",
+      website: "https://www.waal.co/",
       img: vanderwaal,
       imgLifestyle: vanderwaalLifestyle,
       category_en: "Surfboard Grip",
@@ -155,6 +169,7 @@ function Brands() {
     },
     {
       name: "greenfix",
+      website: "https://www.greenfix.fr/",
       img: greenfix,
       imgLifestyle: greenfixLifestyle,
       category_en: "Wax",
@@ -204,14 +219,24 @@ function Brands() {
               <div className={classes.logoContainer}>
                 <img
                   src={elem.img}
-                  alt={`brand_${elem.name}`}
+                  alt={`brand${elem.name}`}
                   className={classes.logo}
                 />
                 <div>
                   <p className={classes.title}>
                     {elem[`category_${i18n.language}`]}
                   </p>
-                  <p className={classes.title2}>{elem.name}</p>
+                  <div className={classes.titleHolder}>
+                    <p className={classes.title2}>{`${elem.name} - `}</p>
+                    <a
+                      className={classes.title3}
+                      href={elem.website}
+                      rel="noopener"
+                      target="_blank"
+                    >
+                      {t("links.officialWebsite")}
+                    </a>
+                  </div>
                 </div>
               </div>
               <p>{elem[`content_${i18n.language}`]}</p>

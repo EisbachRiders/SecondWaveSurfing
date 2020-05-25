@@ -191,21 +191,23 @@ function Footer() {
   ]
   return (
     <footer className={classes.footer}>
-      <Container justifyContent="spaceAround">
-        {features.map((elem, idx) => (
-          <div className={classes.iconContainer} key={`feature${idx}`}>
-            {elem.icon}
-            <div>
-              <p className={classes.feature}>{t(`footer.${elem.title}`)}</p>
-              <p className={classes.featureText}>
-                {t(`footer.${elem.title}Text`)}
-              </p>
+      {process.env.NODE_ENV === "development" && (
+        <Container justifyContent="spaceAround">
+          {features.map((elem, idx) => (
+            <div className={classes.iconContainer} key={`feature${idx}`}>
+              {elem.icon}
+              <div>
+                <p className={classes.feature}>{t(`footer.${elem.title}`)}</p>
+                <p className={classes.featureText}>
+                  {t(`footer.${elem.title}Text`)}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
-      </Container>
+          ))}
+        </Container>
+      )}
 
-      <Newsletter />
+      {process.env.NODE_ENV === "development" && <Newsletter />}
 
       <Container alignItems="flexStart" className={classes.container}>
         <div className={classes.imgContainer}>
@@ -254,18 +256,20 @@ function Footer() {
                 </Link>
               ))}
             </div>
-            <div className={classes.list}>
-              <p className={classes.title}>{t("links.shop")}</p>
-              {shop.map((elem, idx) => (
-                <Link
-                  key={`shop${idx}`}
-                  to={`/${elem}`}
-                  className={clsx(classes.text, classes.link)}
-                >
-                  {t(`links.${elem}`)}
-                </Link>
-              ))}
-            </div>
+            {process.env.NODE_ENV === "development" && (
+              <div className={classes.list}>
+                <p className={classes.title}>{t("links.shop")}</p>
+                {shop.map((elem, idx) => (
+                  <Link
+                    key={`shop${idx}`}
+                    to={`/${elem}`}
+                    className={clsx(classes.text, classes.link)}
+                  >
+                    {t(`links.${elem}`)}
+                  </Link>
+                ))}
+              </div>
+            )}
             <div className={classes.list}>
               <p className={classes.title}>{t("links.customerService")}</p>
               {customerService.map((elem, idx) => (

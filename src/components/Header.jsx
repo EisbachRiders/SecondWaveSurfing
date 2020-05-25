@@ -129,7 +129,10 @@ function Header({ handleSetLang }) {
     threshold: 0,
   })
 
-  const links = ["brands", "blog", "shop", "about"]
+  const links =
+    process.env.NODE_ENV === "development"
+      ? ["blog", "about"]
+      : ["brands", "blog", "shop", "about"]
   const mobileLinks = ["contact", "customerService"]
 
   return (

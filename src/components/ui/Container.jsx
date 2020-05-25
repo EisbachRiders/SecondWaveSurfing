@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("xl")]: {
       width: 1440,
-      padding: `30px 0`,
+      padding: `60px 0`,
     },
   },
   containerSlim: {
