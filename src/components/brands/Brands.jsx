@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, animateScroll as scroll, Element } from "react-scroll"
+import { Link, Element } from "react-scroll"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function Brands() {
-  const [active, setActive] = useState("ER")
+  const [setActive] = useState("ER")
   const classes = useStyles()
   const { i18n, t } = useTranslation()
 
@@ -231,8 +231,8 @@ function Brands() {
                     <a
                       className={classes.title3}
                       href={elem.website}
-                      rel="noopener"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       {t("links.officialWebsite")}
                     </a>
