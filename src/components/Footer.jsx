@@ -207,7 +207,7 @@ function Footer() {
         </Container>
       )}
 
-      {process.env.NODE_ENV === "development" && <Newsletter />}
+      <Newsletter />
 
       <Container alignItems="flexStart" className={classes.container}>
         <div className={classes.imgContainer}>

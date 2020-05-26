@@ -49,7 +49,9 @@
     "signup": "sign up",
     "consent": "Yes, I would like to receive emails from Second Wave Surfing!",
     "subscribe": "subscribe",
-    "cancel": "cancel"
+    "cancel": "cancel",
+    "legal1": "You can unsubscribe at any time.",
+    "legal2": "privacy policy"
   },
   "form": {
     "contactTitle": "Send us a message!",
@@ -168,5 +170,17 @@
     "waterLevel": "water level",
     "faq1_question": "When is the best time to go surfing?",
     "faq1_answer": "Temperatures of the water heats up over the day so the warmest time to go surfing is late afternoon."
+  },
+  "brands": {
+    "er": "Eisbach Riders is a surf brand from Munich, Germany that specializes in surf equipment and accessories. Their products cover surfboard fins and leashes for river surfing, stand-up paddling (SUP) as well as kitesurfing. Their focus is to provide sustainably packaged and affordable products so you can feel good about jumping back into the water.",
+    "er_category": "Fins & Leashes",
+    "shepps": "SHEPPSolutions is a Toronto, Canada based design team that formed in 2018. They develop high quality, elegant, and sustainable products made out of wood such as surfboard hangers, surfboard racks, wetsuit dry racks, hooks, hangers, and organizers. Their mission is to develop tools that perform one task as efficiently as possible.",
+    "shepps_category": "Surfboard & Wetsuit Hangers",
+    "beeSwell": "Bee Swell has a huge love and respect for the ocean and our planet which is why they created an eco-friendly surf wax. Bee Swell surf wax is made from ethically sourced beeswax and other natural and organic ingredients. This company is on a mission to build the Bee Swell Pollinator Sanctuary in Idaho, US that will be a place where the bees and other pollinators can thrive in natural lush habitat.",
+    "beeSwell_category": "Organic Wax",
+    "waal": "Van Der Waal surf grip allows you to stay on your board without wax. It is a clean, green alternative that is low maintenance and long-lasting made in Lisbon, Portugal. Van Der Waal Grip is for the common surfer, the everyday dude and dudette that rips on the same boards for a long time. A surfboard grip for the environmentally conscious.",
+    "waal_category": "Surfboard Grip",
+    "greenfix": "The team hails from the Basque country near the famous and iconic surf beaches of Biarritz, France. They have a range of products, all revolving around wax and cleaning products for your prized surfboards. Everything is sourced and made in France, insuring consistently high quality results with the up most care for our beloved planet.",
+    "greenfix_category": "Wax"
   }
 }

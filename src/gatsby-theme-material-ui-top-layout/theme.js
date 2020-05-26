@@ -25,27 +25,32 @@ const color = {
   // theme colors
   white: "#ffffff",
   black: "#000000",
-  almostBlack: "#363738", // typography
-  textLight: "#838588",
-  gray: "#ebedee",
-  primaryBlue: "#0062f0",
-  primaryBlueLt: "#3f8eff",
-  gold: "#E6C55E",
-  goldLt: "#f0dda0",
+  // almostBlack: "#363738", // typography
+  // textLight: "#838588",
+  // gray: "#ebedee",
+  // primaryBlue: "#0062f0",
+  // primaryBlueLt: "#3f8eff",
+  // gold: "#E6C55E",
+  // goldLt: "#f0dda0",
+  greenDk: "#026670",
+  greenLt: "#9FEDD7",
+  yellowDk: "#FCE181",
+  yellowLt: "#FEF9C7",
+  gray: "#EDEAE5",
 }
 
 const theme = createMuiTheme({
   palette: {
     type: "light",
     primary: {
-      light: color.goldLt,
-      main: color.gold,
-      dark: color.goldLt,
+      light: color.greenDk,
+      main: color.greenLt,
+      dark: color.greenDk,
     },
     secondary: {
-      light: color.primaryBlueLt,
-      main: color.primaryBlue,
-      dark: color.primaryBlueLt,
+      light: color.yellowLt,
+      main: color.yellowDk,
+      dark: color.yellowLt,
     },
     error: { main: color.red },
   },

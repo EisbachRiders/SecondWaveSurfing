@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: 0,
     },
   },
+  header: {
+    textAlign: "center",
+    fontFamily: "secondary",
+    width: "100%",
+  },
   img: {
     height: 150,
     width: "auto",
@@ -86,6 +91,7 @@ const BlogWidget = () => {
 
   return (
     <Container background="gray">
+      <h2 className={classes.header}>Blog</h2>
       <div className={classes.root}>
         {data.allMdx.edges.map((elem, idx) => (
           <div className={classes.container} key={`blogPreview${idx}`}>

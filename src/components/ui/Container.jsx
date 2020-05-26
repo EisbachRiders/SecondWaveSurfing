@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.primary.main,
   },
   black: {
-    background: theme.color.almostBlack,
+    background: theme.color.black,
   },
   gray: {
     background: theme.color.gray,

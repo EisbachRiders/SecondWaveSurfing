@@ -2,9 +2,9 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/Layout"
 import Hero from "../components/homepage/Hero"
-import MissionStatement from "../components/homepage/MissionStatement"
+// import MissionStatement from "../components/homepage/MissionStatement"
 // import ShopCategories from "../components/homepage/ShopCategories"
-import BlogWidget from "../components/blog/BlogWidget"
+import BlogWidget2 from "../components/blog/BlogWidget2"
 // import BrandsWidget from "../components/brands/BrandsWidget"
 import Brands from "../components/brands/Brands"
 
@@ -13,11 +13,11 @@ const Homepage = () => {
     <Layout>
       <SEO />
       <Hero />
-      <MissionStatement />
+      {/* <MissionStatement /> */}
       {/* <BrandsWidget /> */}
       <Brands />
       {/* <ShopCategories /> */}
-      <BlogWidget />
+      <BlogWidget2 />
     </Layout>
   )
 }

@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     marginTop: -98,
   },
+  img2: {
+    width: 600,
+  },
   text: {
     color: theme.color.black,
     fontFamily: "secondary",
@@ -92,7 +95,14 @@ function Hero() {
   const { t } = useTranslation()
   const data = useStaticQuery(graphql`
     query {
-      fileName: file(relativePath: { eq: "hero.jpg" }) {
+      hero: file(relativePath: { eq: "hero.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      text: file(relativePath: { eq: "text.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -105,14 +115,21 @@ function Hero() {
   return (
     <div className={classes.root}>
       <Img
-        fluid={data.fileName.childImageSharp.fluid}
+        fluid={data.hero.childImageSharp.fluid}
         alt="wave"
         placeholderStyle={{ backgroundColor: `blue` }}
         className={classes.img}
-        imgStyle={{ objectPosition: "center center" }}
+        imgStyle={{ objectPosition: "top center" }}
       />
       <div className={classes.container}>
-        <Typography
+        <Img
+          fluid={data.text.childImageSharp.fluid}
+          alt="wave"
+          placeholderStyle={{ backgroundColor: `blue` }}
+          className={classes.img2}
+          imgStyle={{ objectPosition: "center center" }}
+        />
+        {/* <Typography
           variant="h1"
           gutterBottom
           className={clsx(classes.text, classes.title)}
@@ -133,7 +150,7 @@ function Hero() {
           className={clsx(classes.text, classes.subtitle)}
         >
           {t("homepage.heroSubtitle")}
-        </Typography>
+        </Typography> */}
       </div>
     </div>
   )

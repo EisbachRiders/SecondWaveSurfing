@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { Link, Element } from "react-scroll"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
+import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
-import clsx from "clsx"
 import er from "../../assets/logos/eisbach-riders.png"
 import erLifestyle from "../../assets/websiteImages/person-putting-on-surfboard-leash.jpg"
 import shepps from "../../assets/logos/shepps-gnarwall.png"
@@ -73,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 5,
   },
   title2: {
-    textTransform: "capitalize",
     fontWeight: 700,
     fontSize: 18,
     margin: 0,
@@ -86,6 +87,11 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     paddingLeft: 5,
   },
+  img1: {
+    flexBasis: "30%",
+    width: "70%",
+    height: 400,
+  },
   img: {
     width: "100%",
     height: 400,
@@ -96,6 +102,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     alignItems: "center",
     marginBottom: 30,
+  },
+  flexItem: {
+    flexBasis: "40%",
   },
   logoContainer: {
     display: "flex",
@@ -112,81 +121,88 @@ const useStyles = makeStyles((theme) => ({
 function Brands() {
   const [setActive] = useState("ER")
   const classes = useStyles()
-  const { i18n, t } = useTranslation()
+  const { t } = useTranslation()
 
   const handleScroll = (to) => {
     setActive(to)
   }
 
+  const data = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "brands.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   const brands = [
     {
-      name: "eisbach riders",
-      img: er,
+      key: "er",
+      name: "Eisbach Riders",
       website: "https://eisbach-riders.com/",
+      logo: er,
       imgLifestyle: erLifestyle,
-      category_en: "Fins & Leashes",
-      category_de: "Flossen & Leinen",
-      content_en:
-        "Eisbach Riders is a surf brand from Munich, Germany that specializes in surf equipment and accessories. Their products cover surfboard fins and leashes for river surfing, stand-up paddling (SUP) as well as kitesurfing. Their focus is to provide sustainably packaged and affordable products so you can feel good about jumping back into the water.",
-      content_de:
-        "Eisbach Riders ist eine Surfmarke aus München, die sich auf Surfausrüstung und Zubehör spezialisiert hat. Ihre Produkte umfassen Surfbrettflossen und Leinen zum Flusssurfen, Stand-Up-Paddeln (SUP) sowie Kitesurfen. Ihr Fokus liegt auf der Bereitstellung nachhaltig verpackter und erschwinglicher Produkte, damit Sie sich wohl fühlen, wenn Sie wieder ins Wasser springen.",
     },
     {
-      name: "shepps gnarwall",
+      key: "shepps",
+      name: "SHEPPS Gnarwall",
       website: "https://sheppsolutions.com/",
-      img: shepps,
+      logo: shepps,
       imgLifestyle: sheppsLifestyle,
-      category_en: "Surfboard & Wetsuit Hangers",
-      category_de: "Surfbrett & Neoprenanzug Kleiderbügel",
-      content_en:
-        "SHEPPSolutions is a Toronto, Canada based design team that formed in 2018. They develop high quality, elegant, and sustainable products made out of wood such as surfboard hangers, surfboard racks, wetsuit dry racks, hooks, hangers, and organizers. Their mission is to develop tools that perform one task as efficiently as possible.",
-      content_de:
-        "SHEPPSolutions ist ein in Toronto, Kanada, ansässiges Designteam, das 2018 gegründet wurde. Es entwickelt hochwertige, elegante und nachhaltige Produkte aus Holz wie Surfbrettaufhänger, Surfbretthalter, Neoprenanzug-Trockengestelle, Haken, Kleiderbügel und Organisatoren. Ihre Mission ist es, Werkzeuge zu entwickeln, die eine Aufgabe so effizient wie möglich ausführen.",
     },
     {
+      key: "beeSwell",
       name: "bee swell",
       website: "https://www.beeswell.com/",
-      img: beeSwell,
+      logo: beeSwell,
       imgLifestyle: beeSwellLifestyle,
-      category_en: "Organic Wax",
-      category_de: "Bio-Wachs",
-      content_en:
-        "Bee Swell has a huge love and respect for the ocean and our planet which is why they created an eco-friendly surf wax. Bee Swell surf wax is made from ethically sourced beeswax and other natural and organic ingredients. This company is on a mission to build the Bee Swell Pollinator Sanctuary in Idaho, US that will be a place where the bees and other pollinators can thrive in natural lush habitat.",
-      content_de:
-        "Bee Swell hat eine große Liebe und Respekt für den Ozean und unseren Planeten, weshalb sie ein umweltfreundliches Surfwachs kreiert haben. Bee Swell Surfwachs wird aus Bienenwachs aus ethischen Quellen und anderen natürlichen und biologischen Zutaten hergestellt. Dieses Unternehmen hat die Mission, das Bee Swell Pollinator Sanctuary in Idaho, USA, zu errichten, in dem Bienen und andere Bestäuber in einem natürlichen, üppigen Lebensraum gedeihen können.",
     },
     {
-      name: "van der waal",
+      key: "waal",
+      name: "Van der Waal",
       website: "https://www.waal.co/",
-      img: vanderwaal,
+      logo: vanderwaal,
       imgLifestyle: vanderwaalLifestyle,
-      category_en: "Surfboard Grip",
-      category_de: "Surfbrettgriff",
-      content_en:
-        "Van Der Waal surf grip allows you to stay on your board without wax. It is a clean, green alternative that is low maintenance and long-lasting made in Lisbon, Portugal. Van Der Waal Grip is for the common surfer, the everyday dude and dudette that rips on the same boards for a long time. A surfboard grip for the environmentally conscious.",
-      content_de:
-        "Mit dem Van Der Waal Surfgriff kannst du ohne Wachs auf deinem Board bleiben. Es ist eine saubere, umweltfreundliche Alternative, die wartungsarm und langlebig ist und in Lissabon, Portugal, hergestellt wird. Van Der Waal Grip ist für den gewöhnlichen Surfer, den alltäglichen Kerl und die Dudette, die lange Zeit auf denselben Brettern reißen. Ein Surfbrettgriff für Umweltbewusste.",
     },
     {
-      name: "greenfix",
+      key: "greenfix",
+      name: "GreenFIX",
       website: "https://www.greenfix.fr/",
-      img: greenfix,
+      logo: greenfix,
       imgLifestyle: greenfixLifestyle,
-      category_en: "Wax",
-      category_de: "Wachs",
-      content_en:
-        "The team hails from the Basque country near the famous and iconic surf beaches of Biarritz, France. They have a range of products, all revolving around wax and cleaning products for your prized surfboards. Everything is sourced and made in France, insuring consistently high quality results with the up most care for our beloved planet.",
-      content_de:
-        "Das Team stammt aus dem Baskenland in der Nähe der berühmten und legendären Surfstrände von Biarritz, Frankreich. Sie haben eine Reihe von Produkten, die sich alle um Wachs und Reinigungsprodukte für Ihre wertvollen Surfbretter drehen. Alles wird in Frankreich bezogen und hergestellt, um gleichbleibend hochwertige Ergebnisse mit größter Sorgfalt für unseren geliebten Planeten zu gewährleisten.",
     },
   ]
 
   return (
     <>
-      <Container background="primary">
-        <h1 className={classes.header}>{t("links.brands")}</h1>
+      <Container>
         <div className={classes.logoListContainer}>
-          {brands.map((elem, idx) => (
+          <Img
+            fluid={data.image.childImageSharp.fluid}
+            alt="brands"
+            placeholderStyle={{ backgroundColor: `blue` }}
+            className={classes.img1}
+            imgStyle={{ objectPosition: "center center" }}
+          />
+
+          <div className={classes.flexItem}>
+            <p className={classes.tagline}>tagline</p>
+            <h2 className={classes.header}>Second Wave Surfing</h2>
+            <p className={classes.text}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          {/* {brands.map((elem, idx) => (
             <Link
               key={`logo${idx}`}
               to={elem.name}
@@ -198,12 +214,12 @@ function Brands() {
               className={classes.link}
             >
               <img
-                src={elem.img}
+                src={elem.logo}
                 alt={`brand${elem.name}`}
                 className={classes.logo}
               />
             </Link>
-          ))}
+          ))} */}
         </div>
       </Container>
       <Container>
@@ -218,13 +234,13 @@ function Brands() {
             <div className={classes.textContainer}>
               <div className={classes.logoContainer}>
                 <img
-                  src={elem.img}
+                  src={elem.logo}
                   alt={`brand${elem.name}`}
                   className={classes.logo}
                 />
                 <div>
                   <p className={classes.title}>
-                    {elem[`category_${i18n.language}`]}
+                    {t(`brands.${elem.key}_category`)}
                   </p>
                   <div className={classes.titleHolder}>
                     <p className={classes.title2}>{`${elem.name} - `}</p>
@@ -239,7 +255,7 @@ function Brands() {
                   </div>
                 </div>
               </div>
-              <p>{elem[`content_${i18n.language}`]}</p>
+              <p>{t(`brands.${elem.key}`)}</p>
             </div>
             <div className={classes.imgContainer}>
               <img
