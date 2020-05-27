@@ -25,10 +25,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   header: {
-    textAlign: "center",
     fontFamily: "secondary",
-    width: "100%",
-    marginBottom: 30,
+    fontSize: 32,
+    margin: 0,
   },
   root: {
     width: "100%",
@@ -88,9 +87,13 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 5,
   },
   img1: {
-    flexBasis: "30%",
     width: "70%",
-    height: 400,
+    height: 350,
+    flexBasis: "100%",
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "30%",
+      height: 400,
+    },
   },
   img: {
     width: "100%",
@@ -99,12 +102,18 @@ const useStyles = makeStyles((theme) => ({
   logoListContainer: {
     width: "100%",
     display: "flex",
+    flexWrap: "wrap",
     justifyContent: "space-around",
     alignItems: "center",
-    marginBottom: 30,
+    [theme.breakpoints.up("md")]: {
+      marginBottom: 30,
+    },
   },
   flexItem: {
-    flexBasis: "40%",
+    flexBasis: "100%",
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "40%",
+    },
   },
   logoContainer: {
     display: "flex",
@@ -115,6 +124,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     cursor: "pointer",
+  },
+  tagline: {
+    textTransform: "capitalize",
+    color: theme.palette.primary.main,
+    fontWeight: "bold",
   },
 }))
 
@@ -190,7 +204,7 @@ function Brands() {
           />
 
           <div className={classes.flexItem}>
-            <p className={classes.tagline}>tagline</p>
+            <p className={classes.tagline}>{t("homepage.heroSubtitle")}</p>
             <h2 className={classes.header}>Second Wave Surfing</h2>
             <p className={classes.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

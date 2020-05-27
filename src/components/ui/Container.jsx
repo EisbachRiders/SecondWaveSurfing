@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     width: "100%",
-    padding: `30px 30px`,
+    padding: 15,
     [theme.breakpoints.up("sm")]: {
       padding: `30px 45px`,
     },

@@ -12,7 +12,7 @@ import TextField from "@material-ui/core/TextField"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import NewsletterSnackbar from "./Snackbar"
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: theme.palette.primary.main,
     display: "flex",
@@ -23,16 +23,19 @@ const useStyles = makeStyles(theme => ({
   },
   textContainer: {
     marginBottom: 15,
+    width: "100%",
+    textAlign: "center",
     [theme.breakpoints.up("sm")]: {
       marginBottom: 0,
       marginRight: 50,
+      width: "auto",
+      textAlign: "left",
     },
   },
   text: {
-    color: theme.color.white,
     fontFamily: "secondary",
     letterSpacing: 2,
-    fontSize: 18,
+    fontSize: 32,
     margin: 0,
     [theme.breakpoints.up("md")]: {
       width: 500,
@@ -95,7 +98,7 @@ function Newsletter() {
   const [snackbarMessage, setSnackbarMessage] = useState(false)
   const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     if (isEmailValid && isNameValid) {
       //   const result = await addToMailchimp(email, {
       //     FNAME: name,
@@ -123,7 +126,7 @@ function Newsletter() {
     }
   }
 
-  const handleChange = name => event => {
+  const handleChange = (name) => (event) => {
     if (name === "email") {
       setEmail(event.target.value)
       if (!pattern.test(event.target.value)) {

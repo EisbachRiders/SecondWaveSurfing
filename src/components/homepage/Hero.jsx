@@ -2,9 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
-import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
-import Typography from "@material-ui/core/Typography"
+import Hidden from "@material-ui/core/Hidden"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("lg")]: {
       top: "50%",
-      left: "70%",
+      left: "68%",
       transform: "translate(-50%, -50%)",
       padding: 30,
       width: "fit-content",
@@ -44,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "secondary",
   },
   textBig: {
+    marginBottom: 0,
+    lineHeight: 1,
+    transform: "rotate(355deg)",
     [theme.breakpoints.up("sm")]: {
       fontSize: 72,
     },
@@ -55,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   indent: {
+    marginBottom: 0,
     [theme.breakpoints.up("xs")]: {
       marginLeft: 60,
     },
@@ -63,7 +66,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    textTransform: "capitalize",
+    marginBottom: 0,
+    lineHeight: 0.5,
+    transform: "rotate(355deg)",
+    // textTransform: "capitalize",
     fontSize: 52,
     fontWeight: 600,
     [theme.breakpoints.up("sm")]: {
@@ -95,14 +101,14 @@ function Hero() {
   const { t } = useTranslation()
   const data = useStaticQuery(graphql`
     query {
-      hero: file(relativePath: { eq: "hero.jpg" }) {
+      hero: file(relativePath: { eq: "hero.png" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      text: file(relativePath: { eq: "text.png" }) {
+      heroMobile: file(relativePath: { eq: "heroMobile.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -114,44 +120,24 @@ function Hero() {
 
   return (
     <div className={classes.root}>
-      <Img
-        fluid={data.hero.childImageSharp.fluid}
-        alt="wave"
-        placeholderStyle={{ backgroundColor: `blue` }}
-        className={classes.img}
-        imgStyle={{ objectPosition: "top center" }}
-      />
-      <div className={classes.container}>
+      <Hidden mdUp>
         <Img
-          fluid={data.text.childImageSharp.fluid}
+          fluid={data.heroMobile.childImageSharp.fluid}
           alt="wave"
           placeholderStyle={{ backgroundColor: `blue` }}
-          className={classes.img2}
+          className={classes.img}
           imgStyle={{ objectPosition: "center center" }}
         />
-        {/* <Typography
-          variant="h1"
-          gutterBottom
-          className={clsx(classes.text, classes.title)}
-        >
-          <span className={classes.textBig}>S</span>econd{" "}
-          <span className={classes.textBig}>W</span>ave
-        </Typography>
-        <Typography
-          variant="h1"
-          gutterBottom
-          className={clsx(classes.text, classes.title, classes.indent)}
-        >
-          <span className={classes.textBig}>S</span>urfing
-        </Typography>
-
-        <Typography
-          component="h2"
-          className={clsx(classes.text, classes.subtitle)}
-        >
-          {t("homepage.heroSubtitle")}
-        </Typography> */}
-      </div>
+      </Hidden>
+      <Hidden smDown>
+        <Img
+          fluid={data.hero.childImageSharp.fluid}
+          alt="wave"
+          placeholderStyle={{ backgroundColor: `blue` }}
+          className={classes.img}
+          imgStyle={{ objectPosition: "top center" }}
+        />
+      </Hidden>
     </div>
   )
 }

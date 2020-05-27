@@ -117,7 +117,7 @@ module.exports = {
         short_name: `SecondWaveSurfing`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#00d7a2`,
+        theme_color: `#FEF9C7`,
         display: `minimal-ui`,
         icon: `${__dirname}/src/assets/logos/logo.png`,
       },

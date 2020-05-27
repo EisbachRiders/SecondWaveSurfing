@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import { Link } from "gatsby-theme-material-ui"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
+import Hidden from "@material-ui/core/Hidden"
 import PlaceholderImg from "../../assets/shopCategory/surfer-at-eisbach.jpg"
 
 const useStyles = makeStyles((theme) => ({
@@ -14,9 +15,13 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   container: {
-    flexBasis: "50%",
+    flexBasis: "100%",
     display: "flex",
-    height: 400,
+    height: 350,
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "50%",
+      height: 400,
+    },
   },
   flexItem: {
     flexBasis: "50%",
@@ -60,12 +65,19 @@ const useStyles = makeStyles((theme) => ({
   link: {
     color: theme.color.white,
     fontWeight: 700,
-    fontSize: 18,
+    fontSize: 16,
+    [theme.breakpoints.up("md")]: {
+      fontSize: 18,
+    },
   },
   text: {
     color: theme.color.white,
-    fontSize: 16,
-    marginTop: 25,
+    fontSize: 14,
+    marginTop: 5,
+    [theme.breakpoints.up("md")]: {
+      fontSize: 16,
+      marginTop: 25,
+    },
   },
   link2: {
     color: theme.color.black,
@@ -115,68 +127,146 @@ const BlogWidget2 = () => {
   return (
     <div className={classes.root}>
       {data.allMdx.edges.map((elem, idx) => (
-        <div className={classes.container} key={`blogPreview${idx}`}>
-          {idx > 1 && (
-            <div className={classes.flexItem}>
-              {elem.node.frontmatter.featuredImage ? (
-                <Img
-                  fluid={
-                    elem.node.frontmatter.featuredImage.childImageSharp.fluid
-                  }
-                  alt={elem.path}
-                  placeholderStyle={{ backgroundColor: `blue` }}
-                  className={classes.img}
-                  imgStyle={{ objectPosition: "center center" }}
-                />
-              ) : (
-                <img
-                  src={PlaceholderImg}
-                  alt="surfer at eisbach"
-                  className={classes.img}
-                />
+        <>
+          <Hidden mdUp>
+            {idx < 2 && (
+              <div className={classes.container} key={`blogPreview${idx}`}>
+                {idx === 0 && (
+                  <div className={classes.flexItem}>
+                    {elem.node.frontmatter.featuredImage ? (
+                      <Img
+                        fluid={
+                          elem.node.frontmatter.featuredImage.childImageSharp
+                            .fluid
+                        }
+                        alt={elem.path}
+                        placeholderStyle={{ backgroundColor: `blue` }}
+                        className={classes.img}
+                        imgStyle={{ objectPosition: "center center" }}
+                      />
+                    ) : (
+                      <img
+                        src={PlaceholderImg}
+                        alt="surfer at eisbach"
+                        className={classes.img}
+                      />
+                    )}
+                  </div>
+                )}
+
+                <div
+                  className={clsx(classes.flexItem, classes.content, {
+                    [classes[`background${idx}`]]: idx !== undefined,
+                  })}
+                >
+                  <div className={classes.innerContent}>
+                    <p className={classes.tag}>
+                      {elem.node.frontmatter.tags[0]}
+                    </p>
+                    <Link
+                      to={elem.node.fields.slug}
+                      className={idx === 2 ? classes.link2 : classes.link}
+                    >
+                      {elem.node.frontmatter.title}
+                    </Link>
+                    <p className={idx === 2 ? classes.text2 : classes.text}>
+                      {elem.node.excerpt}
+                    </p>
+                  </div>
+                </div>
+
+                {idx === 1 && (
+                  <div className={classes.flexItem}>
+                    {elem.node.frontmatter.featuredImage ? (
+                      <Img
+                        fluid={
+                          elem.node.frontmatter.featuredImage.childImageSharp
+                            .fluid
+                        }
+                        alt={elem.path}
+                        placeholderStyle={{ backgroundColor: `blue` }}
+                        className={classes.img}
+                        imgStyle={{ objectPosition: "center center" }}
+                      />
+                    ) : (
+                      <img
+                        src={PlaceholderImg}
+                        alt="surfer at eisbach"
+                        className={classes.img}
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+          </Hidden>
+          <Hidden lgDown>
+            <div className={classes.container} key={`blogPreview${idx}`}>
+              {idx > 1 && (
+                <div className={classes.flexItem}>
+                  {elem.node.frontmatter.featuredImage ? (
+                    <Img
+                      fluid={
+                        elem.node.frontmatter.featuredImage.childImageSharp
+                          .fluid
+                      }
+                      alt={elem.path}
+                      placeholderStyle={{ backgroundColor: `blue` }}
+                      className={classes.img}
+                      imgStyle={{ objectPosition: "center center" }}
+                    />
+                  ) : (
+                    <img
+                      src={PlaceholderImg}
+                      alt="surfer at eisbach"
+                      className={classes.img}
+                    />
+                  )}
+                </div>
               )}
-            </div>
-          )}
-          <div
-            className={clsx(classes.flexItem, classes.content, {
-              [classes[`background${idx}`]]: idx !== undefined,
-            })}
-          >
-            <div className={classes.innerContent}>
-              <p className={classes.tag}>{elem.node.frontmatter.tags[0]}</p>
-              <Link
-                to={elem.node.fields.slug}
-                className={idx === 2 ? classes.link2 : classes.link}
+              <div
+                className={clsx(classes.flexItem, classes.content, {
+                  [classes[`background${idx}`]]: idx !== undefined,
+                })}
               >
-                {elem.node.frontmatter.title}
-              </Link>
-              <p className={idx === 2 ? classes.text2 : classes.text}>
-                {elem.node.excerpt}
-              </p>
-            </div>
-          </div>
-          {idx < 2 && (
-            <div className={classes.flexItem}>
-              {elem.node.frontmatter.featuredImage ? (
-                <Img
-                  fluid={
-                    elem.node.frontmatter.featuredImage.childImageSharp.fluid
-                  }
-                  alt={elem.path}
-                  placeholderStyle={{ backgroundColor: `blue` }}
-                  className={classes.img}
-                  imgStyle={{ objectPosition: "center center" }}
-                />
-              ) : (
-                <img
-                  src={PlaceholderImg}
-                  alt="surfer at eisbach"
-                  className={classes.img}
-                />
+                <div className={classes.innerContent}>
+                  <p className={classes.tag}>{elem.node.frontmatter.tags[0]}</p>
+                  <Link
+                    to={elem.node.fields.slug}
+                    className={idx === 2 ? classes.link2 : classes.link}
+                  >
+                    {elem.node.frontmatter.title}
+                  </Link>
+                  <p className={idx === 2 ? classes.text2 : classes.text}>
+                    {elem.node.excerpt}
+                  </p>
+                </div>
+              </div>
+              {idx < 2 && (
+                <div className={classes.flexItem}>
+                  {elem.node.frontmatter.featuredImage ? (
+                    <Img
+                      fluid={
+                        elem.node.frontmatter.featuredImage.childImageSharp
+                          .fluid
+                      }
+                      alt={elem.path}
+                      placeholderStyle={{ backgroundColor: `blue` }}
+                      className={classes.img}
+                      imgStyle={{ objectPosition: "center center" }}
+                    />
+                  ) : (
+                    <img
+                      src={PlaceholderImg}
+                      alt="surfer at eisbach"
+                      className={classes.img}
+                    />
+                  )}
+                </div>
               )}
             </div>
-          )}
-        </div>
+          </Hidden>
+        </>
       ))}
     </div>
   )
