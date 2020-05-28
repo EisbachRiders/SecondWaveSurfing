@@ -123,7 +123,7 @@ function Contact({ variant }) {
       name !== "" &&
       message !== ""
     ) {
-      fetch("https://formspree.io/myynzldd", {
+      fetch("https://formspree.io/xlepjopd", {
         method: "POST",
         headers: {
           Accept: "application/json",

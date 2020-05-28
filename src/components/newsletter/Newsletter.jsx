@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 import clsx from "clsx"
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
@@ -100,12 +101,10 @@ function Newsletter() {
 
   const handleSubmit = async (e) => {
     if (isEmailValid && isNameValid) {
-      //   const result = await addToMailchimp(email, {
-      //     FNAME: name,
-      //     gdpr_26529: true,
-      //   })
-      const result = { msg: "test" }
-      setDialog(false)
+      const result = await addToMailchimp(email, {
+        FNAME: name,
+        gdpr_26529: true,
+      })
       if (result.result === "error") {
         setSnackbar(true)
         setSnackbarMessage(

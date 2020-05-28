@@ -131,8 +131,8 @@ function Header({ handleSetLang }) {
 
   const links =
     process.env.NODE_ENV === "development"
-      ? ["blog", "about"]
-      : ["brands", "blog", "shop", "about"]
+      ? ["brands", "blog", "shop", "about"]
+      : ["blog", "shop", "about"]
   const mobileLinks = ["contact", "customerService"]
 
   return (
@@ -221,9 +221,21 @@ function Header({ handleSetLang }) {
                       : classes.listItem
                   }
                 >
-                  <Link to={`/${elem}`} className={classes.link}>
-                    {t(`links.${elem}`)}
-                  </Link>
+                  {elem === "shop" ? (
+                    <a
+                      href="https://shop.eisbach-riders.com/"
+                      rel="noopener"
+                      target="_blank"
+                      className={classes.link}
+                    >
+                      {" "}
+                      {t(`links.${elem}`)}
+                    </a>
+                  ) : (
+                    <Link to={`/${elem}`} className={classes.link}>
+                      {t(`links.${elem}`)}
+                    </Link>
+                  )}
                 </ListItem>
               ))}
             </List>

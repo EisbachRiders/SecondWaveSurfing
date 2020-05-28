@@ -206,15 +206,7 @@ function Brands() {
           <div className={classes.flexItem}>
             <p className={classes.tagline}>{t("homepage.heroSubtitle")}</p>
             <h2 className={classes.header}>Second Wave Surfing</h2>
-            <p className={classes.text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <p className={classes.text}>{t("homepage.about")}</p>
           </div>
           {/* {brands.map((elem, idx) => (
             <Link
