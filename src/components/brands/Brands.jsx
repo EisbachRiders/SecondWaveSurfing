@@ -53,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
+    alignItems: "center",
+    justifyContent: "space-between",
     overflow: "hidden",
     marginTop: 30,
   },
@@ -68,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
       padding: 30,
     },
     [theme.breakpoints.up("lg")]: {
-      flexBasis: "60%",
+      flexBasis: "50%",
       padding: 60,
     },
   },
@@ -79,7 +80,17 @@ const useStyles = makeStyles((theme) => ({
       flexBasis: "50%",
     },
     [theme.breakpoints.up("lg")]: {
-      flexBasis: "40%",
+      flexBasis: "22%",
+    },
+  },
+  imgContainer2: {
+    flexBasis: "100%",
+    overflow: "hidden",
+    [theme.breakpoints.up("sm")]: {
+      flexBasis: "50%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "22%",
     },
   },
   titleHolder: {
@@ -106,10 +117,13 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     paddingLeft: 5,
   },
-
   img: {
     width: "100%",
     height: 400,
+  },
+  img2: {
+    width: "100%",
+    height: 300,
   },
   logoContainer: {
     display: "flex",
@@ -208,36 +222,41 @@ function Brands() {
             key={`brand${elem.name}`}
           >
             <div className={classes.textContainer}>
-              <div className={classes.logoContainer}>
+              <p className={classes.title}>
+                {t(`brands.${elem.key}_category`)}
+              </p>
+              <p>{t(`brands.${elem.key}`)}</p>
+              <div>
                 <img
                   src={elem.logo}
                   alt={`brand${elem.name}`}
                   className={classes.logo}
                 />
-                <div>
-                  <p className={classes.title}>
-                    {t(`brands.${elem.key}_category`)}
-                  </p>
-                  <div className={classes.titleHolder}>
-                    <p className={classes.title2}>{`${elem.name} - `}</p>
-                    <a
-                      className={classes.title3}
-                      href={elem.website}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {t("links.officialWebsite")}
-                    </a>
-                  </div>
+                <div className={classes.titleHolder}>
+                  <p className={classes.title2}>{`${elem.name} - `}</p>
+                  <a
+                    className={classes.title3}
+                    href={elem.website}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {t("links.officialWebsite")}
+                  </a>
                 </div>
               </div>
-              <p>{t(`brands.${elem.key}`)}</p>
             </div>
             <div className={classes.imgContainer}>
               <img
                 src={elem.imgLifestyle}
                 alt={`${elem.name}_lifestyle`}
                 className={classes.img}
+              />
+            </div>
+            <div className={classes.imgContainer2}>
+              <img
+                src={elem.imgLifestyle}
+                alt={`${elem.name}_lifestyle`}
+                className={classes.img2}
               />
             </div>
           </div>
