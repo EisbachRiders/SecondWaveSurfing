@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Link } from "gatsby-theme-material-ui"
@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     height: 350,
     [theme.breakpoints.up("md")]: {
       flexBasis: "50%",
+      height: 300,
+    },
+    [theme.breakpoints.up("lg")]: {
       height: 400,
     },
   },
@@ -39,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 15,
     display: "flex",
     alignItems: "center",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("lg")]: {
       padding: 75,
     },
   },
@@ -72,10 +75,8 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: theme.color.white,
-    fontSize: 14,
     marginTop: 5,
     [theme.breakpoints.up("md")]: {
-      fontSize: 16,
       marginTop: 25,
     },
   },
@@ -86,8 +87,9 @@ const useStyles = makeStyles((theme) => ({
   },
   text2: {
     color: theme.color.black,
-    fontSize: 16,
-    marginTop: 25,
+    [theme.breakpoints.up("md")]: {
+      marginTop: 25,
+    },
   },
 }))
 
@@ -127,10 +129,10 @@ const BlogWidget2 = () => {
   return (
     <div className={classes.root}>
       {data.allMdx.edges.map((elem, idx) => (
-        <>
+        <Fragment key={`blogPreview${idx}`}>
           <Hidden mdUp>
             {idx < 2 && (
-              <div className={classes.container} key={`blogPreview${idx}`}>
+              <div className={classes.container}>
                 {idx === 0 && (
                   <div className={classes.flexItem}>
                     {elem.node.frontmatter.featuredImage ? (
@@ -200,7 +202,7 @@ const BlogWidget2 = () => {
               </div>
             )}
           </Hidden>
-          <Hidden lgDown>
+          <Hidden smDown>
             <div className={classes.container} key={`blogPreview${idx}`}>
               {idx > 1 && (
                 <div className={classes.flexItem}>
@@ -266,7 +268,7 @@ const BlogWidget2 = () => {
               )}
             </div>
           </Hidden>
-        </>
+        </Fragment>
       ))}
     </div>
   )

@@ -1,5 +1,4 @@
 import React from "react"
-import { Element } from "react-scroll"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
@@ -51,7 +50,6 @@ function AboutTemp() {
   const { t } = useTranslation()
   return (
     <div className={classes.root}>
-      <Element name="about"></Element>
       <Container>
         <div className={classes.innerContainer}>
           <p className={classes.title}>{t("about.about")}</p>

@@ -16,7 +16,7 @@
     "apparel": "apparel",
     "accessories": "accessories",
     "customerService": "customer service",
-    "faq": "faq",
+    "faq": "FAQ",
     "contact": "contact",
     "payment": "payment",
     "shipping": "shipping",
@@ -86,6 +86,9 @@
     "apparelTagline": "everything you need",
     "supTagline": "all gear for paddling",
     "rapidSurfingTagline": "designed for rivers or wavepools"
+  },
+  "blog": {
+    "subMenuMobile": "I'm looking for"
   },
   "common": {
     "about": "about",
@@ -173,6 +176,7 @@
     "faq1_answer": "Temperatures of the water heats up over the day so the warmest time to go surfing is late afternoon."
   },
   "brands": {
+    "ourBrands": "our brands",
     "er": "Eisbach Riders is a surf brand from Munich, Germany that specializes in surf equipment and accessories. Their products cover surfboard fins and leashes for river surfing, stand-up paddling (SUP) as well as kitesurfing. Their focus is to provide sustainably packaged and affordable products so you can feel good about jumping back into the water.",
     "er_category": "Fins & Leashes",
     "shepps": "SHEPPSolutions is a Toronto, Canada based design team that formed in 2018. They develop high quality, elegant, and sustainable products made out of wood such as surfboard hangers, surfboard racks, wetsuit dry racks, hooks, hangers, and organizers. Their mission is to develop tools that perform one task as efficiently as possible.",

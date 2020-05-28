@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import { Link, Element } from "react-scroll"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
@@ -18,16 +17,37 @@ import greenfix from "../../assets/logos/greenfix.png"
 import greenfixLifestyle from "../../assets/websiteImages/greenfix-wax-on-surfboard.png"
 
 const useStyles = makeStyles((theme) => ({
-  brands: {
-    width: "100%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+  img1: {
+    flexBasis: "80%",
+    [theme.breakpoints.up("sm")]: {
+      flexBasis: "40%",
+      // height: 400,
+    },
   },
   header: {
     fontFamily: "secondary",
-    fontSize: 32,
+    fontSize: 48,
+    textTransform: "capitalize",
     margin: 0,
+    width: "100%",
+    textAlign: "center",
+  },
+  s: {
+    fontSize: 72,
+    lineHeight: 1,
+  },
+  tagline: {
+    textTransform: "capitalize",
+    fontWeight: "700",
+  },
+  flexItem: {
+    flexBasis: "100%",
+    [theme.breakpoints.up("sm")]: {
+      flexBasis: "60%",
+    },
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "40%",
+    },
   },
   root: {
     width: "100%",
@@ -86,34 +106,10 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     paddingLeft: 5,
   },
-  img1: {
-    width: "70%",
-    height: 350,
-    flexBasis: "100%",
-    [theme.breakpoints.up("md")]: {
-      flexBasis: "30%",
-      height: 400,
-    },
-  },
+
   img: {
     width: "100%",
     height: 400,
-  },
-  logoListContainer: {
-    width: "100%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    alignItems: "center",
-    [theme.breakpoints.up("md")]: {
-      marginBottom: 30,
-    },
-  },
-  flexItem: {
-    flexBasis: "100%",
-    [theme.breakpoints.up("md")]: {
-      flexBasis: "40%",
-    },
   },
   logoContainer: {
     display: "flex",
@@ -125,21 +121,11 @@ const useStyles = makeStyles((theme) => ({
   link: {
     cursor: "pointer",
   },
-  tagline: {
-    textTransform: "capitalize",
-    color: theme.palette.primary.main,
-    fontWeight: "bold",
-  },
 }))
 
 function Brands() {
-  const [setActive] = useState("ER")
   const classes = useStyles()
   const { t } = useTranslation()
-
-  const handleScroll = (to) => {
-    setActive(to)
-  }
 
   const data = useStaticQuery(graphql`
     query {
@@ -193,42 +179,27 @@ function Brands() {
 
   return (
     <>
-      <Container>
-        <div className={classes.logoListContainer}>
-          <Img
-            fluid={data.image.childImageSharp.fluid}
-            alt="brands"
-            placeholderStyle={{ backgroundColor: `blue` }}
-            className={classes.img1}
-            imgStyle={{ objectPosition: "center center" }}
-          />
-
-          <div className={classes.flexItem}>
-            <p className={classes.tagline}>{t("homepage.heroSubtitle")}</p>
-            <h2 className={classes.header}>Second Wave Surfing</h2>
-            <p className={classes.text}>{t("homepage.about")}</p>
-          </div>
-          {/* {brands.map((elem, idx) => (
-            <Link
-              key={`logo${idx}`}
-              to={elem.name}
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              onClick={() => handleScroll(elem)}
-              className={classes.link}
-            >
-              <img
-                src={elem.logo}
-                alt={`brand${elem.name}`}
-                className={classes.logo}
-              />
-            </Link>
-          ))} */}
+      <Container
+        background="gray"
+        alignItems="center"
+        justifyContent="spaceAround"
+      >
+        <Img
+          fluid={data.image.childImageSharp.fluid}
+          alt="brands"
+          placeholderStyle={{ backgroundColor: `white` }}
+          className={classes.img1}
+          imgStyle={{ objectPosition: "center center" }}
+        />
+        <div className={classes.flexItem}>
+          <p className={classes.tagline}>{t("homepage.heroSubtitle")}</p>
+          <p className={classes.text}>{t("homepage.about")}</p>
         </div>
       </Container>
       <Container>
+        <h2 className={clsx(classes.header, classes.center)}>
+          {t("brands.ourBrands")}
+        </h2>
         {brands.map((elem, idx) => (
           <div
             className={clsx(classes.root, {
@@ -236,7 +207,6 @@ function Brands() {
             })}
             key={`brand${elem.name}`}
           >
-            <Element name={elem.name} />
             <div className={classes.textContainer}>
               <div className={classes.logoContainer}>
                 <img

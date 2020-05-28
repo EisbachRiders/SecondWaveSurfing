@@ -133,7 +133,7 @@ function Header({ handleSetLang }) {
     process.env.NODE_ENV === "development"
       ? ["brands", "blog", "shop", "about"]
       : ["blog", "shop", "about"]
-  const mobileLinks = ["contact", "customerService"]
+  const mobileLinks = []
 
   return (
     <AppBar
@@ -224,11 +224,10 @@ function Header({ handleSetLang }) {
                   {elem === "shop" ? (
                     <a
                       href="https://shop.eisbach-riders.com/"
-                      rel="noopener"
+                      rel="noreferrer"
                       target="_blank"
                       className={classes.link}
                     >
-                      {" "}
                       {t(`links.${elem}`)}
                     </a>
                   ) : (
@@ -259,9 +258,9 @@ function Header({ handleSetLang }) {
                   <ListItem
                     button
                     key={`navItem${idx}`}
-                    className={classes.listItem}
+                    className={classes.listItemMobile}
                   >
-                    <Link to="/" className={classes.link}>
+                    <Link to={`/${elem}`} className={classes.link}>
                       {t(`links.${elem}`)}
                     </Link>
                   </ListItem>

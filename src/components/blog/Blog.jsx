@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Paper from "@material-ui/core/Paper"
+import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
 import Sidebar from "./Sidebar"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
@@ -14,7 +15,10 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 
 const useStyles = makeStyles((theme) => ({
   banner: {
-    height: 300,
+    height: 150,
+    [theme.breakpoints.up("sm")]: {
+      height: 300,
+    },
   },
   bannerImg: {
     width: "100%",
@@ -22,26 +26,42 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     display: "flex",
+    flexWrap: "wrap",
     justifyContent: "center",
     borderBottom: `1px solid ${theme.color.gray}`,
   },
   headerItem: {
-    padding: 15,
+    flexBasis: "100%",
     textTransform: "lowercase",
-    fontSize: 18,
+    padding: 10,
+    textAlign: "center",
     color: theme.color.black,
     "&:hover": {
       color: theme.palette.primary.main,
       textDecoration: "none",
     },
+    [theme.breakpoints.up("sm")]: {
+      flexBasis: "auto",
+      padding: 15,
+      textAlign: "right",
+    },
   },
   headerItemActive: {
     color: theme.palette.primary.main,
   },
+  subMenu: {
+    fontFamily: "secondary",
+    fontSize: 28,
+    margin: 10,
+    lineHeight: 1,
+  },
   paper: {
-    padding: 60,
+    padding: 15,
     marginBottom: 30,
     boxShadow: "0 0 70px rgba(0,0,0,.11)",
+    [theme.breakpoints.up("sm")]: {
+      padding: 60,
+    },
   },
   link: {
     marginBottom: 30,
@@ -58,29 +78,59 @@ const useStyles = makeStyles((theme) => ({
   blog: {
     display: "flex",
     flexDirection: "column",
-    flexBasis: "70%",
+    flexBasis: "100%",
+    marginBottom: 30,
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "65%",
+      marginBottom: 0,
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "70%",
+    },
   },
   sidebar: {
     display: "flex",
     flexDirection: "column",
-    flexBasis: "25%",
+    flexBasis: "100%",
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "30%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "25%",
+    },
   },
   blogItem: {
     display: "flex",
     alignItems: "center",
-    marginBottom: 45,
+    flexDirection: "column",
+    marginBottom: 30,
+    [theme.breakpoints.up("sm")]: {
+      flexDirection: "row",
+      marginBottom: 45,
+    },
   },
   blogImgLink: {
-    width: 300,
-    height: 250,
+    width: "100%",
+    height: 300,
+    [theme.breakpoints.up("sm")]: {
+      width: 300,
+      height: 250,
+    },
   },
   blogImg: {
-    width: 300,
-    height: 250,
+    width: "100%",
+    height: 300,
+    [theme.breakpoints.up("sm")]: {
+      width: 300,
+      height: 250,
+    },
   },
   blogImgFirst: {
     width: "100%",
-    height: 500,
+    height: 150,
+    [theme.breakpoints.up("sm")]: {
+      height: 500,
+    },
   },
   blogDate: {
     letterSpacing: 3,
@@ -88,16 +138,22 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 5,
   },
   blogExcerptRight: {
-    padding: 30,
-    marginRight: -80,
+    padding: 15,
     zIndex: 2,
     boxShadow: "0 0 70px rgba(0,0,0,.11)",
+    [theme.breakpoints.up("sm")]: {
+      padding: 30,
+      marginRight: -80,
+    },
   },
   blogExcerptLeft: {
-    padding: 30,
-    marginLeft: -80,
+    padding: 15,
     zIndex: 2,
     boxShadow: "0 0 70px rgba(0,0,0,.11)",
+    [theme.breakpoints.up("sm")]: {
+      padding: 30,
+      marginLeft: -80,
+    },
   },
   blogTitleLink: {
     color: theme.color.black,
@@ -108,12 +164,15 @@ const useStyles = makeStyles((theme) => ({
   },
   blogTitle: {
     fontWeight: 600,
-    letterSpacing: 3,
     marginBottom: 15,
-    fontSize: 16,
+    fontSize: 14,
+    [theme.breakpoints.up("sm")]: {
+      fontSize: 16,
+      letterSpacing: 3,
+    },
   },
   categories: {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
     fontWeight: 700,
   },
   pagination: {
@@ -122,7 +181,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paginationButton: {
     color: theme.color.white,
-    background: theme.palette.primary.main,
+    background: theme.palette.primary.dark,
     padding: "9px 27px",
     textTransform: "uppercase",
     fontSize: 16,
@@ -132,7 +191,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     "&:hover": {
       textDecoration: "none",
-      background: theme.palette.primary.light,
+      background: theme.palette.secondary.dark,
     },
   },
   paginationNumberContainer: {
@@ -141,8 +200,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paginationNumber: {
-    color: theme.palette.primary.main,
-    border: `1px solid ${theme.palette.primary.main}`,
+    color: theme.palette.primary.dark,
+    border: `1px solid ${theme.palette.primary.dark}`,
     width: 42,
     height: 42,
     marginLeft: 5,
@@ -157,15 +216,15 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       textDecoration: "none",
       color: theme.color.white,
-      background: theme.palette.primary.main,
+      background: theme.palette.primary.dark,
     },
   },
   paginationNumberActive: {
-    background: theme.palette.primary.main,
+    background: theme.palette.primary.dark,
     color: theme.color.white,
     "&:hover": {
       textDecoration: "none",
-      background: theme.palette.primary.light,
+      background: theme.palette.primary.main,
     },
   },
   placeholder: {
@@ -178,9 +237,16 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
   const { t } = useTranslation()
   const data = useStaticQuery(graphql`
     query {
-      fileName: file(relativePath: { in: "blogBanner.jpg" }) {
+      banner: file(relativePath: { in: "blogBanner.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bannerMobile: file(relativePath: { in: "blogBannerMobile.jpg" }) {
+        childImageSharp {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
@@ -192,15 +258,29 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
   return (
     <>
       <div className={classes.banner}>
-        <Img
-          alt={`surfers sitting in water`}
-          fluid={data.fileName.childImageSharp.fluid}
-          placeholderStyle={{ backgroundColor: `blue` }}
-          className={classes.bannerImg}
-          imgStyle={{ objectPosition: "top center" }}
-        />
+        <Hidden smUp>
+          <Img
+            alt={`surfers sitting in water`}
+            fluid={data.bannerMobile.childImageSharp.fluid}
+            placeholderStyle={{ backgroundColor: `blue` }}
+            className={classes.bannerImg}
+            imgStyle={{ objectPosition: "top center" }}
+          />
+        </Hidden>
+        <Hidden xsDown>
+          <Img
+            alt={`surfers sitting in water`}
+            fluid={data.banner.childImageSharp.fluid}
+            placeholderStyle={{ backgroundColor: `blue` }}
+            className={classes.bannerImg}
+            imgStyle={{ objectPosition: "top center" }}
+          />
+        </Hidden>
       </div>
       <div className={classes.header}>
+        <Hidden smUp>
+          <p className={classes.subMenu}>{t("blog.subMenuMobile")}...</p>
+        </Hidden>
         {tags.map((elem) => (
           <Link
             key={`link${elem}`}
@@ -259,7 +339,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                 <Fragment key={`post_${idx}`}>
                   <div className={classes.blogItem} key={`blogItem_${idx}`}>
                     <Fragment key={`blog_${elem.node.frontmatter.title}`}>
-                      {idx % 2 !== 0 && (
+                      <Hidden smUp>
                         <Link
                           to={elem.node.fields.slug}
                           className={classes.blogImgLink}
@@ -273,7 +353,24 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             className={classes.blogImg}
                           />
                         </Link>
-                      )}
+                      </Hidden>
+                      <Hidden xsDown>
+                        {idx % 2 !== 0 && (
+                          <Link
+                            to={elem.node.fields.slug}
+                            className={classes.blogImgLink}
+                          >
+                            <Img
+                              alt={`blog image ${idx}`}
+                              fluid={
+                                elem.node.frontmatter.featuredImage
+                                  .childImageSharp.fluid
+                              }
+                              className={classes.blogImg}
+                            />
+                          </Link>
+                        )}
+                      </Hidden>
                       <Paper
                         className={
                           idx % 2 !== 0
@@ -300,21 +397,23 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                         </Link>
                         <p>{elem.node.excerpt}</p>
                       </Paper>
-                      {idx % 2 === 0 && (
-                        <Link
-                          to={elem.node.fields.slug}
-                          className={classes.blogImgLink}
-                        >
-                          <Img
-                            alt={`blog image ${idx}`}
-                            fluid={
-                              elem.node.frontmatter.featuredImage
-                                .childImageSharp.fluid
-                            }
-                            className={classes.blogImg}
-                          />
-                        </Link>
-                      )}
+                      <Hidden xsDown>
+                        {idx % 2 === 0 && (
+                          <Link
+                            to={elem.node.fields.slug}
+                            className={classes.blogImgLink}
+                          >
+                            <Img
+                              alt={`blog image ${idx}`}
+                              fluid={
+                                elem.node.frontmatter.featuredImage
+                                  .childImageSharp.fluid
+                              }
+                              className={classes.blogImg}
+                            />
+                          </Link>
+                        )}
+                      </Hidden>
                     </Fragment>
                   </div>
                 </Fragment>

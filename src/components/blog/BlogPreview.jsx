@@ -8,7 +8,10 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
-    marginBottom: 20,
+    marginBottom: 15,
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: 20,
+    },
   },
   img: {
     height: 70,
@@ -16,6 +19,13 @@ const useStyles = makeStyles((theme) => ({
   },
   flexItem: {
     flexBasis: "70%",
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "65%",
+    },
+
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "70%",
+    },
   },
   tag: {
     textTransform: "uppercase",
@@ -23,11 +33,15 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 0,
     fontSize: 11,
     fontWeight: 700,
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.dark,
   },
   link: {
     textTransform: "capitalize",
     color: theme.color.black,
+    fontSize: 12,
+    [theme.breakpoints.up("lg")]: {
+      fontSize: 14,
+    },
   },
   hr: {
     borderBottom: `1px solid ${theme.color.gray}`,
