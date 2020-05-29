@@ -37,6 +37,7 @@ const color = {
   yellowDk: "#FCE181",
   yellowLt: "#FEF9C7",
   gray: "#EDEAE5",
+  grayLt: "rgba(237, 234, 229, .2)",
 }
 
 const theme = createMuiTheme({

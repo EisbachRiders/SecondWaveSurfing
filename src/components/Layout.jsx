@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
         declineButtonText={t("tracking.decline")}
         setDeclineCookie
         declineButtonStyle={{
-          color: "#E6C55E",
+          color: "#00130e",
           fontSize: "14px",
           textTransform: "uppercase",
           background: "transparent",
@@ -71,7 +71,7 @@ const Layout = ({ children }) => {
         {t("tracking.consent")}
         <Link
           to="/dataProtection/"
-          style={{ color: "#E6C55E", textDecoration: "underline" }}
+          style={{ color: "#00130e", textDecoration: "underline" }}
         >
           {t("tracking.dataPrivacy")}.
         </Link>
