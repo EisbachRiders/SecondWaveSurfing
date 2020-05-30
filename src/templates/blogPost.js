@@ -6,20 +6,29 @@ import { MDXProvider } from "@mdx-js/react"
 import { Link } from "gatsby-theme-material-ui"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
+import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Container from "../components/ui/Container"
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
-import ChevronRightIcon from "@material-ui/icons/ChevronRight"
+import Sidebar from "../components/blog/Sidebar"
 
 const useStyles = makeStyles((theme) => ({
   h1: {
     fontSize: 18,
     textAlign: "center",
+    marginBottom: 30,
+    [theme.breakpoints.up("lg")]: {
+      marginBottom: 60,
+    },
   },
   featuredImg: {
-    height: 500,
-    margin: "0 auto",
+    height: 300,
+    marginBottom: 30,
+    [theme.breakpoints.up("lg")]: {
+      height: 500,
+      marginBottom: 60,
+    },
   },
   nav: {
     width: "100%",
@@ -31,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   link: {
-    color: theme.color.white,
+    color: theme.color.black,
     background: theme.palette.primary.main,
     padding: "9px 27px",
     textTransform: "uppercase",
@@ -52,11 +61,46 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 15,
   },
   img: {
-    height: 400,
+    height: 300,
+    [theme.breakpoints.up("md")]: {
+      height: 400,
+    },
   },
   sub: {
     fontSize: 12,
-    textAlign: "center",
+    textAlign: "right",
+    width: "100%",
+  },
+  a: {
+    color: theme.palette.primary.dark,
+    "&:hover": {
+      color: theme.palette.primary.main,
+    },
+  },
+  blog: {
+    display: "flex",
+    flexDirection: "column",
+    flexBasis: "100%",
+    marginBottom: 30,
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "65%",
+      marginBottom: 0,
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "70%",
+      overflow: "hidden",
+    },
+  },
+  sidebar: {
+    display: "flex",
+    flexDirection: "column",
+    flexBasis: "100%",
+    [theme.breakpoints.up("md")]: {
+      flexBasis: "30%",
+    },
+    [theme.breakpoints.up("lg")]: {
+      flexBasis: "25%",
+    },
   },
 }))
 
@@ -69,6 +113,7 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
     Link,
     img: (props) => <img {...props} className={classes.img} />,
     sub: (props) => <sub {...props} className={classes.sub} />,
+    a: (props) => <a {...props} className={classes.a} />,
   }
 
   return (
@@ -78,20 +123,25 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
         description={mdx.frontmatter.description || mdx.excerpt}
       />
       <>
-        <article>
-          <Container flexDirection="column">
-            <h1 className={classes.h1}>{mdx.frontmatter.title}</h1>
-            <Img
-              alt={mdx.frontmatter.title}
-              fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
-              placeholderStyle={{ backgroundColor: `blue` }}
-              className={classes.img}
-            />
-            <MDXProvider components={shortcodes}>
-              <MDXRenderer>{mdx.body}</MDXRenderer>
-            </MDXProvider>
-          </Container>
-        </article>
+        <Container justifyContent="spaceBetween">
+          <div className={classes.blog}>
+            <article>
+              <h1 className={classes.h1}>{mdx.frontmatter.title}</h1>
+              <Img
+                alt={mdx.frontmatter.title}
+                fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
+                placeholderStyle={{ backgroundColor: `blue` }}
+                className={classes.featuredImg}
+              />
+              <MDXProvider components={shortcodes}>
+                <MDXRenderer>{mdx.body}</MDXRenderer>
+              </MDXProvider>
+            </article>
+          </div>
+          <div className={classes.sidebar}>
+            <Sidebar />
+          </div>
+        </Container>
         <Container>
           <nav className={classes.nav}>
             <ul className={classes.ul}>

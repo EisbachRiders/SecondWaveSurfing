@@ -25,6 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
       postsRemark: allMdx(
+        sort: { fields: frontmatter___date, order: ASC }
         filter: { frontmatter: { label: { in: "article" } } }
       ) {
         edges {

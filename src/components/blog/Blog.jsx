@@ -180,8 +180,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   paginationButton: {
-    color: theme.color.white,
-    background: theme.palette.primary.dark,
+    color: theme.color.black,
+    background: theme.palette.primary.main,
     padding: "9px 27px",
     textTransform: "uppercase",
     fontSize: 16,
@@ -191,7 +191,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     "&:hover": {
       textDecoration: "none",
-      background: theme.palette.secondary.dark,
+      background: theme.palette.primary.dark,
     },
   },
   paginationNumberContainer: {
@@ -200,8 +200,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paginationNumber: {
-    color: theme.palette.primary.dark,
-    border: `1px solid ${theme.palette.primary.dark}`,
+    color: theme.palette.primary.main,
+    border: `1px solid ${theme.palette.primary.main}`,
     width: 42,
     height: 42,
     marginLeft: 5,
@@ -215,20 +215,29 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     "&:hover": {
       textDecoration: "none",
-      color: theme.color.white,
+      color: theme.color.black,
       background: theme.palette.primary.dark,
+      border: `1px solid ${theme.palette.primary.dark}`,
     },
   },
   paginationNumberActive: {
-    background: theme.palette.primary.dark,
-    color: theme.color.white,
+    background: theme.palette.primary.main,
+    color: theme.color.black,
     "&:hover": {
       textDecoration: "none",
-      background: theme.palette.primary.main,
+      background: theme.palette.primary.dark,
     },
   },
   placeholder: {
     width: 130,
+  },
+  readMore: {
+    textTransform: "uppercase",
+    color: theme.palette.primary.dark,
+    "&:hover": {
+      textDecoration: "none",
+      background: theme.palette.primary.main,
+    },
   },
 }))
 
@@ -395,7 +404,13 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             {elem.node.frontmatter.title}
                           </Typography>
                         </Link>
-                        <p>{elem.node.excerpt}</p>
+                        <p>{elem.node.frontmatter.description}</p>
+                        <Link
+                          to={elem.node.fields.slug}
+                          className={classes.readMore}
+                        >
+                          {t("blog.more")}
+                        </Link>
                       </Paper>
                       <Hidden xsDown>
                         {idx % 2 === 0 && (

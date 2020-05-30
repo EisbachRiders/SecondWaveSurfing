@@ -60,7 +60,8 @@
     "error": "Ein Fehler ist aufgetreten! Bitte versuchen Sie es später noch einmal."
   },
   "blog": {
-    "subMenuMobile": ""
+    "subMenuMobile": "",
+    "more": "weiter lesen"
   },
   "footer": {
     "message": "Schreib uns",

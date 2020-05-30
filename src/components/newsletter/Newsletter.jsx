@@ -49,10 +49,14 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     background: theme.color.white,
-    color: theme.palette.primary.main,
+    color: theme.color.black,
     fontSize: 16,
     [theme.breakpoints.up("md")]: {
       padding: "15px 45px",
+    },
+    "&:hover": {
+      boxShadow: "none",
+      background: theme.palette.primary.dark,
     },
   },
   form: {
