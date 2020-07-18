@@ -1,10 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/styles"
 import IconButton from "@material-ui/core/IconButton"
 import Button from "@material-ui/core/Button"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
+import Grow from "@material-ui/core/Grow"
+import MenuItem from "@material-ui/core/MenuItem"
+import MenuList from "@material-ui/core/MenuList"
+import Paper from "@material-ui/core/Paper"
+import Popper from "@material-ui/core/Popper"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import AppBar from "@material-ui/core/AppBar"
@@ -81,11 +87,12 @@ const useStyles = makeStyles((theme) => ({
   listItem: {
     margin: "15px 30px 15px 15px",
     [theme.breakpoints.up("md")]: {
-      margin: "0 30px 0 0",
+      margin: "0 15px 0 0",
     },
   },
   listItemLast: {
     margin: 15,
+    minWidth: "max-content",
     [theme.breakpoints.up("md")]: {
       margin: 0,
     },
@@ -98,11 +105,26 @@ const useStyles = makeStyles((theme) => ({
     color: theme.color.white,
     minWidth: 50,
   },
+  shopLink: {
+    color: theme.color.black,
+    "&:hover": {
+      textDecoration: "none",
+    },
+  },
+  buttonOverride: {
+    padding: 0,
+    margin: 0,
+    "&:hover": {
+      background: "transparent",
+    },
+  },
 }))
 
 function Header() {
   const [drawer, setDrawer] = useState(false)
+  const [openShop, setOpenShop] = useState(false)
   const classes = useStyles()
+  const anchorRef = useRef(null)
   const { t, i18n } = useTranslation()
 
   const handleSetLang = () => {
@@ -121,16 +143,51 @@ function Header() {
     setDrawer(open)
   }
 
+  const handleToggleShop = () => {
+    setOpenShop((prevOpen) => !prevOpen)
+  }
+
+  const handleCloseShop = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return
+    }
+
+    setOpenShop(false)
+  }
+
+  function handleListKeyDown(event) {
+    if (event.key === "Tab") {
+      event.preventDefault()
+      setOpenShop(false)
+    }
+  }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = useRef(openShop)
+  useEffect(() => {
+    if (prevOpen.current === true && openShop === false) {
+      anchorRef.current.focus()
+    }
+
+    prevOpen.current = openShop
+  }, [openShop])
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
   })
 
-  const links =
-    process.env.NODE_ENV === "development"
-      ? ["brands", "blog", "shop", "about"]
-      : ["blog", "shop", "about"]
+  const links = ["blog", "about", "shop", "cart", "my-account"]
   const mobileLinks = []
+  const shopCategories = [
+    "rapid-surfing",
+    "sup",
+    "fins",
+    "leashes",
+    "apparel",
+    "accessories",
+    "products",
+  ]
 
   return (
     <AppBar
@@ -205,9 +262,80 @@ function Header() {
                       : classes.listItem
                   }
                 >
-                  <Link to={`/${elem}`} className={classes.link}>
-                    {t(`links.${elem}`)}
-                  </Link>
+                  {elem === "cart" ? (
+                    <a
+                      href="https://secondwavesurfing.com/shop/cart/"
+                      className={classes.link}
+                    >
+                      {t(`links.${elem}`)}
+                    </a>
+                  ) : elem === "my-account" ? (
+                    <a
+                      href="https://secondwavesurfing.com/shop/my-account/"
+                      className={classes.link}
+                    >
+                      {t(`links.${elem}`)}
+                    </a>
+                  ) : elem === "shop" ? (
+                    <>
+                      <Button
+                        ref={anchorRef}
+                        aria-controls={openShop ? "menu-list-grow" : undefined}
+                        aria-haspopup="true"
+                        onMouseOver={handleToggleShop}
+                        classes={{ root: classes.link }}
+                        href="https://secondwavesurfing.com/shop/"
+                        className={classes.buttonOverride}
+                      >
+                        {elem}
+                      </Button>
+                      <Popper
+                        open={openShop}
+                        anchorEl={anchorRef.current}
+                        role={undefined}
+                        transition
+                        disablePortal
+                      >
+                        {({ TransitionProps, placement }) => (
+                          <Grow
+                            {...TransitionProps}
+                            style={{
+                              transformOrigin:
+                                placement === "bottom"
+                                  ? "center top"
+                                  : "center bottom",
+                            }}
+                          >
+                            <Paper>
+                              <ClickAwayListener onClickAway={handleCloseShop}>
+                                <MenuList
+                                  autoFocusItem={openShop}
+                                  id="menu-list-grow"
+                                  onKeyDown={handleListKeyDown}
+                                >
+                                  {shopCategories.map((elem) => (
+                                    <a
+                                      key={`product_link_${elem}`}
+                                      href={`https://secondwavesurfing.com/shop/product-category/${elem}/`}
+                                      className={classes.shopLink}
+                                    >
+                                      <MenuItem onClick={handleCloseShop}>
+                                        {t(`links.${elem}`)}
+                                      </MenuItem>
+                                    </a>
+                                  ))}
+                                </MenuList>
+                              </ClickAwayListener>
+                            </Paper>
+                          </Grow>
+                        )}
+                      </Popper>
+                    </>
+                  ) : (
+                    <Link to={`/${elem}`} className={classes.link}>
+                      {t(`links.${elem}`)}
+                    </Link>
+                  )}
                 </ListItem>
               ))}
             </List>
@@ -233,9 +361,38 @@ function Header() {
                     key={`navItem${idx}`}
                     className={classes.listItemMobile}
                   >
-                    <Link to={`/${elem}`} className={classes.link}>
-                      {t(`links.${elem}`)}
-                    </Link>
+                    {elem === "shop" ? (
+                      <a
+                        href="https://secondwavesurfing.com/shop/"
+                        rel="noreferrer"
+                        target="_blank"
+                        className={classes.link}
+                      >
+                        {t(`links.${elem}`)}
+                      </a>
+                    ) : elem === "cart" ? (
+                      <a
+                        href="https://secondwavesurfing.com/shop/cart/"
+                        rel="noreferrer"
+                        target="_blank"
+                        className={classes.link}
+                      >
+                        {t(`links.${elem}`)}
+                      </a>
+                    ) : elem === "my account" ? (
+                      <a
+                        href="https://secondwavesurfing.com/shop/my-account/"
+                        rel="noreferrer"
+                        target="_blank"
+                        className={classes.link}
+                      >
+                        {t(`links.${elem}`)}
+                      </a>
+                    ) : (
+                      <Link to={`/${elem}`} className={classes.link}>
+                        {t(`links.${elem}`)}
+                      </Link>
+                    )}
                   </ListItem>
                 ))}
                 {mobileLinks.map((elem, idx) => (
