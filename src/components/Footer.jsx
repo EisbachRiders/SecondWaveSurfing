@@ -15,6 +15,12 @@ import Newsletter from "./newsletter/Newsletter"
 import Container from "./ui/Container"
 import Contact from "./Contact"
 import logo from "../assets/logos/logo.png"
+import visa from "../assets/logos/visa.svg"
+import amex from "../assets/logos/american-express.svg"
+import amazonpay from "../assets/logos/amazonpay.png"
+import mastercard from "../assets/logos/mastercard.svg"
+import banktransfer from "../assets/logos/bank-transfer.svg"
+import paypal from "../assets/logos/paypal.svg"
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -167,6 +173,13 @@ const useStyles = makeStyles((theme) => ({
       width: "fit-content",
     },
   },
+  paymentsContainer: {
+    display: "flex",
+  },
+  paymentImg: {
+    height: 32,
+    marginRight: 15,
+  },
 }))
 
 function Footer() {
@@ -286,6 +299,28 @@ function Footer() {
                   )}
                 </Fragment>
               ))}
+              <div className={classes.paymentsContainer}>
+                <img src={paypal} alt="paypal" className={classes.paymentImg} />
+                <img
+                  src={amazonpay}
+                  alt="amazonpay"
+                  className={classes.paymentImg}
+                />
+                <img
+                  src={banktransfer}
+                  alt="banktransfer"
+                  className={classes.paymentImg}
+                />
+              </div>
+              <div className={classes.paymentsContainer}>
+                <img src={visa} alt="visa" className={classes.paymentImg} />
+                <img
+                  src={mastercard}
+                  alt="mastercard"
+                  className={classes.paymentImg}
+                />
+                <img src={amex} alt="amex" className={classes.paymentImg} />
+              </div>
             </div>
           </div>
         </Hidden>

@@ -65,12 +65,12 @@
     "error": "An error has occurred! Please try again later."
   },
   "footer": {
-    "emailSupport": "email support",
-    "emailSupportText": "contact us at support@eisbach-riders.com",
-    "30dayReturns": "30 day returns",
-    "30dayReturnsText": "return any items within 30 days",
-    "freeShipping": "free shipping",
-    "freeShippingText": "Free Shipping on Orders Over 15€ within Germany"
+    "emailSupport": "Email Support",
+    "emailSupportText": "Contact us at support@secondwavesurfing.com",
+    "30dayReturns": "30 Day Returns",
+    "30dayReturnsText": "Return any items within 30 days",
+    "freeShipping": "Free Shipping",
+    "freeShippingText": "Free shipping on orders over 15€ within Germany"
   },
   "shop": {
     "viewCollection": "view collection",

@@ -4,15 +4,13 @@ import clsx from "clsx"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/styles"
 import IconButton from "@material-ui/core/IconButton"
-import Menu from "@material-ui/core/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
+import Button from "@material-ui/core/Button"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Hidden from "@material-ui/core/Hidden"
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
-import LanguageIcon from "@material-ui/icons/Language"
 import useScrollTrigger from "@material-ui/core/useScrollTrigger"
 import MenuIcon from "@material-ui/icons/Menu"
 import FacebookIcon from "@material-ui/icons/Facebook"
@@ -96,21 +94,20 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: `1px solid ${theme.color.gray}`,
     textAlign: "center",
   },
+  languageButton: {
+    color: theme.color.white,
+    minWidth: 50,
+  },
 }))
 
-function Header({ handleSetLang }) {
-  const [anchorEl, setAnchorEl] = useState(null)
+function Header() {
   const [drawer, setDrawer] = useState(false)
   const classes = useStyles()
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = (lang) => {
-    setAnchorEl(null)
-    handleSetLang(lang)
+  const handleSetLang = () => {
+    let newLng = i18n.language === "en" ? "de" : "en"
+    i18n.changeLanguage(newLng)
   }
 
   const toggleDrawer = (open) => (event) => {
@@ -176,25 +173,12 @@ function Header({ handleSetLang }) {
         >
           <PinterestIcon className={classes.icon} />
         </IconButton>
-        <IconButton
-          aria-controls="simple-menu"
-          aria-label="language"
-          aria-haspopup="true"
-          onClick={handleClick}
-          size="small"
+        <Button
+          onClick={() => handleSetLang()}
+          className={classes.languageButton}
         >
-          <LanguageIcon className={classes.icon} alt="language" />
-        </IconButton>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <MenuItem onClick={() => handleClose("en")}>EN</MenuItem>
-          <MenuItem onClick={() => handleClose("de")}>DE</MenuItem>
-        </Menu>
+          {i18n.language}
+        </Button>
       </Container>
       <Container padding="none">
         <Toolbar className={classes.toolbar} disableGutters>
@@ -221,20 +205,9 @@ function Header({ handleSetLang }) {
                       : classes.listItem
                   }
                 >
-                  {elem === "shop" ? (
-                    <a
-                      href="https://shop.eisbach-riders.com/"
-                      rel="noreferrer"
-                      target="_blank"
-                      className={classes.link}
-                    >
-                      {t(`links.${elem}`)}
-                    </a>
-                  ) : (
-                    <Link to={`/${elem}`} className={classes.link}>
-                      {t(`links.${elem}`)}
-                    </Link>
-                  )}
+                  <Link to={`/${elem}`} className={classes.link}>
+                    {t(`links.${elem}`)}
+                  </Link>
                 </ListItem>
               ))}
             </List>

@@ -57,7 +57,11 @@ const InstagramWidget = () => {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
-      allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 6) {
+      allInstaNode(
+        filter: { username: { eq: "8544844204" } }
+        sort: { fields: timestamp, order: DESC }
+        limit: 6
+      ) {
         edges {
           node {
             likes

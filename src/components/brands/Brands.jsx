@@ -258,7 +258,7 @@ function Brands() {
     },
     {
       key: "beeSwell",
-      name: "bee swell",
+      name: "Bee Swell",
       website: "https://www.beeswell.com/",
       logo: beeSwell,
     },

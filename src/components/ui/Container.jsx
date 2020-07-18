@@ -47,6 +47,9 @@ const useStyles = makeStyles((theme) => ({
   gray: {
     background: theme.color.grayLt,
   },
+  grayLt: {
+    background: "#fafafa",
+  },
   flexStart: {
     justifyContent: "flex-start",
   },
