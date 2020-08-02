@@ -107,6 +107,7 @@ const useStyles = makeStyles((theme) => ({
   },
   shopLink: {
     color: theme.color.black,
+    textTransform: "capitalize",
     "&:hover": {
       textDecoration: "none",
     },
@@ -180,13 +181,13 @@ function Header() {
   const links = ["blog", "about", "shop", "cart", "my-account"]
   const mobileLinks = []
   const shopCategories = [
-    "rapid-surfing",
-    "sup",
-    "fins",
-    "leashes",
-    "apparel",
-    "accessories",
-    "products",
+    { en: "rapid-surfing", de: "rapid-surfing-de" },
+    { en: "sup", de: "sup-de" },
+    { en: "fins", de: "finnen" },
+    { en: "leashes", de: "leashes-de" },
+    { en: "apparel", de: "kleidung" },
+    { en: "accessories", de: "zubehor" },
+    { en: "products", de: "products" },
   ]
 
   return (
@@ -264,14 +265,22 @@ function Header() {
                 >
                   {elem === "cart" ? (
                     <a
-                      href="https://secondwavesurfing.com/shop/cart/"
+                      href={
+                        i18n.language === "de"
+                          ? "https://secondwavesurfing.com/shop/de/einkaufswagen/"
+                          : "https://secondwavesurfing.com/shop/cart/"
+                      }
                       className={classes.link}
                     >
                       {t(`links.${elem}`)}
                     </a>
                   ) : elem === "my-account" ? (
                     <a
-                      href="https://secondwavesurfing.com/shop/my-account/"
+                      href={
+                        i18n.language === "de"
+                          ? "https://secondwavesurfing.com/shop/de/mein-account/"
+                          : "https://secondwavesurfing.com/shop/my-account/"
+                      }
                       className={classes.link}
                     >
                       {t(`links.${elem}`)}
@@ -284,7 +293,11 @@ function Header() {
                         aria-haspopup="true"
                         onMouseOver={handleToggleShop}
                         classes={{ root: classes.link }}
-                        href="https://secondwavesurfing.com/shop/"
+                        href={
+                          i18n.language === "de"
+                            ? "https://secondwavesurfing.com/shop/de/"
+                            : "https://secondwavesurfing.com/shop/"
+                        }
                         className={classes.buttonOverride}
                       >
                         {elem}
@@ -315,12 +328,16 @@ function Header() {
                                 >
                                   {shopCategories.map((elem) => (
                                     <a
-                                      key={`product_link_${elem}`}
-                                      href={`https://secondwavesurfing.com/shop/product-category/${elem}/`}
+                                      key={`product_link_${elem.en}`}
+                                      href={
+                                        i18n.language === "de"
+                                          ? `https://secondwavesurfing.com/shop/de/produkt-kategorie/${elem.de}/`
+                                          : `https://secondwavesurfing.com/shop/product-category/${elem.en}/`
+                                      }
                                       className={classes.shopLink}
                                     >
                                       <MenuItem onClick={handleCloseShop}>
-                                        {t(`links.${elem}`)}
+                                        {t(`links.${elem.en}`)}
                                       </MenuItem>
                                     </a>
                                   ))}

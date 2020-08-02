@@ -10,18 +10,13 @@ import vanderwaal from "../../assets/logos/van-der-waal-logo.png"
 import greenfix from "../../assets/logos/greenfix.png"
 
 const useStyles = makeStyles((theme) => ({
-  header: {
-    textAlign: "center",
-    fontFamily: "secondary",
-    width: "100%",
-    marginBottom: 30,
-  },
   logoContainer: {
     width: "100%",
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
     marginBottom: 30,
+    marginTop: 30,
   },
   link: {
     flexBasis: "20%",
@@ -47,8 +42,7 @@ function BrandsWidget() {
   ]
 
   return (
-    <Container variant="center" background="primary">
-      <h1 className={classes.header}>{t("links.brands")}</h1>
+    <Container variant="center" background="gray">
       <div className={classes.logoContainer}>
         {brands.map((elem, idx) => (
           <Link key={`logo${idx}`} to={"/brands"} className={classes.link}>

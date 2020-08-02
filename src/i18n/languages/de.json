@@ -23,7 +23,7 @@
     "shipping": "Versand",
     "returns": "Rückgabe",
     "officialWebsite": "offizielle Website",
-    "products": "All Products",
+    "products": "Alle Produkte",
     "cart": "cart",
     "my-account": "my account"
   },
@@ -34,13 +34,15 @@
     "decline": "opt-out"
   },
   "homepage": {
-    "heroSubtitle": "Surf Equipment und Zubehör aus München",
+    "heroSubtitle": "Nachhaltige Surflösungen",
     "about": "Unser Ziel ist es nachhaltig und ökologisch produziertes Surfequipment und Technologien zu fördern",
     "sustainable": "Nachhaltigkeit",
     "community": "Gemeinschaft",
     "surf": "Surfausrüstung",
     "ourStory": "Unsere Geschichte",
-    "mission": "Unsere Mission ist es das Meer und die Flüsse, die uns so viel Freude bereiten, zu schützen. Durch die Unterstützung von lokale Vereine und Organisationen versuchen wir unsere Spielplätze im Wasser zu erhalten."
+    "mission": "Unsere Mission ist es das Meer und die Flüsse, die uns so viel Freude bereiten, zu schützen. Durch die Unterstützung von lokale Vereine und Organisationen versuchen wir unsere Spielplätze im Wasser zu erhalten.",
+    "trends": "trends",
+    "highlights": "highlights"
   },
   "newsletter": {
     "stayintouch1": "Bleib auf dem neusten Stand ",

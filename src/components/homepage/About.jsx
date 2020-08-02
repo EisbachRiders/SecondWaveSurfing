@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Brands() {
+function About() {
   const classes = useStyles()
   const { t } = useTranslation()
 
@@ -68,4 +68,4 @@ function Brands() {
   )
 }
 
-export default Brands
+export default About

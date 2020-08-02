@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    textTransform: "lowercase",
+    textTransform: "capitalize",
     fontSize: 16,
     letterSpacing: 3,
     marginBottom: 15,

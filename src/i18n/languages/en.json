@@ -40,13 +40,15 @@
     "decline": "opt-out"
   },
   "homepage": {
-    "heroSubtitle": "surf all the things",
-    "about": "our goal is to promote eco friendly surf equipment and promote sustainable surf technology.",
+    "heroSubtitle": "Sustainable Surf Solutions",
+    "about": "Our goal is to promote eco friendly and sustainable surf equipment.",
     "sustainable": "sustainability",
     "community": "community",
     "surf": "surf equipment",
     "ourStory": "Our Story",
-    "mission": "Our mission is to protect our playgrounds - the ocean and rivers that provide us so much enjoyment - by supporting local communities and efforts to preserve our water sources."
+    "mission": "Our mission is to protect our playgrounds - the ocean and rivers that provide us so much enjoyment - by supporting local communities and efforts to preserve our water sources.",
+    "trends": "trends",
+    "highlights": "highlights"
   },
   "newsletter": {
     "stayintouch1": "Stay in touch with all the ",
