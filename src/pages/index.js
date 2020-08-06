@@ -13,11 +13,11 @@ const Homepage = () => {
     <Layout>
       <SEO />
       <Hero />
-      <About />
-      {/* <Highlights /> */}
+      <BrandsWidget />
+      <Highlights />
+      {/* <About /> */}
       <Trends />
       <BlogWidget2 />
-      <BrandsWidget />
     </Layout>
   )
 }

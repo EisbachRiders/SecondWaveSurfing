@@ -1,6 +1,4 @@
 import React from "react"
-import { useTranslation } from "react-i18next"
-import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
 import er from "../../assets/logos/eisbach-riders.svg"
@@ -15,43 +13,46 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginBottom: 30,
-    marginTop: 30,
   },
   link: {
-    flexBasis: "20%",
+    flexBasis: "19%",
     textAlign: "center",
     cursor: "pointer",
   },
   logo: {
-    height: 75,
-    width: "auto",
+    height: 35,
+    [theme.breakpoints.up("md")]: {
+      height: 75,
+    },
   },
 }))
 
 function BrandsWidget() {
   const classes = useStyles()
-  const { t } = useTranslation()
 
   const brands = [
-    { name: "eisbach riders", img: er },
-    { name: "shepps gnarwall", img: shepps },
-    { name: "bee swell", img: beeSwell },
-    { name: "van der waal", img: vanderwaal },
-    { name: "greenfix", img: greenfix },
+    { name: "eisbach riders", img: er, link: "eisbach-riders" },
+    { name: "shepps gnarwall", img: shepps, link: "shepps-gnarwall" },
+    { name: "bee swell", img: beeSwell, link: "bee-swell" },
+    { name: "van der waal", img: vanderwaal, link: "van-der-waal" },
+    { name: "greenfix", img: greenfix, link: "greenfix" },
   ]
 
   return (
-    <Container variant="center" background="gray">
+    <Container variant="center">
       <div className={classes.logoContainer}>
         {brands.map((elem, idx) => (
-          <Link key={`logo${idx}`} to={"/brands"} className={classes.link}>
+          <a
+            key={`logo${idx}`}
+            href={`https://secondwavesurfing.com/shop/brand/${elem.link}/`}
+            className={classes.link}
+          >
             <img
               src={elem.img}
               alt={`brand${elem.name}`}
               className={classes.logo}
             />
-          </Link>
+          </a>
         ))}
       </div>
     </Container>

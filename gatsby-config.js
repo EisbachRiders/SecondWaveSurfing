@@ -87,20 +87,17 @@ module.exports = {
       options: {
         googleAnalytics: {
           trackingId: "UA-168058937-1", // leave empty if you want to disable the tracker
-          cookieName: "gatsby-gdpr-google-analytics", // default
           anonymize: true, // default
         },
-        // googleTagManager: {
-        //   trackingId: "GTM-WNTQC2R", // leave empty if you want to disable the tracker
-        //   cookieName: "gatsby-gdpr-google-tagmanager", // default
-        //   dataLayerName: "dataLayer", // default
-        // },
-        // facebookPixel: {
-        //   pixelId: "203659477338999", // leave empty if you want to disable the tracker
-        //   cookieName: "gatsby-gdpr-facebook-pixel", // default
-        // },
+        googleTagManager: {
+          trackingId: "", // leave empty if you want to disable the tracker
+          dataLayerName: "dataLayer", // default
+        },
+        facebookPixel: {
+          pixelId: "", // leave empty if you want to disable the tracker
+        },
         // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ["production", "development"],
+        environments: ["production"],
       },
     },
     {

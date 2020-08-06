@@ -24,10 +24,13 @@ const Layout = ({ children }) => {
   const { t } = useTranslation()
 
   const handleOptOut = () => {
-    var disableStr = "ga-disable-" + process.env.GA_KEY
-    document.cookie =
-      disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/"
+    var disableStr = `ga-disable-${process.env.GA_KEY}`
+    document.cookie = `${disableStr}=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`
     window[disableStr] = true
+  }
+
+  const handleAccept = () => {
+    window.location.reload(false)
   }
 
   return (
@@ -38,6 +41,7 @@ const Layout = ({ children }) => {
         location="bottom"
         enableDeclineButton
         onDecline={() => handleOptOut()}
+        onAccept={() => handleAccept()}
         declineButtonText={t("tracking.decline")}
         setDeclineCookie
         declineButtonStyle={{

@@ -178,7 +178,7 @@ function Header() {
     threshold: 0,
   })
 
-  const links = ["blog", "about", "shop", "cart", "my-account"]
+  const links = ["blog", "shop", "cart", "my-account"]
   const mobileLinks = []
   const shopCategories = [
     { en: "rapid-surfing", de: "rapid-surfing-de" },

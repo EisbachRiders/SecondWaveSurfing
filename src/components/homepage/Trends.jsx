@@ -20,25 +20,26 @@ const useStyles = makeStyles((theme) => ({
   },
   innerContainer: {
     display: "flex",
+    flexWrap: "wrap",
     justifyContent: "space-between",
+    [theme.breakpoints.up("md")]: {
+      flexWrap: "nowrap",
+    },
   },
   flexItem: {
     flexBasis: "100%",
     position: "relative",
+    marginBottom: 30,
     [theme.breakpoints.up("md")]: {
       flexBasis: "48%",
+      marginBottom: 0,
     },
   },
   textContainer: {
     position: "absolute",
     bottom: "0%",
     left: "0%",
-    [theme.breakpoints.up("sm")]: {
-      width: "fit-content",
-    },
-    [theme.breakpoints.up("lg")]: {
-      padding: 30,
-    },
+    padding: 30,
   },
   text: {
     color: theme.color.white,
@@ -83,13 +84,13 @@ function Trends() {
             imgStyle={{ objectPosition: "center center" }}
           />
           <div className={classes.textContainer}>
-            <p className={classes.text}>Modern alternative to surf wax</p>
+            <p className={classes.text}> {t("homepage.trends1")}</p>
             <Button
               className={classes.button}
               variant="contained"
               color="primary"
             >
-              More info
+              {t("homepage.moreInfo")}
             </Button>
           </div>
         </div>
@@ -102,15 +103,13 @@ function Trends() {
             imgStyle={{ objectPosition: "center center" }}
           />
           <div className={classes.textContainer}>
-            <p className={classes.text}>
-              Hidden surfboard holder from ecological materials
-            </p>
+            <p className={classes.text}>{t("homepage.trends2")}</p>
             <Button
               className={classes.button}
               variant="contained"
               color="primary"
             >
-              More info
+              {t("homepage.moreInfo")}
             </Button>
           </div>
         </div>
