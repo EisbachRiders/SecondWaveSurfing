@@ -187,7 +187,6 @@ function Header() {
     { en: "leashes", de: "leashes-de" },
     { en: "apparel", de: "kleidung" },
     { en: "accessories", de: "zubehor" },
-    { en: "products", de: "products" },
   ]
 
   return (
@@ -341,6 +340,19 @@ function Header() {
                                       </MenuItem>
                                     </a>
                                   ))}
+                                  <a
+                                    key={`product_link_${elem.en}`}
+                                    href={
+                                      i18n.language === "de"
+                                        ? `https://secondwavesurfing.com/shop/de/produkte/`
+                                        : `https://secondwavesurfing.com/shop/products/`
+                                    }
+                                    className={classes.shopLink}
+                                  >
+                                    <MenuItem onClick={handleCloseShop}>
+                                      {t(`links.products`)}
+                                    </MenuItem>
+                                  </a>
                                 </MenuList>
                               </ClickAwayListener>
                             </Paper>

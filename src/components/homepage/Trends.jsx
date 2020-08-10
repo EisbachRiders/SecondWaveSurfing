@@ -89,6 +89,7 @@ function Trends() {
               className={classes.button}
               variant="contained"
               color="primary"
+              href="https://secondwavesurfing.com/shop/product/van-der-waal-surf-grip/"
             >
               {t("homepage.moreInfo")}
             </Button>
@@ -108,6 +109,7 @@ function Trends() {
               className={classes.button}
               variant="contained"
               color="primary"
+              href="https://secondwavesurfing.com/shop/brand/shepps-gnarwall/"
             >
               {t("homepage.moreInfo")}
             </Button>
