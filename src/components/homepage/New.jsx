@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
+import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
 import Container from "../ui/Container"
@@ -89,6 +90,9 @@ const useStyles = makeStyles((theme) => ({
   button: {
     padding: 0,
   },
+  marginTop: {
+    marginTop: 14,
+  },
 }))
 
 function New() {
@@ -130,6 +134,7 @@ function New() {
             <Button
               variant="contained"
               color="primary"
+              alt="shop this wax"
               href="https://secondwavesurfing.com/shop/product/wax-zam-surf-wax/"
             >
               {t("homepage.moreInfo")}
@@ -139,6 +144,7 @@ function New() {
         <div className={classes.flexItem}>
           <Button
             classes={{ text: classes.button }}
+            alt="shop wax zam wax"
             href="https://secondwavesurfing.com/shop/product/wax-zam-surf-wax/"
           >
             <Img
@@ -150,12 +156,15 @@ function New() {
             />
           </Button>
           <div className={classes.textContainer}>
-            <p className={classes.text}>HIGH PERFORMANCE</p>
-            <p className={classes.text}>HANDMADE IN MUNICH</p>
-            <p className={classes.text}>BIODEGRADABLE & SUSTAINABLE</p>
-            <p className={classes.text}>
-              NO PETROCHEMICALS OR CONVENTIONAL ADHESIVES
-            </p>
+            {[1, 2, 3, 4].map((elem) => (
+              <p
+                className={clsx(classes.text, {
+                  [classes.marginTop]: elem === 1,
+                })}
+              >
+                {t(`homepage.newPoint${elem}`)}
+              </p>
+            ))}
           </div>
         </div>
       </div>

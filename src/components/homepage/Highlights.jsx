@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
-import Button from "@material-ui/core/Button"
+import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
 
 const useStyles = makeStyles((theme) => ({
@@ -21,31 +21,40 @@ const useStyles = makeStyles((theme) => ({
   imgContainer: {
     position: "relative",
   },
-  textContainer: {
-    // position: "absolute",
-    // bottom: "0%",
-    // left: "0%",
-    // [theme.breakpoints.up("sm")]: {
-    //   width: "fit-content",
-    // },
-    // [theme.breakpoints.up("lg")]: {
-    //   padding: 30,
-    // },
-  },
-  text: {
-    color: theme.color.white,
-    fontSize: 20,
-    fontWeight: "bold",
-  },
 }))
 
 function Highlights() {
   const classes = useStyles()
-  const { t } = useTranslation()
+  const { i18n } = useTranslation()
 
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "about-test.png" }) {
+      imageEn: file(relativePath: { eq: "sustainable-surf-solutions-en.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      imageDe: file(relativePath: { eq: "sustainable-surf-solutions-de.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      imageMobileEn: file(
+        relativePath: { eq: "sustainable-surf-solutions-mobile-en.png" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      imageMobileDe: file(
+        relativePath: { eq: "sustainable-surf-solutions-mobile-de.png" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
@@ -57,26 +66,32 @@ function Highlights() {
 
   return (
     <Container className={classes.container}>
-      {/* <h2 className={classes.text}>{t("homepage.highlights")}</h2> */}
-      {/* <div className={classes.imgContainer}> */}
-      <Img
-        fluid={data.image.childImageSharp.fluid}
-        alt="brands"
-        placeholderStyle={{ backgroundColor: `white` }}
-        className={classes.img}
-        imgStyle={{ objectPosition: "center center" }}
-      />
-      {/* <div className={classes.textContainer}>
-          <p className={classes.text}>Exploring with SUP</p>
-          <Button
-            className={classes.button}
-            variant="contained"
-            color="primary"
-          >
-            More info
-          </Button>
-        </div> */}
-      {/* </div> */}
+      <Hidden smDown>
+        <Img
+          fluid={
+            i18n.language === "de"
+              ? data.imageDe.childImageSharp.fluid
+              : data.imageEn.childImageSharp.fluid
+          }
+          alt="brands"
+          placeholderStyle={{ backgroundColor: `white` }}
+          className={classes.img}
+          imgStyle={{ objectPosition: "center center" }}
+        />
+      </Hidden>
+      <Hidden mdUp>
+        <Img
+          fluid={
+            i18n.language === "de"
+              ? data.imageMobileDe.childImageSharp.fluid
+              : data.imageMobileEn.childImageSharp.fluid
+          }
+          alt="brands"
+          placeholderStyle={{ backgroundColor: `white` }}
+          className={classes.img}
+          imgStyle={{ objectPosition: "center center" }}
+        />
+      </Hidden>
     </Container>
   )
 }
