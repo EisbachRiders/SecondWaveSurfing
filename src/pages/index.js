@@ -6,7 +6,6 @@ import Trends from "../components/homepage/Trends"
 import Highlights from "../components/homepage/Highlights"
 import BlogWidget2 from "../components/blog/BlogWidget2"
 import BrandsWidget from "../components/brands/BrandsWidget"
-import About from "../components/homepage/About"
 import New from "../components/homepage/New"
 
 const Homepage = () => {
@@ -16,7 +15,6 @@ const Homepage = () => {
       <Hero />
       <BrandsWidget />
       <Highlights />
-      {/* <About /> */}
       <Trends />
       <New />
       <BlogWidget2 />

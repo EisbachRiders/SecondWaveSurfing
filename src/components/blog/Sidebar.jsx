@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import { Link } from "gatsby-theme-material-ui"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -73,12 +72,7 @@ export default function Sidebar() {
             imgStyle={{ objectPosition: "center center" }}
           />
         </div>
-        <p className={classes.text}>
-          {t("sidebar.about")}
-          <Link to="/about" className={classes.link}>
-            {t("common.more")}...
-          </Link>
-        </p>
+        <p className={classes.text}>{t("sidebar.about")}</p>
       </Paper>
 
       {/* <Paper className={classes.paper} square elevation={0}>

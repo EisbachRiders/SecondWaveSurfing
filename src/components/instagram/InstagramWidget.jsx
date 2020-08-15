@@ -58,7 +58,7 @@ const InstagramWidget = () => {
   const data = useStaticQuery(graphql`
     query {
       allInstaNode(
-        filter: { username: { eq: "8544844204" } }
+        filter: { username: { eq: "27192288280" } }
         sort: { fields: timestamp, order: DESC }
         limit: 6
       ) {

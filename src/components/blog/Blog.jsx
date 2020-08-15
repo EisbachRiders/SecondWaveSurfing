@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Paper from "@material-ui/core/Paper"
 import Hidden from "@material-ui/core/Hidden"
+import Button from "@material-ui/core/Button"
 import Container from "../ui/Container"
 import Sidebar from "./Sidebar"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
@@ -112,6 +113,9 @@ const useStyles = makeStyles((theme) => ({
   blogImgLink: {
     width: "100%",
     height: 300,
+    "&:hover": {
+      textDecoration: "none",
+    },
     [theme.breakpoints.up("sm")]: {
       width: 300,
       height: 250,
@@ -239,6 +243,15 @@ const useStyles = makeStyles((theme) => ({
       background: theme.palette.primary.main,
     },
   },
+  imgContainer: {
+    position: "relative",
+  },
+  buttonContainer: {
+    position: "absolute",
+    bottom: "0%",
+    left: "0%",
+    padding: 30,
+  },
 }))
 
 const Blog = ({ posts, tag, numPages, currentPage }) => {
@@ -329,10 +342,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       {elem.node.frontmatter.title}
                     </Typography>
                   </Link>
-                  <Link
-                    to={elem.node.fields.slug}
-                    className={classes.blogImgLink}
-                  >
+                  <div className={classes.imgContainer}>
                     <Img
                       alt={`blog image ${idx}`}
                       fluid={
@@ -341,7 +351,17 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       }
                       className={classes.blogImgFirst}
                     />
-                  </Link>
+                    <div className={classes.buttonContainer}>
+                      <Link
+                        to={elem.node.fields.slug}
+                        className={classes.blogImgLink}
+                      >
+                        <Button variant="contained" color="primary">
+                          {t("blog.more")}
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
                   <p>{elem.node.frontmatter.description}</p>
                 </Paper>
               ) : (
