@@ -69,7 +69,7 @@ function AboutDetail() {
         <Img
           fluid={images.community.childImageSharp.fluid}
           alt="wave"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          placeholderStyle={{ backgroundColor: `lightgray` }}
           className={classes.img}
           imgStyle={{ objectPosition: "center center" }}
         />
@@ -86,7 +86,7 @@ function AboutDetail() {
         <Img
           fluid={images.sustainability.childImageSharp.fluid}
           alt="wave"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          placeholderStyle={{ backgroundColor: `lightgray` }}
           className={classes.img}
           imgStyle={{ objectPosition: "center center" }}
         />

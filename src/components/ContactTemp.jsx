@@ -1,15 +1,28 @@
 import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
 import Snackbar from "@material-ui/core/Snackbar"
+import Hidden from "@material-ui/core/Hidden"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import Notification from "./ui/Snackbar"
 import Container from "./ui/Container"
 
 const useStyles = makeStyles((theme) => ({
+  banner: {
+    height: 150,
+    [theme.breakpoints.up("sm")]: {
+      height: 300,
+    },
+  },
+  bannerImg: {
+    width: "100%",
+    height: "100%",
+  },
   text: {
     color: theme.palette.common.black,
     fontSize: 12,
@@ -81,6 +94,25 @@ function ContactTemp() {
   const [isSnackbarOpen, setSnackbar] = useState(false)
   const [notification, setNotification] = useState("success")
   const [isLoading, setLoading] = useState(false)
+
+  const data = useStaticQuery(graphql`
+    query {
+      banner: file(relativePath: { in: "blogBanner.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bannerMobile: file(relativePath: { in: "blogBannerMobile.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
   const handleChange = (name) => (event) => {
     if (!isTouched) {
@@ -180,6 +212,26 @@ function ContactTemp() {
           }
         />
       </Snackbar>
+      <div className={classes.banner}>
+        <Hidden smUp>
+          <Img
+            alt={`surfers sitting in water`}
+            fluid={data.bannerMobile.childImageSharp.fluid}
+            placeholderStyle={{ backgroundColor: `lightgray` }}
+            className={classes.bannerImg}
+            imgStyle={{ objectPosition: "top center" }}
+          />
+        </Hidden>
+        <Hidden xsDown>
+          <Img
+            alt={`surfers sitting in water`}
+            fluid={data.banner.childImageSharp.fluid}
+            placeholderStyle={{ backgroundColor: `lightgray` }}
+            className={classes.bannerImg}
+            imgStyle={{ objectPosition: "top center" }}
+          />
+        </Hidden>
+      </div>
       <Container justifyContent="center">
         <form noValidate autoComplete="off" className={classes.form}>
           <Typography className={classes.textHeading} variant="h5">

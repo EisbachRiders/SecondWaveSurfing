@@ -19,16 +19,16 @@ const variantIcon = {
 
 const useStyles = makeStyles((theme) => ({
   success: {
-    backgroundColor: theme.status.fin,
+    backgroundColor: theme.color.greenLt,
   },
   error: {
-    backgroundColor: theme.status.redLt,
+    backgroundColor: theme.color.redLt,
   },
   info: {
-    backgroundColor: theme.status.blueLt2,
+    backgroundColor: theme.color.blueLt2,
   },
   warning: {
-    backgroundColor: theme.status.yellow,
+    backgroundColor: theme.color.yellow,
   },
   icon: {
     fontSize: 20,

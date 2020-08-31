@@ -20,7 +20,7 @@ function FeaturedProduct() {
       fileName: file(relativePath: { eq: "featured.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -32,7 +32,7 @@ function FeaturedProduct() {
       <Img
         fluid={data.fileName.childImageSharp.fluid}
         alt="featured product"
-        placeholderStyle={{ backgroundColor: `blue` }}
+        backgroundColor="lightgray"
         className={classes.img}
         imgStyle={{ objectPosition: "center center" }}
       />

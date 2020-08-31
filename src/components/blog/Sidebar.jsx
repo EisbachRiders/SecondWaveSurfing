@@ -8,7 +8,7 @@ import Paper from "@material-ui/core/Paper"
 import Hidden from "@material-ui/core/Hidden"
 import LatestPosts from "./LatestPosts"
 import PopularPosts from "./PopularPosts"
-import InstagramWidget from "../instagram/InstagramWidget"
+// import InstagramWidget from "../instagram/InstagramWidget"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -67,7 +67,7 @@ export default function Sidebar() {
           <Img
             fluid={data.fileName.childImageSharp.fluid}
             alt="2 friends sitting together"
-            placeholderStyle={{ backgroundColor: `blue` }}
+            placeholderStyle={{ backgroundColor: `lightgray` }}
             className={classes.img}
             imgStyle={{ objectPosition: "center center" }}
           />
@@ -114,7 +114,7 @@ export default function Sidebar() {
 
       <Paper className={classes.paper} square elevation={0}>
         <p className={classes.title}>Instagram</p>
-        <InstagramWidget />
+        {/* <InstagramWidget /> */}
       </Paper>
     </>
   )

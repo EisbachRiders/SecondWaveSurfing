@@ -284,7 +284,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
           <Img
             alt={`surfers sitting in water`}
             fluid={data.bannerMobile.childImageSharp.fluid}
-            placeholderStyle={{ backgroundColor: `blue` }}
+            placeholderStyle={{ backgroundColor: `lightgray` }}
             className={classes.bannerImg}
             imgStyle={{ objectPosition: "top center" }}
           />
@@ -293,7 +293,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
           <Img
             alt={`surfers sitting in water`}
             fluid={data.banner.childImageSharp.fluid}
-            placeholderStyle={{ backgroundColor: `blue` }}
+            placeholderStyle={{ backgroundColor: `lightgray` }}
             className={classes.bannerImg}
             imgStyle={{ objectPosition: "top center" }}
           />

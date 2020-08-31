@@ -48,9 +48,9 @@
     "moreInfo": "mehr info",
     "new": "Neu",
     "newPoint1": "HIGH PERFORMANCE",
-    "newPoint2": "HANDMADE IN MUNICH",
-    "newPoint3": "BIODEGRADABLE & SUSTAINABLE",
-    "newPoint4": "NO PETROCHEMICALS OR CONVENTIONAL ADHESIVES"
+    "newPoint2": "HANDGEFERTIGT IN MÜNCHEN",
+    "newPoint3": "BIOLOGISCH ABBAUBAR & NACHHALTIG",
+    "newPoint4": "FREI VON PETROCHEMIE UND SYNTHETISCHEN KLEBSTOFFEN"
   },
   "newsletter": {
     "stayintouch1": "Bleib auf dem neusten Stand ",
@@ -74,7 +74,11 @@
   },
   "blog": {
     "subMenuMobile": "Ich suche nach",
-    "more": "weiter lesen"
+    "more": "weiter lesen",
+    "technicalData:": "technische daten",
+    "positives": "positives",
+    "negatives": "negatives",
+    "buy": "buy now"
   },
   "footer": {
     "message": "Schreib uns",
@@ -136,7 +140,7 @@
     "global": "globale Organisationen",
     "provide the slide": "Provide the Slide konzentriert sich darauf, Bretter, Wellen und Menschen zusammenzubringen. Während einer Reise nach Liberia sahen sie einen Bedarf an Surfbrettern, was angesichts der Schönheit der Wellen in der Gegend eine Schande war. Der Gedanke an all die unbenutzten Surfbretter da draußen, die einen besseren Zweck erfüllen würden, gründete dieses Projekt. Durch die Spende eines gebrauchten Surfbretts an diese Stiftung bringt PROVIDETHESLIDE die Boards dorthin, wo sie gebraucht und gesurft werden. Sie ermöglichen es den Einheimischen, zu surfen und das Surfen an andere weiterzugeben sowie ein geringes Einkommen rund um den Sport zu generieren (z. B. mit einem kleinen Laden, Boardverleih, Boardreparatur usw.). Wenn Sie also ein neues Board bekommen und nach einer guten Verwendung für Ihr altes Board suchen, können wir dies nicht genug empfehlen!",
     "Interessengemeinschaft Surfen in München": "Die Interessengemeinschaft Surfen in München eV ist ein eingetragener Verein, der sich um alle Angelegenheiten des Flusssurfens in München kümmert. Sie setzen sich dafür ein, bestehende Wellen in und um die Stadt zu erhalten, für neue Surfspots zu kämpfen, mit den politischen Organen der Stadt zu verhandeln und den Jugendlichen zu helfen, diesen Sport auszuüben.",
-    "Wirmachenwelle": "Wir Machen Welle ist die erste deutschlandweite Surforganisation, die sich mit der sozialen und therapeutischen Wirkung des Sports befasst. Das Programm 'Surf's Up Germany' fördert das persönliche Wachstum junger Menschen untereinander und unter allen Beteiligten. Sie schaffen eine einzigartige und nachhaltige Erfahrung, die jungen Menschen nicht nur unterschiedliche Perspektiven zeigt, sondern sie auch motiviert, ihre zukünftige „Welt des Lebens und Arbeitens“ und der Gemeinschaft positiv zu verändern. 'Wirmachenwelle' setzt sich für mehr Chancengleichheit bei der Entwicklung und Ausbildung junger Menschen ein. Sie sind überzeugt, dass das Surfen das Leben jedes Einzelnen nicht nur verändert, sondern auch verbessert.",
+    "Wirmachenwelle": "Wir Machen Welle ist die erste deutschlandweite Surforganisation, die sich mit der sozialen und therapeutischen Wirkung des Sports befasst. Das Programm 'Surf's Up Germany' fördert das persönliche Wachstum junger Menschen untereinander und unter allen Beteiligten. Sie schaffen eine einzigartige und nachhaltige Erfahrung, die jungen Menschen nicht nur unterschiedliche Perspektiven zeigt, sondern sie auch motiviert, ihre zukünftige 'Welt des Lebens und Arbeitens' und der Gemeinschaft positiv zu verändern. 'Wirmachenwelle' setzt sich für mehr Chancengleichheit bei der Entwicklung und Ausbildung junger Menschen ein. Sie sind überzeugt, dass das Surfen das Leben jedes Einzelnen nicht nur verändert, sondern auch verbessert.",
     "Surfrider Foundation": "Die Surfrider Foundation widmet sich dem Schutz und Genuss des Ozeans, der Wellen und Strände der Welt durch ein starkes Aktivistennetzwerk.",
     "Ocean Conservancy": "Ocean Conservancy arbeitet mit Ihnen zusammen, um den Ozean vor den größten globalen Herausforderungen von heute zu schützen. The Ocean Conservancy schafft wissenschaftlich fundierte Lösungen für einen gesunden Ozean und die davon abhängigen Wildtiere und Gemeinschaften.",
     "The Ocean Cleanup": "The Ocean Cleanup ist eine gemeinnützige Organisation, die fortschrittliche Technologien entwickelt, um die Weltmeere von Plastik zu befreien. Durch die Nutzung der Meeresströmungen zu unserem Vorteil wird geschätzt, dass unsere passiven Driftsysteme in 5 Jahren die Hälfte des Great Pacific Garbage Patch beseitigen.",
@@ -148,7 +152,7 @@
     "singleFin_question": "Ich habe eine meiner Finnen gebrochen oder verloren. Gibt es die Mittel- oder Seitenflossen auch separat?",
     "singleFin_answer": "Aktuell haben wir Finnen nicht einzeln verfügbard, außer natürlich bei den US-Box Single Fins. Manchmal haben wir jedoch einzele Finnen aus Retouren oder Promo-Sets in unserem Lager. Schreib uns einfach kurz und wir prüfen, was wir zur Verfügung haben.",
     "finSize_question": "Welche Finnengröße ist die beste für mich - klein, mittel oder groß?",
-    "finSize_answer": "Surfbrettfinnen gibt es in verschiedenen Größen und Formen um Deinem persönlichen Surfstil zu entsprechen. Für das gängigste Thruster-Finnen-Setup mit drei Finnen kannst Du zwischen kleinen, mittleren und großen Finnen wählen. Größere Flossen bedeuten mehr Halt und verhindern das das Tail über das Wasser rutscht, da mehr Oberfläche mit dem Wasser in Kontakt kommt. Kleinere sorgen dagegen für ein „lockereres“ Gefühl. Generell richtet sich die Finnengröße nach dem Gewicht des Surfers. Wenn Du zwischen zwei Größen liegen solltest, empfehlen wir für Beginner und Intermediate Surfer die größere Variante zu wählen.",
+    "finSize_answer": "Surfbrettfinnen gibt es in verschiedenen Größen und Formen um Deinem persönlichen Surfstil zu entsprechen. Für das gängigste Thruster-Finnen-Setup mit drei Finnen kannst Du zwischen kleinen, mittleren und großen Finnen wählen. Größere Flossen bedeuten mehr Halt und verhindern das das Tail über das Wasser rutscht, da mehr Oberfläche mit dem Wasser in Kontakt kommt. Kleinere sorgen dagegen für ein 'lockereres' Gefühl. Generell richtet sich die Finnengröße nach dem Gewicht des Surfers. Wenn Du zwischen zwei Größen liegen solltest, empfehlen wir für Beginner und Intermediate Surfer die größere Variante zu wählen.",
     "incorrectFit_question": "Die Finnen passen nicht in mein Surfbrett",
     "incorrectFit_answer": "Der Bau eines Surfbretts ist ein wahres Handwerk und manchmal gibt es kleinere Toleranzen zwischen den verschiedenen Finnen-Setups und Surfbrettformen. Dies kann besonders bei Boards mit separaten FCS I-Plugs für jede Finnen auftreten, da diese mithilfe einer einer Template-Finne im Surfbrett positioniert werden. Bei FCS I Sana-, Future- oder FCS II-Steckern sollte dieses Problem nicht auftreten. Wenn Du feststellst, dass die Finnen nicht passen, kannst Du sie natürlich zurückgeben. Wir würden uns freuen, Dir bei der Suche nach etwas Passenden für Dein Board behilflich zu sein!",
     "finTypes_question": "Was ist der Unterschied zwischen Kunststoff-, Glasfaser- und Finnen mit Honigwabenkern?",

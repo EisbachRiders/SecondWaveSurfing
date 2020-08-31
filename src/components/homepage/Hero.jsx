@@ -22,14 +22,14 @@ function Hero() {
       hero: file(relativePath: { eq: "hero.png" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
       heroMobile: file(relativePath: { eq: "heroMobile.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -42,8 +42,9 @@ function Hero() {
         <Img
           fluid={data.heroMobile.childImageSharp.fluid}
           alt="wave"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          backgroundColor="lightgray"
           className={classes.img}
+          loading="eager"
           imgStyle={{ objectPosition: "center center" }}
         />
       </Hidden>
@@ -51,8 +52,9 @@ function Hero() {
         <Img
           fluid={data.hero.childImageSharp.fluid}
           alt="wave"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          backgroundColor="lightgray"
           className={classes.img}
+          loading="eager"
           imgStyle={{ objectPosition: "top center" }}
         />
       </Hidden>

@@ -57,7 +57,7 @@ function Founders() {
       <Img
         fluid={images.robin.childImageSharp.fluid}
         alt="wave"
-        placeholderStyle={{ backgroundColor: `blue` }}
+        placeholderStyle={{ backgroundColor: `lightgray` }}
         className={classes.img}
         imgStyle={{ objectPosition: "center center" }}
       />
@@ -65,7 +65,7 @@ function Founders() {
         <Img
           fluid={images.michi.childImageSharp.fluid}
           alt="wave"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          placeholderStyle={{ backgroundColor: `lightgray` }}
           className={classes.img}
           imgStyle={{ objectPosition: "center center" }}
         />
@@ -79,7 +79,7 @@ function Founders() {
         <Img
           fluid={images.michi.childImageSharp.fluid}
           alt="wave"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          placeholderStyle={{ backgroundColor: `lightgray` }}
           className={classes.img}
           imgStyle={{ objectPosition: "center center" }}
         />

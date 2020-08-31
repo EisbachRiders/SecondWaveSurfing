@@ -55,13 +55,10 @@ const useStyles = makeStyles((theme) => ({
 
 const InstagramWidget = () => {
   const classes = useStyles()
+  const data = []
   const data = useStaticQuery(graphql`
     query {
-      allInstaNode(
-        filter: { username: { eq: "27192288280" } }
-        sort: { fields: timestamp, order: DESC }
-        limit: 6
-      ) {
+      allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 6) {
         edges {
           node {
             likes
@@ -94,7 +91,7 @@ const InstagramWidget = () => {
           <Img
             fluid={elem.node.localFile.childImageSharp.fluid}
             alt={`instagram ${idx}`}
-            placeholderStyle={{ backgroundColor: `blue` }}
+            placeholderStyle={{ backgroundColor: `lightgray` }}
             className={classes.img}
           />
           <div className={classes.overlay}>

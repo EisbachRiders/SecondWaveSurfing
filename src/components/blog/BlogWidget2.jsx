@@ -142,7 +142,7 @@ const BlogWidget2 = () => {
                             .fluid
                         }
                         alt={elem.path}
-                        placeholderStyle={{ backgroundColor: `blue` }}
+                        placeholderStyle={{ backgroundColor: `lightgray` }}
                         className={classes.img}
                         imgStyle={{ objectPosition: "center center" }}
                       />
@@ -186,7 +186,7 @@ const BlogWidget2 = () => {
                             .fluid
                         }
                         alt={elem.path}
-                        placeholderStyle={{ backgroundColor: `blue` }}
+                        placeholderStyle={{ backgroundColor: `lightgray` }}
                         className={classes.img}
                         imgStyle={{ objectPosition: "center center" }}
                       />
@@ -213,7 +213,7 @@ const BlogWidget2 = () => {
                           .fluid
                       }
                       alt={elem.path}
-                      placeholderStyle={{ backgroundColor: `blue` }}
+                      placeholderStyle={{ backgroundColor: `lightgray` }}
                       className={classes.img}
                       imgStyle={{ objectPosition: "center center" }}
                     />
@@ -253,7 +253,7 @@ const BlogWidget2 = () => {
                           .fluid
                       }
                       alt={elem.path}
-                      placeholderStyle={{ backgroundColor: `blue` }}
+                      placeholderStyle={{ backgroundColor: `lightgray` }}
                       className={classes.img}
                       imgStyle={{ objectPosition: "center center" }}
                     />

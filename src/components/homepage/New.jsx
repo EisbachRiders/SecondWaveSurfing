@@ -158,6 +158,7 @@ function New() {
           <div className={classes.textContainer}>
             {[1, 2, 3, 4].map((elem) => (
               <p
+                key={`text${elem}`}
                 className={clsx(classes.text, {
                   [classes.marginTop]: elem === 1,
                 })}

@@ -130,7 +130,7 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
               <Img
                 alt={mdx.frontmatter.title}
                 fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
-                placeholderStyle={{ backgroundColor: `blue` }}
+                placeholderStyle={{ backgroundColor: `lightgray` }}
                 className={classes.featuredImg}
               />
               <MDXProvider components={shortcodes}>

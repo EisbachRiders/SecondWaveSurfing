@@ -103,7 +103,11 @@
   },
   "blog": {
     "subMenuMobile": "I'm looking for",
-    "more": "read more"
+    "more": "read more",
+    "technicalData": "technical data",
+    "positives": "positives",
+    "negatives": "negatives",
+    "buy": "buy now"
   },
   "common": {
     "about": "about",

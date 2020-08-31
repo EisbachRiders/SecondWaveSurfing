@@ -115,7 +115,7 @@ function FrequentlyAskedQuestions() {
         <Img
           fluid={data.fileName.childImageSharp.fluid}
           alt="surfer putting on leash"
-          placeholderStyle={{ backgroundColor: `blue` }}
+          placeholderStyle={{ backgroundColor: `lightgray` }}
           className={classes.backgroundImg}
           imgStyle={{ objectPosition: "center center" }}
         />

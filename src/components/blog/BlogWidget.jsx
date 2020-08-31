@@ -101,7 +101,7 @@ const BlogWidget = () => {
                   elem.node.frontmatter.featuredImage.childImageSharp.fluid
                 }
                 alt={elem.path}
-                placeholderStyle={{ backgroundColor: `blue` }}
+                placeholderStyle={{ backgroundColor: `lightgray` }}
                 className={classes.img}
                 imgStyle={{ objectPosition: "center center" }}
               />

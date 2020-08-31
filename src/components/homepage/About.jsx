@@ -40,7 +40,7 @@ function About() {
       image: file(relativePath: { eq: "brands.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -56,7 +56,7 @@ function About() {
       <Img
         fluid={data.image.childImageSharp.fluid}
         alt="brands"
-        placeholderStyle={{ backgroundColor: `white` }}
+        backgroundColor="lightgray"
         className={classes.img}
         imgStyle={{ objectPosition: "center center" }}
       />

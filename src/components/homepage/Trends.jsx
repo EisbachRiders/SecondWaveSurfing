@@ -58,14 +58,14 @@ function Trends() {
       image1: file(relativePath: { eq: "van-der-waal-surf-grip.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
       image2: file(relativePath: { eq: "gnarwall-surfboard-hanging.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -80,7 +80,7 @@ function Trends() {
           <Img
             fluid={data.image1.childImageSharp.fluid}
             alt="brands"
-            placeholderStyle={{ backgroundColor: `white` }}
+            backgroundColor="lightgray"
             className={classes.img}
             imgStyle={{ objectPosition: "center center" }}
           />
@@ -101,7 +101,7 @@ function Trends() {
           <Img
             fluid={data.image2.childImageSharp.fluid}
             alt="brands"
-            placeholderStyle={{ backgroundColor: `white` }}
+            backgroundColor="lightgray"
             className={classes.img}
             imgStyle={{ objectPosition: "center center" }}
           />
