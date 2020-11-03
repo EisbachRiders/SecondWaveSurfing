@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
@@ -165,12 +165,12 @@ export default function ProductReview({
 
   return (
     <Container flexDirection="column" flexWrap="nowrap">
-      <div className={classes.titleContainer}>
+      {/* <div className={classes.titleContainer}>
         <div className={classes.reviewContainer}>
           <p className={classes.rating}>{rating}</p>
           <div className={classes.starsContainer}>
             {[1, 2, 3, 4, 5].map((elem) => (
-              <>
+              <Fragment key={elem}>
                 {elem < rating ? (
                   <StarIcon className={classes.star} key={`star${elem}`} />
                 ) : rating % 1 !== 0 && Math.floor(rating) === elem - 1 ? (
@@ -181,7 +181,7 @@ export default function ProductReview({
                     key={`star${elem}`}
                   />
                 )}
-              </>
+              </Fragment>
             ))}
           </div>
         </div>
@@ -211,7 +211,7 @@ export default function ProductReview({
         <div className={classes.flexItem}>
           <p className={classes.subtitle2}>{t("blog.positives")}</p>
           {pros.map((elem) => (
-            <div className={classes.listItemContainer}>
+            <div className={classes.listItemContainer} key={`pro-${elem}`}>
               <div className={classes.dot}></div>
               <p className={classes.pro}>{elem}</p>
             </div>
@@ -220,7 +220,7 @@ export default function ProductReview({
         <div className={classes.flexItem}>
           <p className={classes.subtitle2}>{t("blog.negatives")}</p>
           {cons.map((elem) => (
-            <div className={classes.listItemContainer}>
+            <div className={classes.listItemContainer} key={`con-${elem}`}>
               <div className={classes.dot}></div>
               <p className={classes.pro}>{elem}</p>
             </div>
@@ -236,7 +236,7 @@ export default function ProductReview({
         >
           {t("blog.buy")}
         </Button>
-      </div>
+      </div> */}
     </Container>
   )
 }

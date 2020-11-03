@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
 import er from "../../assets/logos/eisbach-riders.svg"
 import shepps from "../../assets/logos/shepps-gnarwall.png"
-import beeSwell from "../../assets/logos/bee-sweel-logo.jpg"
+import waxzam from "../../assets/logos/waxzam.png"
 import vanderwaal from "../../assets/logos/van-der-waal-logo.png"
 import greenfix from "../../assets/logos/greenfix.png"
 
@@ -33,7 +33,7 @@ function BrandsWidget() {
   const brands = [
     { name: "eisbach riders", img: er, link: "eisbach-riders" },
     { name: "shepps gnarwall", img: shepps, link: "shepps-gnarwall" },
-    { name: "bee swell", img: beeSwell, link: "bee-swell" },
+    { name: "waxzam", img: waxzam, link: "wax-zam" },
     { name: "van der waal", img: vanderwaal, link: "van-der-waal" },
     { name: "greenfix", img: greenfix, link: "greenfix" },
   ]

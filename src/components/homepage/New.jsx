@@ -93,6 +93,9 @@ const useStyles = makeStyles((theme) => ({
   marginTop: {
     marginTop: 14,
   },
+  img3: {
+    marginBottom: 30,
+  },
 }))
 
 function New() {
@@ -115,12 +118,20 @@ function New() {
           }
         }
       }
+      image3: file(relativePath: { eq: "quickLockAD.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
     <Container className={classes.container}>
       <h2 className={classes.header}>{t("homepage.new")}</h2>
+
       <div className={classes.innerContainer}>
         <div className={classes.flexItemImg}>
           <Img

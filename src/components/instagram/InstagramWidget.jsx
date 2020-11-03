@@ -55,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
 
 const InstagramWidget = () => {
   const classes = useStyles()
-  const data = []
   const data = useStaticQuery(graphql`
     query {
       allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 6) {
