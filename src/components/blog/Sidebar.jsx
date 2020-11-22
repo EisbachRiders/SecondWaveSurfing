@@ -8,7 +8,7 @@ import Paper from "@material-ui/core/Paper"
 import Hidden from "@material-ui/core/Hidden"
 import LatestPosts from "./LatestPosts"
 import PopularPosts from "./PopularPosts"
-// import InstagramWidget from "../instagram/InstagramWidget"
+import InstagramWidget from "../instagram/InstagramWidget"
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -114,7 +114,7 @@ export default function Sidebar() {
 
       <Paper className={classes.paper} square elevation={0}>
         <p className={classes.title}>Instagram</p>
-        {/* <InstagramWidget /> */}
+        <InstagramWidget />
       </Paper>
     </>
   )
