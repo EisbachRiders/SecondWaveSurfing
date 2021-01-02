@@ -55,6 +55,8 @@
   "newsletter": {
     "stayintouch1": "Bleib auf dem neusten Stand ",
     "stayintouch2": "mit Infos zu Produkten und Evenets!",
+    "stayintouch3": "Verpass die Veröffentlichung nicht",
+    "stayintouch4": "und trag Dich in den Newsletter ein!!",
     "signup": "Anmelden",
     "consent": "Ja, ich möchte E-Mails von Second Wave Surfing erhalten!",
     "subscribe": "Trag dich ein",
@@ -78,7 +80,8 @@
     "technicalData:": "technische daten",
     "positives": "positives",
     "negatives": "negatives",
-    "buy": "buy now"
+    "buy": "buy now",
+    "updated": "aktualiseirt am:"
   },
   "footer": {
     "message": "Schreib uns",

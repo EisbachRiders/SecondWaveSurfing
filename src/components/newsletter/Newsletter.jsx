@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Newsletter() {
+function Newsletter({ variant }) {
   const classes = useStyles()
   const theme = useTheme()
   const fullScreen = useMediaQuery(theme.breakpoints.down("xs"))
@@ -156,10 +156,21 @@ function Newsletter() {
       />
       <div className={classes.root}>
         <div className={classes.textContainer}>
-          <p className={classes.text}>{t("newsletter.stayintouch1")}</p>
-          <p className={clsx(classes.text, classes.textIndent)}>
-            {t("newsletter.stayintouch2")}
-          </p>
+          {variant === "blog" ? (
+            <>
+              <p className={classes.text}>{t("newsletter.stayintouch3")}</p>
+              <p className={clsx(classes.text, classes.textIndent)}>
+                {t("newsletter.stayintouch4")}
+              </p>
+            </>
+          ) : (
+            <>
+              <p className={classes.text}>{t("newsletter.stayintouch1")}</p>
+              <p className={clsx(classes.text, classes.textIndent)}>
+                {t("newsletter.stayintouch2")}
+              </p>
+            </>
+          )}
         </div>
         <Button
           variant="contained"

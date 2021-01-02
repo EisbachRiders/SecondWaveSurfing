@@ -61,6 +61,8 @@
   "newsletter": {
     "stayintouch1": "Stay in touch with all the ",
     "stayintouch2": "latest news and products!",
+    "stayintouch3": "Don’t miss the pre-sales",
+    "stayintouch4": "join our mailing list today!",
     "signup": "sign up",
     "consent": "Yes, I would like to receive emails from Second Wave Surfing!",
     "subscribe": "subscribe",
@@ -107,7 +109,8 @@
     "technicalData": "technical data",
     "positives": "positives",
     "negatives": "negatives",
-    "buy": "buy now"
+    "buy": "buy now",
+    "updated": "updated on:"
   },
   "common": {
     "about": "about",

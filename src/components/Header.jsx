@@ -297,7 +297,7 @@ function Header() {
                             ? "https://secondwavesurfing.com/shop/de/"
                             : "https://secondwavesurfing.com/shop/"
                         }
-                        className={classes.buttonOverride}
+                        className={clsx(classes.link, classes.buttonOverride)}
                       >
                         {elem}
                       </Button>

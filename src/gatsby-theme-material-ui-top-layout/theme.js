@@ -57,7 +57,7 @@ const theme = createMuiTheme({
   },
   color,
   typography: {
-    fontFamily: "'Raleway', sans-serif",
+    fontFamily: ["Raleway", "sans-serif"].join(","),
     h1: {
       letterSpacing: 2,
     },

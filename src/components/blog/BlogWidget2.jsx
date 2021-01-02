@@ -98,7 +98,7 @@ const BlogWidget2 = () => {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
-        sort: { fields: frontmatter___date, order: ASC }
+        sort: { fields: frontmatter___date, order: DESC }
         limit: 4
         filter: { frontmatter: { label: { in: "article" } } }
       ) {

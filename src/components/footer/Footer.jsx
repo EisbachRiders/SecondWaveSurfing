@@ -11,16 +11,17 @@ import PinterestIcon from "@material-ui/icons/Pinterest"
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer"
 import ReplyIcon from "@material-ui/icons/Reply"
 import LocalShippingIcon from "@material-ui/icons/LocalShipping"
-import Newsletter from "./newsletter/Newsletter"
-import Container from "./ui/Container"
-import Contact from "./Contact"
-import logo from "../assets/logos/logo.png"
-import visa from "../assets/logos/visa.svg"
-import amex from "../assets/logos/american-express.svg"
-import amazonpay from "../assets/logos/amazonpay.png"
-import mastercard from "../assets/logos/mastercard.svg"
-import banktransfer from "../assets/logos/bank-transfer.svg"
-import paypal from "../assets/logos/paypal.svg"
+import Newsletter from "../newsletter/Newsletter"
+import Container from "../ui/Container"
+import Contact from "../Contact"
+import BottomFooter from "./BottomFooter"
+import logo from "../../assets/logos/logo.png"
+import visa from "../../assets/logos/visa.svg"
+import amex from "../../assets/logos/american-express.svg"
+import amazonpay from "../../assets/logos/amazonpay.png"
+import mastercard from "../../assets/logos/mastercard.svg"
+import banktransfer from "../../assets/logos/bank-transfer.svg"
+import paypal from "../../assets/logos/paypal.svg"
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -49,29 +50,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 12,
     [theme.breakpoints.up("md")]: {
       fontSize: 16,
-    },
-  },
-  copyrightContainer: {
-    display: "flex",
-    flexWrap: "wrap",
-    alignItems: "center",
-    color: theme.color.white,
-    paddingTop: 10,
-    [theme.breakpoints.up("sm")]: {
-      paddingTop: 0,
-    },
-  },
-  textSmall: {
-    color: theme.color.white,
-    fontSize: 12,
-    textTransform: "capitalize",
-    letterSpacing: 2,
-    fontWeight: 500,
-    padding: "0 10px",
-    width: "49%",
-    textAlign: "center",
-    [theme.breakpoints.up("sm")]: {
-      width: "fit-content",
     },
   },
   link: {
@@ -165,12 +143,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("md")]: {
       fontSize: 12,
-    },
-  },
-  copyright: {
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "fit-content",
     },
   },
   paymentsContainer: {
@@ -326,39 +298,7 @@ function Footer() {
         </Hidden>
       </Container>
 
-      <Container
-        justifyContent="spaceBetween"
-        background="black"
-        alignItems="center"
-        padding="none"
-      >
-        <div className={classes.copyrightContainer}>
-          <Link
-            to="/dataProtection"
-            className={clsx(classes.textSmall, classes.link)}
-          >
-            {t("links.data")}
-          </Link>
-          |
-          <Link
-            to="/termsAndConditions"
-            className={clsx(classes.textSmall, classes.link)}
-          >
-            {t("links.terms")}
-          </Link>
-          <Hidden smDown>|</Hidden>
-          <Link to="/imprint" className={clsx(classes.textSmall, classes.link)}>
-            {t("links.imprint")}
-          </Link>
-          |
-          <Link to="/credit" className={clsx(classes.textSmall, classes.link)}>
-            {t("links.credit")}
-          </Link>
-        </div>
-        <p className={clsx(classes.textSmall, classes.copyright)}>
-          &copy; SecondWaveSurfing
-        </p>
-      </Container>
+      <BottomFooter />
     </footer>
   )
 }

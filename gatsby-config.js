@@ -75,6 +75,17 @@ module.exports = {
         ],
       },
     },
+    // {
+    //   resolve: "gatsby-source-wordpress-experimental",
+    //   options: {
+    //     url: `https://secondwavesurfing.com/shop/graphql`,
+    //     schema: {
+    //       requestConcurrency: 1, // currently set to undefined
+    //       previewRequestConcurrency: 1, // currently set to undefined
+    //       timeout: 100000,
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-source-instagram`,
       options: {
@@ -118,10 +129,27 @@ module.exports = {
         icon: `${__dirname}/src/assets/logos/logo.png`,
       },
     },
-    "gatsby-theme-material-ui",
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-sitemap`,
+    "gatsby-plugin-emotion",
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Raleway`,
+                variants: [`300`, `400`, `500`],
+              },
+            ],
+          },
+        },
+      },
+    },
   ],
 }

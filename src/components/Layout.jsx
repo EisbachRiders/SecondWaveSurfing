@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 import CookieConsent from "react-cookie-consent"
 import { makeStyles } from "@material-ui/core/styles"
 import Header from "./Header"
-import Footer from "./Footer"
+import Footer from "./footer/Footer"
 import { Link } from "gatsby-theme-material-ui"
 import "../i18n/i18n"
 

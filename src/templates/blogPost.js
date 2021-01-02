@@ -17,6 +17,12 @@ const useStyles = makeStyles((theme) => ({
   h1: {
     fontSize: 18,
     textAlign: "center",
+    marginBottom: 15,
+  },
+  caption: {
+    fontSize: 10,
+    textAlign: "center",
+    textTransform: "capitalize",
     marginBottom: 30,
     [theme.breakpoints.up("lg")]: {
       marginBottom: 60,
@@ -127,6 +133,9 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
           <div className={classes.blog}>
             <article>
               <h1 className={classes.h1}>{mdx.frontmatter.title}</h1>
+              <p className={classes.caption}>
+                {t("blog.updated")} {mdx.frontmatter.date.split("T")[0]}
+              </p>
               <Img
                 alt={mdx.frontmatter.title}
                 fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
@@ -177,6 +186,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        date
         description
         featuredImage {
           childImageSharp {

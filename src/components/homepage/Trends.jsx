@@ -88,7 +88,7 @@ function Trends() {
             <p className={classes.text}> {t("homepage.trends1")}</p>
             <Button
               className={classes.button}
-              alt="shop van der waal surf grip"
+              title="shop van der waal surf grip"
               variant="contained"
               color="primary"
               href="https://secondwavesurfing.com/shop/product/van-der-waal-surf-grip/"
@@ -109,7 +109,7 @@ function Trends() {
             <p className={classes.text}>{t("homepage.trends2")}</p>
             <Button
               className={classes.button}
-              alt="shop hidden surfboard hanger"
+              title="shop hidden surfboard hanger"
               variant="contained"
               color="primary"
               href="https://secondwavesurfing.com/shop/brand/shepps-gnarwall/"

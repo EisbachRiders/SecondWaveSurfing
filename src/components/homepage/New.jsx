@@ -145,7 +145,7 @@ function New() {
             <Button
               variant="contained"
               color="primary"
-              alt="shop this wax"
+              title="shop this wax"
               href="https://secondwavesurfing.com/shop/product/wax-zam-surf-wax/"
             >
               {t("homepage.moreInfo")}
