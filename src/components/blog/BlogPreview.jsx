@@ -58,8 +58,8 @@ export default function BlogPreview({ post, idx }) {
         <Img
           alt={post.node.frontmatter.title}
           fluid={
-            post.node.frontmatter.featuredImage
-              ? post.node.frontmatter.featuredImage.childImageSharp.fluid
+            post.node.frontmatter.featuredImageSmall
+              ? post.node.frontmatter.featuredImageSmall.childImageSharp.fluid
               : placeholder
           }
           className={classes.img}

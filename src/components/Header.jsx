@@ -246,7 +246,7 @@ function Header() {
               alt="second wave surfing logo"
             />
           </Link>
-          <Hidden smDown>
+          <Hidden mdDown>
             <List
               component="nav"
               aria-label="website navigation"

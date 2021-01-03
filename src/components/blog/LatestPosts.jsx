@@ -6,7 +6,7 @@ export default function LatestPosts() {
   const data = useStaticQuery(graphql`
     query {
       allMdx(
-        sort: { fields: frontmatter___date, order: ASC }
+        sort: { fields: frontmatter___date, order: DESC }
         limit: 3
         filter: { frontmatter: { label: { in: "article" } } }
       ) {
@@ -17,7 +17,7 @@ export default function LatestPosts() {
             frontmatter {
               title
               tags
-              featuredImage {
+              featuredImageSmall {
                 childImageSharp {
                   fluid {
                     ...GatsbyImageSharpFluid

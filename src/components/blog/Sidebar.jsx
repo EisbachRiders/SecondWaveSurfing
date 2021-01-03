@@ -78,7 +78,7 @@ export default function Sidebar() {
       {/* <Paper className={classes.paper} square elevation={0}>
         <p className={classes.title}>{t("common.subscribe")}</p>
       </Paper> */}
-      <Hidden xsDown mdUp>
+      <Hidden smDown mdUp>
         <div className={classes.mobileContainer}>
           <Paper
             className={clsx(classes.paper, classes.flexItem)}

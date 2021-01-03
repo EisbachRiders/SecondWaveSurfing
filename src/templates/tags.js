@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
@@ -22,28 +21,6 @@ const Tags = ({ pageContext, data }) => {
   )
 }
 
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMdx: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-            fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
-}
-
 export default Tags
 
 export const pageQuery = graphql`
@@ -63,6 +40,13 @@ export const pageQuery = graphql`
             description
             tags
             featuredImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            featuredImageSmall {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid

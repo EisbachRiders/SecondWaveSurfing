@@ -109,9 +109,9 @@ const BlogWidget2 = () => {
             frontmatter {
               title
               tags
-              featuredImage {
+              featuredImageSmall {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
+                  fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -135,11 +135,11 @@ const BlogWidget2 = () => {
               <div className={classes.container}>
                 {idx === 0 && (
                   <div className={classes.flexItem}>
-                    {elem.node.frontmatter.featuredImage ? (
+                    {elem.node.frontmatter.featuredImageSmall ? (
                       <Img
                         fluid={
-                          elem.node.frontmatter.featuredImage.childImageSharp
-                            .fluid
+                          elem.node.frontmatter.featuredImageSmall
+                            .childImageSharp.fluid
                         }
                         alt={elem.path}
                         placeholderStyle={{ backgroundColor: `lightgray` }}
@@ -179,11 +179,11 @@ const BlogWidget2 = () => {
 
                 {idx === 1 && (
                   <div className={classes.flexItem}>
-                    {elem.node.frontmatter.featuredImage ? (
+                    {elem.node.frontmatter.featuredImageSmall ? (
                       <Img
                         fluid={
-                          elem.node.frontmatter.featuredImage.childImageSharp
-                            .fluid
+                          elem.node.frontmatter.featuredImageSmall
+                            .childImageSharp.fluid
                         }
                         alt={elem.path}
                         placeholderStyle={{ backgroundColor: `lightgray` }}
@@ -206,10 +206,10 @@ const BlogWidget2 = () => {
             <div className={classes.container} key={`blogPreview${idx}`}>
               {idx > 1 && (
                 <div className={classes.flexItem}>
-                  {elem.node.frontmatter.featuredImage ? (
+                  {elem.node.frontmatter.featuredImageSmall ? (
                     <Img
                       fluid={
-                        elem.node.frontmatter.featuredImage.childImageSharp
+                        elem.node.frontmatter.featuredImageSmall.childImageSharp
                           .fluid
                       }
                       alt={elem.path}
@@ -246,10 +246,10 @@ const BlogWidget2 = () => {
               </div>
               {idx < 2 && (
                 <div className={classes.flexItem}>
-                  {elem.node.frontmatter.featuredImage ? (
+                  {elem.node.frontmatter.featuredImageSmall ? (
                     <Img
                       fluid={
-                        elem.node.frontmatter.featuredImage.childImageSharp
+                        elem.node.frontmatter.featuredImageSmall.childImageSharp
                           .fluid
                       }
                       alt={elem.path}

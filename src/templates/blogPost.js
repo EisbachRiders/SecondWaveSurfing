@@ -6,6 +6,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { Link } from "gatsby-theme-material-ui"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
+import Hidden from "@material-ui/core/Hidden"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import Layout from "../components/Layout"
@@ -29,10 +30,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   featuredImg: {
-    height: 300,
     marginBottom: 30,
-    [theme.breakpoints.up("lg")]: {
-      height: 500,
+    [theme.breakpoints.up("sm")]: {
       marginBottom: 60,
     },
   },
@@ -136,12 +135,24 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
               <p className={classes.caption}>
                 {t("blog.updated")} {mdx.frontmatter.date.split("T")[0]}
               </p>
-              <Img
-                alt={mdx.frontmatter.title}
-                fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
-                placeholderStyle={{ backgroundColor: `lightgray` }}
-                className={classes.featuredImg}
-              />
+              <Hidden smUp>
+                <Img
+                  alt={mdx.frontmatter.title}
+                  fluid={
+                    mdx.frontmatter.featuredImageSmall.childImageSharp.fluid
+                  }
+                  placeholderStyle={{ backgroundColor: `lightgray` }}
+                  className={classes.featuredImg}
+                />
+              </Hidden>
+              <Hidden smDown>
+                <Img
+                  alt={mdx.frontmatter.title}
+                  fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
+                  placeholderStyle={{ backgroundColor: `lightgray` }}
+                  className={classes.featuredImg}
+                />
+              </Hidden>
               <MDXProvider components={shortcodes}>
                 <MDXRenderer>{mdx.body}</MDXRenderer>
               </MDXProvider>
@@ -191,6 +202,13 @@ export const pageQuery = graphql`
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 2000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        featuredImageSmall {
+          childImageSharp {
+            fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid
             }
           }

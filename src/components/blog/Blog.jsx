@@ -152,6 +152,7 @@ const useStyles = makeStyles((theme) => ({
   },
   blogExcerptLeft: {
     padding: 15,
+    width: "100%",
     zIndex: 2,
     boxShadow: "0 0 70px rgba(0,0,0,.11)",
     [theme.breakpoints.up("sm")]: {
@@ -343,14 +344,26 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                     </Typography>
                   </Link>
                   <div className={classes.imgContainer}>
-                    <Img
-                      alt={`blog image ${idx}`}
-                      fluid={
-                        elem.node.frontmatter.featuredImage.childImageSharp
-                          .fluid
-                      }
-                      className={classes.blogImgFirst}
-                    />
+                    <Hidden lgUp>
+                      <Img
+                        alt={`blog image ${idx}`}
+                        fluid={
+                          elem.node.frontmatter.featuredImageSmall
+                            .childImageSharp.fluid
+                        }
+                        className={classes.blogImgFirst}
+                      />
+                    </Hidden>
+                    <Hidden lgDown>
+                      <Img
+                        alt={`blog image ${idx}`}
+                        fluid={
+                          elem.node.frontmatter.featuredImage.childImageSharp
+                            .fluid
+                        }
+                        className={classes.blogImgFirst}
+                      />
+                    </Hidden>
                     <div className={classes.buttonContainer}>
                       <Link
                         to={elem.node.fields.slug}
@@ -376,7 +389,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                           <Img
                             alt={`blog image ${idx}`}
                             fluid={
-                              elem.node.frontmatter.featuredImage
+                              elem.node.frontmatter.featuredImageSmall
                                 .childImageSharp.fluid
                             }
                             className={classes.blogImg}
@@ -392,7 +405,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             <Img
                               alt={`blog image ${idx}`}
                               fluid={
-                                elem.node.frontmatter.featuredImage
+                                elem.node.frontmatter.featuredImageSmall
                                   .childImageSharp.fluid
                               }
                               className={classes.blogImg}
@@ -441,7 +454,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             <Img
                               alt={`blog image ${idx}`}
                               fluid={
-                                elem.node.frontmatter.featuredImage
+                                elem.node.frontmatter.featuredImageSmall
                                   .childImageSharp.fluid
                               }
                               className={classes.blogImg}

@@ -17,7 +17,7 @@ export default function PopularPosts() {
             frontmatter {
               title
               tags
-              featuredImage {
+              featuredImageSmall {
                 childImageSharp {
                   fluid {
                     ...GatsbyImageSharpFluid

@@ -41,6 +41,13 @@ export const blogListQuery = graphql`
                 }
               }
             }
+            featuredImageSmall {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             slug
