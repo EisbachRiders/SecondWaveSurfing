@@ -6,7 +6,7 @@
     "credit": "Credit",
     "explore": "Explore",
     "brands": "Brands",
-    "about": "About",
+    "about": "About Us",
     "blog": "Blog",
     "shop": "Shop",
     "rapid": "Rapid Surfing",
@@ -212,6 +212,10 @@
     "waal": "Mit dem Van Der Waal Surfbrett Traction Grip hast Du gänzlich ohne Wachs optimalen Grip auf deinem Board bleiben. Es ist eine saubere, langlebige und umweltfreundliche Alternative, zu herkömmlichen Wachs. Das Van der Waal Team hat seine Sitz in Lissabon, Portugal, wo auch alle Produkte hergestellt werden.",
     "waal_category": "Surfbrett Front Traction",
     "greenfix": "Das Team hinter Greenfix stammt aus dem Baskenland in der Nähe der berühmten und legendären Surfstrände von Biarritz, Frankreich. In Ihrem Sortiment gibt es eine Reihe von Produkten, die sich alle um Surfwachs und Reinigungsprodukte für Surfbretter drehen. Alles wird in Frankreich bezogen und hergestellt und somit werden gleichbleibende hochwertige Produkte erzeugt.",
-    "greenfix_category": "Surfbrett-Wachs"
+    "greenfix_category": "Surfbrett-Wachs",
+    "suntribe": "Suntribe's mission is to contribute to change. Their products prove that you can have high functionality and safety, there is no need for a compromise. They have created worry-free natural sunscreens which are 100% free from synthetic chemicals and unnecessary ingredients like perfumes and preservatives. Their philosophy is grounded in only using ingredients that have been proven safe – both for us humans and the environment – while still retaining functionality. They only use organic oils, waxes, butters and natural minerals to formulate our cosmetics",
+    "suntribe_category": "Sunscreen",
+    "roadtyping": "For Roadtyping, sustainability is a philosophy that is omnipresent in everyday life and in their products. They are in a constant search for solutions to conserve resources, to cause as little waste as possible, to have short distances and to draw on fair conditions. That is why they work with a Bavarian family print shop for all of our paper products and use certified natural papers. They also try to keep the added value in Germany and Europe for our other products.",
+    "roadtyping_category": "Postcards"
   }
 }

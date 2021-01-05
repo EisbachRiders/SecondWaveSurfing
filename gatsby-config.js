@@ -79,11 +79,6 @@ module.exports = {
     //   resolve: "gatsby-source-wordpress-experimental",
     //   options: {
     //     url: `https://secondwavesurfing.com/shop/graphql`,
-    //     schema: {
-    //       requestConcurrency: 1, // currently set to undefined
-    //       previewRequestConcurrency: 1, // currently set to undefined
-    //       timeout: 100000,
-    //     },
     //   },
     // },
     {

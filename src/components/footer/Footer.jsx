@@ -158,7 +158,14 @@ function Footer() {
   const classes = useStyles()
   const { t } = useTranslation()
   const blog = ["lifestyle", "travel", "gear", "community"]
-  const shop = ["rapid", "fins", "sup", "leashes", "accessories", "apparel"]
+  const shop = [
+    "rapid-surfing",
+    "fins",
+    "sup",
+    "leashes",
+    "accessories",
+    "apparel",
+  ]
   const customerService = ["faq", "contact", "shipping", "returns"]
   const features = [
     {
@@ -230,6 +237,12 @@ function Footer() {
         <Hidden xsDown>
           <div className={classes.linksContainer}>
             <div className={classes.list}>
+              <p className={classes.title}>{t("links.about")}</p>
+              <Link to={`/brands`} className={clsx(classes.text, classes.link)}>
+                {t(`links.brands`)}
+              </Link>
+            </div>
+            <div className={classes.list}>
               <p className={classes.title}>{t("links.blog")}</p>
               {blog.map((elem, idx) => (
                 <Link
@@ -241,20 +254,18 @@ function Footer() {
                 </Link>
               ))}
             </div>
-            {process.env.NODE_ENV === "development" && (
-              <div className={classes.list}>
-                <p className={classes.title}>{t("links.shop")}</p>
-                {shop.map((elem, idx) => (
-                  <Link
-                    key={`shop${idx}`}
-                    to={`/${elem}`}
-                    className={clsx(classes.text, classes.link)}
-                  >
-                    {t(`links.${elem}`)}
-                  </Link>
-                ))}
-              </div>
-            )}
+            <div className={classes.list}>
+              <p className={classes.title}>{t("links.shop")}</p>
+              {shop.map((elem, idx) => (
+                <Link
+                  key={`shop${idx}`}
+                  href={`https://secondwavesurfing.com/shop/product-category/${elem}`}
+                  className={clsx(classes.text, classes.link)}
+                >
+                  {t(`links.${elem}`)}
+                </Link>
+              ))}
+            </div>
             <div className={classes.list}>
               <p className={classes.title}>{t("links.customerService")}</p>
               {customerService.map((elem, idx) => (

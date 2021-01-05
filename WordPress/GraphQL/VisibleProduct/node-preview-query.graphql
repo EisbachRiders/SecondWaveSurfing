@@ -1,0 +1,26 @@
+query PREVIEW_QUERY($id: ID!) {
+  visibleProduct(id: $id, idType: ID, asPreview: true) {
+    contentNodes(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    count
+    databaseId
+    description
+    id
+    link
+    name
+    slug
+    taxonomy {
+      node {
+        id
+      }
+    }
+    termGroupId
+    termTaxonomyId
+    uri
+    __typename
+  }
+}

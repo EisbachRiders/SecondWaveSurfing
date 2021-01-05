@@ -6,13 +6,18 @@ import Table from "@material-ui/core/Table"
 import TableBody from "@material-ui/core/TableBody"
 import TableCell from "@material-ui/core/TableCell"
 import TableRow from "@material-ui/core/TableRow"
+import Paper from "@material-ui/core/Paper"
 import StarIcon from "@material-ui/icons/Star"
 import StarBorderIcon from "@material-ui/icons/StarBorder"
 import StarHalfIcon from "@material-ui/icons/StarHalf"
 import Container from "../ui/Container"
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: 30,
+  },
   titleContainer: {
+    borderBottom: `1px solid ${theme.color.gray}`,
     display: "flex",
     alignItems: "center",
   },
@@ -44,10 +49,7 @@ const useStyles = makeStyles((theme) => ({
   tableContainer: {
     flexBasis: "100%",
     [theme.breakpoints.up("sm")]: {
-      flexBasis: "60%",
-    },
-    [theme.breakpoints.up("md")]: {
-      flexBasis: "40%",
+      flexBasis: "75%",
     },
   },
   imgContainer: {
@@ -55,20 +57,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flexBasis: "100%",
     [theme.breakpoints.up("sm")]: {
-      flexBasis: "40%",
-    },
-    [theme.breakpoints.up("md")]: {
-      flexBasis: "60%",
+      flexBasis: "20%",
     },
   },
   img: {
     width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: 300,
-    },
-    [theme.breakpoints.up("md")]: {
-      width: 300,
-    },
   },
   reviewContainer: {
     display: "flex",
@@ -164,79 +157,89 @@ export default function ProductReview({
     i18n.language === "de" ? technicalData_de : technicalData_en
 
   return (
-    <Container flexDirection="column" flexWrap="nowrap">
-      {/* <div className={classes.titleContainer}>
-        <div className={classes.reviewContainer}>
-          <p className={classes.rating}>{rating}</p>
-          <div className={classes.starsContainer}>
-            {[1, 2, 3, 4, 5].map((elem) => (
-              <Fragment key={elem}>
-                {elem < rating ? (
-                  <StarIcon className={classes.star} key={`star${elem}`} />
-                ) : rating % 1 !== 0 && Math.floor(rating) === elem - 1 ? (
-                  <StarHalfIcon className={classes.star} key={`star${elem}`} />
-                ) : (
-                  <StarBorderIcon
-                    className={classes.star}
-                    key={`star${elem}`}
-                  />
-                )}
-              </Fragment>
-            ))}
+    <div className={classes.root}>
+      <Paper elevation={6}>
+        <Container flexDirection="column" flexWrap="nowrap" padding="none">
+          <div className={classes.titleContainer}>
+            <div className={classes.reviewContainer}>
+              <p className={classes.rating}>{rating}</p>
+              <div className={classes.starsContainer}>
+                {[1, 2, 3, 4, 5].map((elem) => (
+                  <Fragment key={elem}>
+                    {elem <= rating ? (
+                      <StarIcon className={classes.star} key={`star${elem}`} />
+                    ) : rating % 1 !== 0 && Math.floor(rating) === elem - 1 ? (
+                      <StarHalfIcon
+                        className={classes.star}
+                        key={`star${elem}`}
+                      />
+                    ) : (
+                      <StarBorderIcon
+                        className={classes.star}
+                        key={`star${elem}`}
+                      />
+                    )}
+                  </Fragment>
+                ))}
+              </div>
+            </div>
+            <p className={classes.title}>{title}</p>
           </div>
-        </div>
-        <p className={classes.title}>{title}</p>
-      </div>
-      <div className={classes.technicalContainer}>
-        <div className={classes.imgContainer}>
-          <img src={img} alt={`product_${title}`} className={classes.img} />
-        </div>
-        <div className={classes.tableContainer}>
-          <p className={classes.subtitle}>{t("blog.technicalData")}</p>
-          <Table className={classes.table} aria-label={t("blog.technicalData")}>
-            <TableBody>
-              {Object.keys(technicalData).map((row) => (
-                <TableRow key={row}>
-                  <TableCell component="th" scope="row">
-                    {row}
-                  </TableCell>
-                  <TableCell align="right">{technicalData[row]}</TableCell>
-                </TableRow>
+          <div className={classes.technicalContainer}>
+            <div className={classes.imgContainer}>
+              <img src={img} alt={`product_${title}`} className={classes.img} />
+            </div>
+            <div className={classes.tableContainer}>
+              <p className={classes.subtitle}>{t("blog.technicalData")}</p>
+              <Table
+                className={classes.table}
+                aria-label={t("blog.technicalData")}
+              >
+                <TableBody>
+                  {Object.keys(technicalData).map((row) => (
+                    <TableRow key={row}>
+                      <TableCell component="th" scope="row">
+                        {row}
+                      </TableCell>
+                      <TableCell align="right">{technicalData[row]}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+          <div className={classes.proConContainer}>
+            <div className={classes.flexItem}>
+              <p className={classes.subtitle2}>{t("blog.positives")}</p>
+              {pros.map((elem) => (
+                <div className={classes.listItemContainer} key={`pro-${elem}`}>
+                  <div className={classes.dot}></div>
+                  <p className={classes.pro}>{elem}</p>
+                </div>
               ))}
-            </TableBody>
-          </Table>
-        </div>
-      </div>
-      <div className={classes.proConContainer}>
-        <div className={classes.flexItem}>
-          <p className={classes.subtitle2}>{t("blog.positives")}</p>
-          {pros.map((elem) => (
-            <div className={classes.listItemContainer} key={`pro-${elem}`}>
-              <div className={classes.dot}></div>
-              <p className={classes.pro}>{elem}</p>
             </div>
-          ))}
-        </div>
-        <div className={classes.flexItem}>
-          <p className={classes.subtitle2}>{t("blog.negatives")}</p>
-          {cons.map((elem) => (
-            <div className={classes.listItemContainer} key={`con-${elem}`}>
-              <div className={classes.dot}></div>
-              <p className={classes.pro}>{elem}</p>
+            <div className={classes.flexItem}>
+              <p className={classes.subtitle2}>{t("blog.negatives")}</p>
+              {cons.map((elem) => (
+                <div className={classes.listItemContainer} key={`con-${elem}`}>
+                  <div className={classes.dot}></div>
+                  <p className={classes.pro}>{elem}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-      <div className={classes.buttonContainer}>
-        <Button
-          href={href}
-          className={classes.button}
-          variant="contained"
-          color="secondary"
-        >
-          {t("blog.buy")}
-        </Button>
-      </div> */}
-    </Container>
+          </div>
+          <div className={classes.buttonContainer}>
+            <Button
+              href={href}
+              className={classes.button}
+              variant="contained"
+              color="secondary"
+            >
+              {t("blog.buy")}
+            </Button>
+          </div>
+        </Container>
+      </Paper>
+    </div>
   )
 }

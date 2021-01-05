@@ -1,0 +1,279 @@
+query NON_NODE_QUERY {
+  allSettings {
+    discussionSettingsDefaultCommentStatus
+    discussionSettingsDefaultPingStatus
+    generalSettingsDateFormat
+    generalSettingsDescription
+    generalSettingsEmail
+    generalSettingsLanguage
+    generalSettingsStartOfWeek
+    generalSettingsTimeFormat
+    generalSettingsTimezone
+    generalSettingsTitle
+    generalSettingsUrl
+    readingSettingsPostsPerPage
+    writingSettingsDefaultCategory
+    writingSettingsDefaultPostFormat
+    writingSettingsUseSmilies
+  }
+
+  cart {
+    appliedCoupons(first: 100) {
+      nodes {
+        id
+      }
+    }
+
+    availableShippingMethods {
+      packageDetails
+
+      rates {
+        cost
+        id
+        instanceId
+        label
+        methodId
+      }
+
+      supportsShippingCalculator
+    }
+
+    chosenShippingMethod
+
+    contents(first: 100) {
+      itemCount
+
+      nodes {
+        extraData {
+          id
+          key
+          value
+        }
+
+        key
+
+        product {
+          node {
+            id
+            __typename
+          }
+        }
+
+        quantity
+        subtotal
+        subtotalTax
+        tax
+        total
+
+        variation {
+          attributes {
+            attributeId
+            id
+            label
+            name
+            value
+          }
+
+          node {
+            attributes(first: 100) {
+              nodes {
+                attributeId
+                id
+                label
+                name
+                value
+              }
+            }
+
+            backorders
+            backordersAllowed
+            catalogVisibility
+
+            contentType {
+              node {
+                id
+              }
+            }
+
+            databaseId
+            date
+            dateGmt
+            dateOnSaleFrom
+            dateOnSaleTo
+            description
+            desiredSlug
+            downloadExpiry
+            downloadLimit
+            downloadable
+
+            downloads {
+              allowedFileType
+              downloadId
+              file
+              fileExists
+              fileExt
+              filePathType
+              fileType
+              name
+            }
+
+            enclosure
+
+            featuredImage {
+              node {
+                __typename
+                id
+              }
+            }
+
+            featuredImageDatabaseId
+            featuredImageId
+            guid
+            hasAttributes
+            height
+            id
+
+            image {
+              __typename
+              id
+            }
+
+            lastEditedBy {
+              node {
+                id
+              }
+            }
+
+            length
+            link
+            manageStock
+            menuOrder
+
+            metaData {
+              id
+              key
+              value
+            }
+
+            modified
+            modifiedGmt
+            name
+            onSale
+
+            wpParent: parent {
+              node {
+                id
+              }
+            }
+
+            price
+            purchasable
+            purchaseNote
+            regularPrice
+            salePrice
+            shippingClass
+
+            shippingClasses(first: 100) {
+              nodes {
+                id
+              }
+            }
+
+            sku
+            slug
+            status
+            stockQuantity
+            stockStatus
+            taxClass
+            taxStatus
+
+            template {
+              templateName
+
+              __typename
+            }
+
+            type
+            uri
+            virtual
+
+            visibleProducts(first: 100) {
+              nodes {
+                id
+              }
+            }
+
+            weight
+            width
+          }
+        }
+      }
+
+      productCount
+    }
+
+    contentsTax
+    contentsTotal
+    discountTax
+    discountTotal
+    displayPricesIncludeTax
+    feeTax
+    feeTotal
+
+    fees {
+      amount
+      id
+      name
+      taxClass
+      taxable
+      total
+    }
+
+    isEmpty
+    needsShippingAddress
+    shippingTax
+    shippingTotal
+    subtotal
+    subtotalTax
+    total
+    totalTax
+
+    totalTaxes {
+      amount
+      id
+      isCompound
+      label
+    }
+  }
+
+  discussionSettings {
+    defaultCommentStatus
+    defaultPingStatus
+  }
+
+  generalSettings {
+    dateFormat
+    description
+    email
+    language
+    startOfWeek
+    timeFormat
+    timezone
+    title
+    url
+  }
+
+  readingSettings {
+    postsPerPage
+  }
+
+  wpGatsby {
+    arePrettyPermalinksEnabled
+  }
+
+  writingSettings {
+    defaultCategory
+    defaultPostFormat
+    useSmilies
+  }
+}

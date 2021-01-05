@@ -6,11 +6,7 @@ import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
-import er from "../../assets/logos/eisbach-riders.png"
-import shepps from "../../assets/logos/shepps-gnarwall.png"
-import beeSwell from "../../assets/logos/bee-sweel-logo.jpg"
-import vanderwaal from "../../assets/logos/van-der-waal-logo.png"
-import greenfix from "../../assets/logos/greenfix.png"
+import suntribe from "../../assets/logos/suntribe.png"
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -127,22 +123,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Brands() {
+function Suntribe() {
   const classes = useStyles()
   const { t } = useTranslation()
 
   const data = useStaticQuery(graphql`
     query {
-      beeSwell1: file(
-        relativePath: { eq: "bee-swell-wax-being-put-on-surfboard.jpg" }
-      ) {
+      img1: file(relativePath: { eq: "suntribe-sunscreen-on-snowboard.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      beeSwell2: file(relativePath: { eq: "wax-and-box-side-view.jpg" }) {
+      img2: file(relativePath: { eq: "suntribe-sunscreen-4-colors.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -154,25 +148,17 @@ function Brands() {
 
   const brands = [
     {
-      key: "beeSwell",
-      name: "Bee Swell",
-      website: "https://www.beeswell.com/",
-      logo: beeSwell,
+      key: "suntribe",
+      name: "Suntribe",
+      website: "https://secondwavesurfing.com/shop/brand/suntribe/",
+      logo: suntribe,
     },
   ]
 
   return (
     <Container background="gray">
-      <h2 className={clsx(classes.header, classes.center)}>
-        {t("brands.ourBrands")}
-      </h2>
       {brands.map((elem, idx) => (
-        <div
-          className={clsx(classes.root, {
-            [classes.reverse]: idx % 2 === 0,
-          })}
-          key={`brand${elem.name}`}
-        >
+        <div className={classes.root} key={`brand${elem.name}`}>
           <div className={classes.textContainer}>
             <p className={classes.title}>{t(`brands.${elem.key}_category`)}</p>
             <p className={classes.text}>{t(`brands.${elem.key}`)}</p>
@@ -198,7 +184,7 @@ function Brands() {
           </div>
           <div className={classes.imgContainer}>
             <Img
-              fluid={data[`${elem.key}1`].childImageSharp.fluid}
+              fluid={data.img1.childImageSharp.fluid}
               alt={`${elem.name} lifestyle`}
               placeholderStyle={{ backgroundColor: `white` }}
               className={classes.img}
@@ -208,7 +194,7 @@ function Brands() {
           <Hidden smDown>
             <div className={classes.imgContainer2}>
               <Img
-                fluid={data[`${elem.key}2`].childImageSharp.fluid}
+                fluid={data.img2.childImageSharp.fluid}
                 alt={`${elem.name} product`}
                 placeholderStyle={{ backgroundColor: `white` }}
                 className={classes.img2}
@@ -222,4 +208,4 @@ function Brands() {
   )
 }
 
-export default Shepps
+export default Suntribe

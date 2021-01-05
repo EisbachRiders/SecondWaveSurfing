@@ -9,14 +9,6 @@ import Container from "../ui/Container"
 import er from "../../assets/logos/eisbach-riders.png"
 
 const useStyles = makeStyles((theme) => ({
-  header: {
-    fontFamily: "secondary",
-    fontSize: 48,
-    textTransform: "capitalize",
-    margin: 0,
-    width: "100%",
-    textAlign: "center",
-  },
   root: {
     width: "100%",
     display: "flex",
@@ -152,16 +144,13 @@ function EisbachRiders() {
     {
       key: "er",
       name: "Eisbach Riders",
-      website: "https://eisbach-riders.com/",
+      website: "https://secondwavesurfing.com/shop/brand/eisbach-riders/",
       logo: er,
     },
   ]
 
   return (
     <Container background="gray">
-      <h2 className={clsx(classes.header, classes.center)}>
-        {t("brands.ourBrands")}
-      </h2>
       {brands.map((elem, idx) => (
         <div
           className={clsx(classes.root, {

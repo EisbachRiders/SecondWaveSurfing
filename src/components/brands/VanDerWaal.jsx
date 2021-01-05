@@ -9,14 +9,6 @@ import Container from "../ui/Container"
 import vanderwaal from "../../assets/logos/van-der-waal-logo.png"
 
 const useStyles = makeStyles((theme) => ({
-  header: {
-    fontFamily: "secondary",
-    fontSize: 48,
-    textTransform: "capitalize",
-    margin: 0,
-    width: "100%",
-    textAlign: "center",
-  },
   root: {
     width: "100%",
     display: "flex",
@@ -150,23 +142,15 @@ function VanDerWaal() {
     {
       key: "waal",
       name: "Van der Waal",
-      website: "https://www.waal.co/",
+      website: "https://secondwavesurfing.com/shop/brand/van-der-waal/",
       logo: vanderwaal,
     },
   ]
 
   return (
     <Container background="gray">
-      <h2 className={clsx(classes.header, classes.center)}>
-        {t("brands.ourBrands")}
-      </h2>
       {brands.map((elem, idx) => (
-        <div
-          className={clsx(classes.root, {
-            [classes.reverse]: idx % 2 === 0,
-          })}
-          key={`brand${elem.name}`}
-        >
+        <div className={classes.root} key={`brand${elem.name}`}>
           <div className={classes.textContainer}>
             <p className={classes.title}>{t(`brands.${elem.key}_category`)}</p>
             <p className={classes.text}>{t(`brands.${elem.key}`)}</p>

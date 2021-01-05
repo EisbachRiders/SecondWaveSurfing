@@ -144,6 +144,7 @@ const useStyles = makeStyles((theme) => ({
   blogExcerptRight: {
     padding: 15,
     zIndex: 2,
+    width: "100%",
     boxShadow: "0 0 70px rgba(0,0,0,.11)",
     [theme.breakpoints.up("sm")]: {
       padding: 30,

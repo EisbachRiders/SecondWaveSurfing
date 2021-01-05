@@ -1,0 +1,780 @@
+query PREVIEW_QUERY($id: ID!) {
+  product(id: $id, idType: ID, asPreview: true) {
+    ... on VariableProduct {
+      backorders
+      backordersAllowed
+      commentCount
+      commentStatus
+      content
+      contentType {
+        node {
+          id
+        }
+      }
+      crossSell(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      dateGmt
+      defaultAttributes(first: 100) {
+        nodes {
+          attributeId
+          id
+          label
+          name
+          value
+        }
+      }
+      desiredSlug
+      enclosure
+      featuredImage {
+        node {
+          __typename
+          id
+        }
+      }
+      featuredImageDatabaseId
+      featuredImageId
+      guid
+      height
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      length
+      manageStock
+      metaData {
+        id
+        key
+        value
+      }
+      modifiedGmt
+      price
+      regularPrice
+      salePrice
+      shippingClassId
+      shippingRequired
+      shippingTaxable
+      soldIndividually
+      stockQuantity
+      stockStatus
+      taxClass
+      taxStatus
+      template {
+        templateName
+        __typename
+      }
+      uri
+      variations(first: 100) {
+        nodes {
+          attributes(first: 100) {
+            nodes {
+              attributeId
+              id
+              label
+              name
+              value
+            }
+          }
+          backorders
+          backordersAllowed
+          catalogVisibility
+          contentType {
+            node {
+              id
+            }
+          }
+          databaseId
+          date
+          dateGmt
+          dateOnSaleFrom
+          dateOnSaleTo
+          description
+          desiredSlug
+          downloadExpiry
+          downloadLimit
+          downloadable
+          downloads {
+            allowedFileType
+            downloadId
+            file
+            fileExists
+            fileExt
+            filePathType
+            fileType
+            name
+          }
+          enclosure
+          featuredImage {
+            node {
+              __typename
+              id
+            }
+          }
+          featuredImageDatabaseId
+          featuredImageId
+          guid
+          hasAttributes
+          height
+          id
+          image {
+            __typename
+            id
+          }
+          lastEditedBy {
+            node {
+              id
+            }
+          }
+          length
+          link
+          manageStock
+          menuOrder
+          metaData {
+            id
+            key
+            value
+          }
+          modified
+          modifiedGmt
+          name
+          onSale
+          wpParent: parent {
+            node {
+              id
+              ...VariableProductFragment
+            }
+          }
+          price
+          purchasable
+          purchaseNote
+          regularPrice
+          salePrice
+          shippingClass
+          shippingClasses(first: 100) {
+            nodes {
+              id
+            }
+          }
+          sku
+          slug
+          status
+          stockQuantity
+          stockStatus
+          taxClass
+          taxStatus
+          template {
+            templateName
+            __typename
+          }
+          type
+          uri
+          virtual
+          visibleProducts(first: 100) {
+            nodes {
+              id
+            }
+          }
+          weight
+          width
+        }
+      }
+      weight
+      width
+    }
+    ... on ExternalProduct {
+      buttonText
+      commentCount
+      commentStatus
+      content
+      contentType {
+        node {
+          id
+        }
+      }
+      dateGmt
+      defaultAttributes(first: 100) {
+        nodes {
+          attributeId
+          id
+          label
+          name
+          value
+        }
+      }
+      desiredSlug
+      enclosure
+      externalUrl
+      featuredImage {
+        node {
+          __typename
+          id
+        }
+      }
+      featuredImageDatabaseId
+      featuredImageId
+      guid
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      metaData {
+        id
+        key
+        value
+      }
+      modifiedGmt
+      price
+      regularPrice
+      salePrice
+      taxClass
+      taxStatus
+      template {
+        templateName
+        __typename
+      }
+      uri
+    }
+    ... on SimpleProduct {
+      backorders
+      backordersAllowed
+      commentCount
+      commentStatus
+      content
+      contentType {
+        node {
+          id
+        }
+      }
+      crossSell(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      dateGmt
+      defaultAttributes(first: 100) {
+        nodes {
+          attributeId
+          id
+          label
+          name
+          value
+        }
+      }
+      desiredSlug
+      downloadExpiry
+      downloadLimit
+      downloadable
+      downloads {
+        allowedFileType
+        downloadId
+        file
+        fileExists
+        fileExt
+        filePathType
+        fileType
+        name
+      }
+      enclosure
+      featuredImage {
+        node {
+          __typename
+          id
+        }
+      }
+      featuredImageDatabaseId
+      featuredImageId
+      guid
+      height
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      length
+      manageStock
+      metaData {
+        id
+        key
+        value
+      }
+      modifiedGmt
+      price
+      regularPrice
+      salePrice
+      shippingClassId
+      shippingRequired
+      shippingTaxable
+      soldIndividually
+      stockQuantity
+      stockStatus
+      taxClass
+      taxStatus
+      template {
+        templateName
+        __typename
+      }
+      uri
+      virtual
+      weight
+      width
+    }
+    ... on GroupProduct {
+      addToCartDescription
+      addToCartText
+      commentCount
+      commentStatus
+      content
+      contentType {
+        node {
+          id
+        }
+      }
+      dateGmt
+      defaultAttributes(first: 100) {
+        nodes {
+          attributeId
+          id
+          label
+          name
+          value
+        }
+      }
+      desiredSlug
+      enclosure
+      featuredImage {
+        node {
+          __typename
+          id
+        }
+      }
+      featuredImageDatabaseId
+      featuredImageId
+      guid
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      metaData {
+        id
+        key
+        value
+      }
+      modifiedGmt
+      price
+      products(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      template {
+        templateName
+        __typename
+      }
+      uri
+    }
+    attributes(first: 100) {
+      nodes {
+        attributeId
+        id
+        label
+        name
+        options
+        position
+        scope
+        variation
+        visible
+        __typename
+        ... on GlobalProductAttribute {
+          slug
+          terms(first: 100) {
+            nodes {
+              id
+              __typename
+            }
+          }
+        }
+      }
+    }
+    averageRating
+    catalogVisibility
+    databaseId
+    date
+    dateOnSaleFrom
+    dateOnSaleTo
+    description
+    featured
+    galleryImages(first: 100) {
+      nodes {
+        __typename
+        id
+      }
+    }
+    globalAttributes(first: 100) {
+      nodes {
+        attributeId
+        id
+        label
+        name
+        options
+        position
+        scope
+        slug
+        terms(first: 100) {
+          nodes {
+            id
+            __typename
+          }
+        }
+        variation
+        visible
+      }
+    }
+    id
+    image {
+      __typename
+      id
+    }
+    link
+    localAttributes(first: 100) {
+      nodes {
+        attributeId
+        id
+        label
+        name
+        options
+        position
+        scope
+        variation
+        visible
+      }
+    }
+    menuOrder
+    modified
+    name
+    onSale
+    paAmounts(first: 100) {
+      nodes {
+        id
+      }
+    }
+    paColors(first: 100) {
+      nodes {
+        id
+      }
+    }
+    paFinPlugs(first: 100) {
+      nodes {
+        id
+      }
+    }
+    paSizes(first: 100) {
+      nodes {
+        id
+      }
+    }
+    paWaterTemps(first: 100) {
+      nodes {
+        id
+      }
+    }
+    wpParent: parent {
+      id
+      __typename
+    }
+    productCategories(first: 100) {
+      nodes {
+        id
+      }
+    }
+    productTags(first: 100) {
+      nodes {
+        id
+      }
+    }
+    productTypes(first: 100) {
+      nodes {
+        id
+      }
+    }
+    purchasable
+    purchaseNote
+    related(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    reviewCount
+    reviews(first: 100) {
+      averageRating
+      nodes {
+        id
+      }
+    }
+    reviewsAllowed
+    shippingClasses(first: 100) {
+      nodes {
+        id
+      }
+    }
+    shortDescription
+    sku
+    slug
+    status
+    totalSales
+    type
+    upsell(first: 100) {
+      nodes {
+        id
+        __typename
+      }
+    }
+    visibleProducts(first: 100) {
+      nodes {
+        id
+      }
+    }
+    __typename
+  }
+}
+fragment VariableProductFragment on VariableProduct {
+  attributes(first: 100) {
+    nodes {
+      attributeId
+      id
+      label
+      name
+      options
+      position
+      scope
+      variation
+      visible
+      __typename
+      ... on GlobalProductAttribute {
+        slug
+        terms(first: 100) {
+          nodes {
+            id
+            __typename
+          }
+        }
+      }
+    }
+  }
+  averageRating
+  backorders
+  backordersAllowed
+  catalogVisibility
+  commentCount
+  commentStatus
+  content
+  contentType {
+    node {
+      id
+    }
+  }
+  crossSell(first: 100) {
+    nodes {
+      id
+      __typename
+    }
+  }
+  databaseId
+  date
+  dateGmt
+  dateOnSaleFrom
+  dateOnSaleTo
+  defaultAttributes(first: 100) {
+    nodes {
+      attributeId
+      id
+      label
+      name
+      value
+    }
+  }
+  description
+  desiredSlug
+  enclosure
+  featured
+  featuredImage {
+    node {
+      __typename
+      id
+    }
+  }
+  featuredImageDatabaseId
+  featuredImageId
+  galleryImages(first: 100) {
+    nodes {
+      __typename
+      id
+    }
+  }
+  globalAttributes(first: 100) {
+    nodes {
+      attributeId
+      id
+      label
+      name
+      options
+      position
+      scope
+      slug
+      terms(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      variation
+      visible
+    }
+  }
+  guid
+  height
+  id
+  image {
+    __typename
+    id
+  }
+  lastEditedBy {
+    node {
+      id
+    }
+  }
+  length
+  link
+  localAttributes(first: 100) {
+    nodes {
+      attributeId
+      id
+      label
+      name
+      options
+      position
+      scope
+      variation
+      visible
+    }
+  }
+  manageStock
+  menuOrder
+  metaData {
+    id
+    key
+    value
+  }
+  modified
+  modifiedGmt
+  name
+  onSale
+  paAmounts(first: 100) {
+    nodes {
+      id
+    }
+  }
+  paColors(first: 100) {
+    nodes {
+      id
+    }
+  }
+  paFinPlugs(first: 100) {
+    nodes {
+      id
+    }
+  }
+  paSizes(first: 100) {
+    nodes {
+      id
+    }
+  }
+  paWaterTemps(first: 100) {
+    nodes {
+      id
+    }
+  }
+  wpParent: parent {
+    id
+    __typename
+  }
+  price
+  productCategories(first: 100) {
+    nodes {
+      id
+    }
+  }
+  productTags(first: 100) {
+    nodes {
+      id
+    }
+  }
+  productTypes(first: 100) {
+    nodes {
+      id
+    }
+  }
+  purchasable
+  purchaseNote
+  regularPrice
+  related(first: 100) {
+    nodes {
+      id
+      __typename
+    }
+  }
+  reviewCount
+  reviews(first: 100) {
+    averageRating
+    nodes {
+      id
+    }
+  }
+  reviewsAllowed
+  salePrice
+  shippingClassId
+  shippingClasses(first: 100) {
+    nodes {
+      id
+    }
+  }
+  shippingRequired
+  shippingTaxable
+  shortDescription
+  sku
+  slug
+  soldIndividually
+  status
+  stockQuantity
+  stockStatus
+  taxClass
+  taxStatus
+  template {
+    templateName
+    __typename
+  }
+  totalSales
+  type
+  upsell(first: 100) {
+    nodes {
+      id
+      __typename
+    }
+  }
+  uri
+  visibleProducts(first: 100) {
+    nodes {
+      id
+    }
+  }
+  weight
+  width
+}

@@ -1,0 +1,151 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  paWaterTemps(first: $first, after: $after) {
+    nodes {
+      contentNodes(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      count
+      databaseId
+      description
+      id
+      link
+      name
+      products(first: 100) {
+        nodes {
+          id
+          __typename
+        }
+      }
+      slug
+      taxonomy {
+        node {
+          id
+        }
+      }
+      termGroupId
+      termTaxonomyId
+      uri
+      variations(first: 100) {
+        nodes {
+          attributes(first: 100) {
+            nodes {
+              attributeId
+              id
+              label
+              name
+              value
+            }
+          }
+          backorders
+          backordersAllowed
+          catalogVisibility
+          contentType {
+            node {
+              id
+            }
+          }
+          databaseId
+          date
+          dateGmt
+          dateOnSaleFrom
+          dateOnSaleTo
+          description
+          desiredSlug
+          downloadExpiry
+          downloadLimit
+          downloadable
+          downloads {
+            allowedFileType
+            downloadId
+            file
+            fileExists
+            fileExt
+            filePathType
+            fileType
+            name
+          }
+          enclosure
+          featuredImage {
+            node {
+              __typename
+              id
+            }
+          }
+          featuredImageDatabaseId
+          featuredImageId
+          guid
+          hasAttributes
+          height
+          id
+          image {
+            __typename
+            id
+          }
+          lastEditedBy {
+            node {
+              id
+            }
+          }
+          length
+          link
+          manageStock
+          menuOrder
+          metaData {
+            id
+            key
+            value
+          }
+          modified
+          modifiedGmt
+          name
+          onSale
+          wpParent: parent {
+            node {
+              id
+            }
+          }
+          price
+          purchasable
+          purchaseNote
+          regularPrice
+          salePrice
+          shippingClass
+          shippingClasses(first: 100) {
+            nodes {
+              id
+            }
+          }
+          sku
+          slug
+          status
+          stockQuantity
+          stockStatus
+          taxClass
+          taxStatus
+          template {
+            templateName
+            __typename
+          }
+          type
+          uri
+          virtual
+          visibleProducts(first: 100) {
+            nodes {
+              id
+            }
+          }
+          weight
+          width
+        }
+      }
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

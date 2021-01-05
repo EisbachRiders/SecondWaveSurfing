@@ -162,6 +162,7 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
             <Sidebar />
           </div>
         </Container>
+
         <Container>
           <nav className={classes.nav}>
             <ul className={classes.ul}>

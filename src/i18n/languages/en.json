@@ -6,7 +6,7 @@
     "credit": "credit",
     "explore": "explore",
     "eisbach": "eisbach",
-    "about": "about",
+    "about": "About Us",
     "blog": "blog",
     "shop": "shop",
     "rapid": "rapid surfing",
@@ -208,6 +208,12 @@
     "waal": "Van Der Waal surf grip allows you to stay on your board without wax. It is a clean, green alternative that is low maintenance and long-lasting made in Lisbon, Portugal. Van Der Waal Grip is for the common surfer, the everyday dude and dudette that rips on the same boards for a long time. A surfboard grip for the environmentally conscious.",
     "waal_category": "Surfboard Grip",
     "greenfix": "The team hails from the Basque country near the famous and iconic surf beaches of Biarritz, France. They have a range of products, all revolving around wax and cleaning products for your prized surfboards. Everything is sourced and made in France, insuring consistently high quality results with the up most care for our beloved planet.",
-    "greenfix_category": "Wax"
+    "greenfix_category": "Wax",
+    "waxzam": "Straight out of Munich, the birthplace and hotbed of urban river surfing, 2 passionate surfers experimented with constituents, proportions and shapes that lead to their 100% natural surf wax recipe. Made in Munich, designed for the world, to keep our waters healthy. Sharing is easy among friends, and when there’s little time and the journey’s far, then we break our wax in two, just like we once broke our bread. That is why this surf wax offers a kink – a piece for you, a piece for me. From cool to warm, from river to ocean. Whatever. WAX Z’AM. Get your feet on the board and always remember: Munich is connected to the ocean- somehow, somewhere, sometime.",
+    "waxzam_category": "Wax",
+    "suntribe": "Suntribe's mission is to contribute to change. Their products prove that you can have high functionality and safety, there is no need for a compromise. They have created worry-free natural sunscreens which are 100% free from synthetic chemicals and unnecessary ingredients like perfumes and preservatives. Their philosophy is grounded in only using ingredients that have been proven safe – both for us humans and the environment – while still retaining functionality. They only use organic oils, waxes, butters and natural minerals to formulate our cosmetics",
+    "suntribe_category": "Sunscreen",
+    "roadtyping": "For Roadtyping, sustainability is a philosophy that is omnipresent in everyday life and in their products. They are in a constant search for solutions to conserve resources, to cause as little waste as possible, to have short distances and to draw on fair conditions. That is why they work with a Bavarian family print shop for all of our paper products and use certified natural papers. They also try to keep the added value in Germany and Europe for our other products.",
+    "roadtyping_category": "Postcards"
   }
 }

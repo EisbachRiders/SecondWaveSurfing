@@ -1,0 +1,18 @@
+query PREVIEW_QUERY($id: ID!) {
+  taxRate(id: $id, idType: ID, asPreview: true) {
+    city
+    class
+    compound
+    country
+    databaseId
+    id
+    name
+    order
+    postcode
+    priority
+    rate
+    shipping
+    state
+    __typename
+  }
+}
