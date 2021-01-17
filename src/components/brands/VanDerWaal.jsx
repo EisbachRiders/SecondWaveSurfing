@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
-import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
@@ -163,12 +162,7 @@ function VanDerWaal() {
                 />
               </div>
               <div>
-                <a
-                  className={classes.title2}
-                  href={elem.website}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className={classes.title2} href={elem.website}>
                   {elem.name}
                 </a>
               </div>

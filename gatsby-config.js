@@ -78,7 +78,7 @@ module.exports = {
     // {
     //   resolve: "gatsby-source-wordpress-experimental",
     //   options: {
-    //     url: `https://secondwavesurfing.com/shop/graphql`,
+    //     url: `https://blog.eisbach-riders.com/graphql`,
     //   },
     // },
     {

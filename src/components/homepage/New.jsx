@@ -145,7 +145,7 @@ function New() {
             <Button
               variant="contained"
               color="primary"
-              title="shop this wax"
+              aria-label="shop wax zam wax"
               href="https://secondwavesurfing.com/shop/product/wax-zam-surf-wax/"
             >
               {t("homepage.moreInfo")}
@@ -155,7 +155,7 @@ function New() {
         <div className={classes.flexItem}>
           <Button
             classes={{ text: classes.button }}
-            alt="shop wax zam wax"
+            aria-label="shop wax zam wax"
             href="https://secondwavesurfing.com/shop/product/wax-zam-surf-wax/"
           >
             <Img

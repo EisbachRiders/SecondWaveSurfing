@@ -83,12 +83,12 @@ function Brands() {
         </div>
       </div>
       <EisbachRiders />
-      <GreenFix />
+      <VanDerWaal />
       <Shepps />
       <Suntribe />
-      <Roadtyping />
-      <VanDerWaal />
       <Waxzam />
+      <GreenFix />
+      <Roadtyping />
     </>
   )
 }

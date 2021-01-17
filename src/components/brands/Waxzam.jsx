@@ -174,12 +174,7 @@ function Waxzam() {
                 />
               </div>
               <div>
-                <a
-                  className={classes.title2}
-                  href={elem.website}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a className={classes.title2} href={elem.website}>
                   {elem.name}
                 </a>
               </div>
