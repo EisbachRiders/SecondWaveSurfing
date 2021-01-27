@@ -59,24 +59,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fieldValue
         }
       }
-      products: allWpProduct {
-        edges {
-          node {
-            name
-            image {
-              slug
-              sourceUrl
-            }
-            galleryImages {
-              nodes {
-                sourceUrl
-                slug
-              }
-            }
-            shortDescription
-          }
-        }
-      }
     }
   `)
   // handle errors
@@ -88,7 +70,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.postsRemark.edges
   const pages = result.data.pagesRemark.edges
   const tags = result.data.tagsGroup.group
-  const products = result.data.products.edges
+  // const products = result.data.products.edges
   // const fins = result.data.fins.products.edges
   // const leashes = result.data.leashes.products.edges
   // const sup = result.data.sup.products.edges
@@ -154,11 +136,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Create product category pages
-  createPage({
-    path: "/products",
-    component: productCategoryTemplate,
-    context: { products: products, category: "products" },
-  })
+  // createPage({
+  //   path: "/products",
+  //   component: productCategoryTemplate,
+  //   context: { products: products, category: "products" },
+  // })
   // createPage({
   //   path: "/products/surfboard-fins",
   //   component: productCategoryTemplate,
@@ -240,3 +222,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// products: allWpProduct {
+//   edges {
+//     node {
+//       name
+//       image {
+//         slug
+//         sourceUrl
+//       }
+//       galleryImages {
+//         nodes {
+//           sourceUrl
+//           slug
+//         }
+//       }
+//       shortDescription
+//     }
+//   }
+// }
