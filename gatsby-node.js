@@ -9,6 +9,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogPostTemplate = path.resolve("src/templates/blogPost.js")
   const blogListTemplate = path.resolve("src/templates/blogList.js")
   const tagTemplate = path.resolve("src/templates/tags.js")
+  const productTemplate = path.resolve("src/templates/productTemplate.js")
+  const productCategoryTemplate = path.resolve(
+    "src/templates/productCategoryTemplate.js"
+  )
 
   const result = await graphql(`
     query {
@@ -55,6 +59,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           fieldValue
         }
       }
+      products: allWpProduct {
+        edges {
+          node {
+            name
+            image {
+              slug
+              sourceUrl
+            }
+            galleryImages {
+              nodes {
+                sourceUrl
+                slug
+              }
+            }
+            shortDescription
+          }
+        }
+      }
     }
   `)
   // handle errors
@@ -66,6 +88,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.postsRemark.edges
   const pages = result.data.pagesRemark.edges
   const tags = result.data.tagsGroup.group
+  const products = result.data.products.edges
+  // const fins = result.data.fins.products.edges
+  // const leashes = result.data.leashes.products.edges
+  // const sup = result.data.sup.products.edges
+  // const accessories = result.data.accessories.products.edges
+  // const apparel = result.data.apparel.products.edges
 
   // Create pages, posts, and tags
   pages.forEach(({ node }) => {
@@ -124,6 +152,78 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   })
+
+  // Create product category pages
+  createPage({
+    path: "/products",
+    component: productCategoryTemplate,
+    context: { products: products, category: "products" },
+  })
+  // createPage({
+  //   path: "/products/surfboard-fins",
+  //   component: productCategoryTemplate,
+  //   context: { products: fins, category: "surfboard-fins" },
+  // })
+  // createPage({
+  //   path: "/products/sup-longboard-fins",
+  //   component: productCategoryTemplate,
+  //   context: { products: sup, category: "sup-longboard-fins" },
+  // })
+  // createPage({
+  //   path: "/products/leashes",
+  //   component: productCategoryTemplate,
+  //   context: { products: leashes, category: "leashes" },
+  // })
+  // createPage({
+  //   path: "/products/accessories",
+  //   component: productCategoryTemplate,
+  //   context: { products: accessories, category: "accessories" },
+  // })
+  // createPage({
+  //   path: "/products/apparel",
+  //   component: productCategoryTemplate,
+  //   context: { products: apparel, category: "apparel" },
+  // })
+  // // Create individual product pages
+  // fins.forEach(({ node }) => {
+  //   createPage({
+  //     path: `products/${node.slug}`,
+  //     component: productTemplate,
+  //     context: { product: node },
+  //   })
+  // })
+
+  // leashes.forEach(({ node }) => {
+  //   createPage({
+  //     path: `products/${node.slug}`,
+  //     component: productTemplate,
+  //     context: { product: node },
+  //   })
+  // })
+
+  // sup.forEach(({ node }) => {
+  //   createPage({
+  //     path: `products/${node.slug}`,
+  //     component: productTemplate,
+  //     context: { product: node },
+  //   })
+  // })
+
+  // accessories.forEach(({ node }) => {
+  //   createPage({
+  //     path: `products/${node.slug}`,
+  //     component: productTemplate,
+  //     context: { product: node },
+  //   })
+  // })
+
+  // apparel.forEach(({ node }) => {
+  //   createPage({
+  //     path: `products/${node.slug}`,
+  //     component: productTemplate,
+  //     context: { product: node },
+  //   })
+  // })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

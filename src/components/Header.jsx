@@ -24,6 +24,7 @@ import InstagramIcon from "@material-ui/icons/Instagram"
 import PinterestIcon from "@material-ui/icons/Pinterest"
 import Container from "./ui/Container"
 import logo from "../assets/logos/logo.png"
+import HeaderMenu from "./shop/HeaderMenu"
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -336,7 +337,7 @@ function Header() {
                                       className={classes.shopLink}
                                     >
                                       <MenuItem onClick={handleCloseShop}>
-                                        {t(`links.${elem.en}`)}
+                                        {t(`shop.${elem.en}`)}
                                       </MenuItem>
                                     </a>
                                   ))}
@@ -367,6 +368,11 @@ function Header() {
                   )}
                 </ListItem>
               ))}
+              {process.env.NODE_ENV === "development" && (
+                <ListItem>
+                  <HeaderMenu link="/shop" title="dev shop" />
+                </ListItem>
+              )}
             </List>
           </Hidden>
           <Hidden mdUp>

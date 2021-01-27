@@ -22,6 +22,7 @@ const color = {
   pink: "#ff0080",
   red: "#FF0012",
   redLt: "#ff4e5b",
+  seaGlass: "#5F5850",
   // theme colors
   white: "#ffffff",
   black: "#000000",

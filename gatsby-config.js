@@ -75,12 +75,12 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: "gatsby-source-wordpress-experimental",
-    //   options: {
-    //     url: `https://blog.eisbach-riders.com/graphql`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-wordpress-experimental",
+      options: {
+        url: `https://blog.eisbach-riders.com/graphql`,
+      },
+    },
     {
       resolve: `gatsby-source-instagram`,
       options: {
