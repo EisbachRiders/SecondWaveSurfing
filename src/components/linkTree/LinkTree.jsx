@@ -88,7 +88,7 @@ function LinkTree() {
           }
         }
       }
-      shepps: file(relativePath: { eq: "gnarwall-surfboard-hanging.jpg" }) {
+      gnarwall: file(relativePath: { eq: "gnarwall-surfboard-hanging.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_tracedSVG
@@ -125,8 +125,8 @@ function LinkTree() {
     },
 
     {
-      title: "Surfboard Hangers from Shepps",
-      img: "shepps",
+      title: "Surfboard Hangers from Gnarwall",
+      img: "gnarwall",
       link:
         "https://secondwavesurfing.com/blog/product-insights-gnarwall-surfboard-hangers-from-SHEPPSolutions/",
     },

@@ -112,7 +112,7 @@ function Trends() {
               aria-label="shop hidden surfboard hanger"
               variant="contained"
               color="primary"
-              href="https://secondwavesurfing.com/shop/brand/shepps-gnarwall/"
+              href="https://secondwavesurfing.com/shop/brand/gnarwall/"
             >
               {t("homepage.moreInfo")}
             </Button>

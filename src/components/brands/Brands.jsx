@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
-import Shepps from "./Shepps"
+import Gnarwall from "./Gnarwall"
 import VanDerWaal from "./VanDerWaal"
 import GreenFix from "./GreenFix"
 import EisbachRiders from "./EisbachRiders"
@@ -84,7 +84,7 @@ function Brands() {
       </div>
       <EisbachRiders />
       <VanDerWaal />
-      <Shepps />
+      <Gnarwall />
       <Suntribe />
       <Waxzam />
       <GreenFix />

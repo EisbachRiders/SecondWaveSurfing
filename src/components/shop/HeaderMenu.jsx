@@ -91,7 +91,7 @@ export default function HeaderMenu() {
     "Eisbach Riders",
     "GreenFIX",
     "Roadtyping",
-    "SHEPPS Gnarwall",
+    "Gnarwall",
     "Suntribe",
     "Van der Waal",
     "WAX Z'AM",
