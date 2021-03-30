@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width: "100%",
+    height: "100%",
     opacity: 1,
   },
   marginBottom: {
@@ -64,7 +65,11 @@ export default function InstagramWidget() {
             id
             localFile {
               childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+                gatsbyImageData(
+                  width: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }
@@ -92,6 +97,7 @@ export default function InstagramWidget() {
             alt={`instagram ${idx}`}
             className={classes.img}
           />
+
           <div className={classes.overlay}>
             <div className={classes.likesContainer}>
               <FavoriteIcon className={classes.icon} />

@@ -3,11 +3,12 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import { ThemeProvider } from "@material-ui/core/styles"
+import StyledEngineProvider from "@material-ui/core/StyledEngineProvider"
 import theme from "../../src/theme"
 
 export default function TopLayout(props) {
   return (
-    <React.Fragment>
+    <StyledEngineProvider injectFirst>
       <Helmet>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link
@@ -20,7 +21,7 @@ export default function TopLayout(props) {
         <CssBaseline />
         {props.children}
       </ThemeProvider>
-    </React.Fragment>
+    </StyledEngineProvider>
   )
 }
 

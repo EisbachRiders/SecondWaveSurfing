@@ -29,7 +29,7 @@ import HeaderMenu from "./shop/HeaderMenu"
 const useStyles = makeStyles((theme) => ({
   appbar: {
     zIndex: 200,
-    backgroundColor: "transparent",
+    background: theme.color.white,
     boxShadow: "none",
   },
   transparentBackground: {
@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Header() {
+function Header({ headerVariant }) {
   const [drawer, setDrawer] = useState(false)
   const [openShop, setOpenShop] = useState(false)
   const classes = useStyles()
@@ -190,7 +190,11 @@ function Header() {
     <AppBar
       className={clsx(
         classes.appbar,
-        trigger ? classes.colorBackground : classes.transparentBackground
+        headerVariant !== "transparent"
+          ? classes.colorBackground
+          : trigger
+          ? classes.colorBackground
+          : classes.transparentBackground
       )}
     >
       <Container

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { useTranslation } from "react-i18next"
+import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-theme-material-ui"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/styles"
@@ -15,7 +16,6 @@ import Newsletter from "../newsletter/Newsletter"
 import Container from "../ui/Container"
 import Contact from "../Contact"
 import BottomFooter from "./BottomFooter"
-import logo from "../../assets/logos/logo.png"
 import visa from "../../assets/logos/visa.svg"
 import amex from "../../assets/logos/american-express.svg"
 import amazonpay from "../../assets/logos/amazonpay.png"
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     justifyContent: "center",
+    flexWrap: "nowrap",
     [theme.breakpoints.up("sm")]: {
       justifyContent: "space-between",
     },
@@ -59,18 +60,29 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   img: {
-    width: 150,
+    width: 50,
     marginBottom: 30,
+    [theme.breakpoints.up("md")]: {
+      width: 150,
+    },
   },
   linksContainer: {
     display: "flex",
     justifyContent: "space-between",
+    flexWrap: "wrap",
+    [theme.breakpoints.up("md")]: {
+      flexWrap: "nowrap",
+    },
   },
   list: {
+    flexBasis: "42%",
     display: "flex",
     flexDirection: "column",
     margin: "0 15px",
     [theme.breakpoints.up("md")]: {
+      flexBasis: "auto",
+    },
+    [theme.breakpoints.up("lg")]: {
       margin: "0 45px",
     },
   },
@@ -203,7 +215,11 @@ function Footer() {
 
       <Container alignItems="flexStart" className={classes.container}>
         <div className={classes.imgContainer}>
-          <img src={logo} alt="logo" className={classes.img} />
+          <StaticImage
+            src="../../assets/logos/logo.png"
+            alt="logo"
+            className={classes.img}
+          />
           <div className={classes.socialContainer}>
             <IconButton
               href="https://www.facebook.com/secondwavesurfing"

@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     height: 150,
     [theme.breakpoints.up("sm")]: {
       height: 300,
+      marginTop: 122,
     },
   },
   bannerImg: {
@@ -268,6 +269,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
           <StaticImage
             src="../../assets/websiteImages/surfers-walking-in-waves-small.jpg"
             alt="surfers walking in waves"
+            objectPosition="center center"
             placeholder="blurred"
             className={classes.bannerImg}
           />
@@ -276,6 +278,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
           <StaticImage
             src="../../assets/websiteImages/surfers-walking-in-waves.jpg"
             alt="surfers walking in waves"
+            objectPosition="top center"
             placeholder="blurred"
             className={classes.bannerImg}
           />

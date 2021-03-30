@@ -69,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     fontSize: 16,
     [theme.breakpoints.up("md")]: {
+      fontSize: 14,
+    },
+    [theme.breakpoints.up("lg")]: {
       fontSize: 18,
     },
   },
@@ -140,7 +143,7 @@ const BlogWidget2 = () => {
                       <GatsbyImage
                         image={getImage(
                           elem.node.frontmatter.featuredImageSmall
-                            .childImageSharp.fluid
+                            .childImageSharp.gatsbyImageData
                         )}
                         alt={elem.node.frontmatter.title}
                         className={classes.img}
@@ -183,7 +186,7 @@ const BlogWidget2 = () => {
                       <GatsbyImage
                         image={getImage(
                           elem.node.frontmatter.featuredImageSmall
-                            .childImageSharp.fluid
+                            .childImageSharp.gatsbyImageData
                         )}
                         alt={elem.node.frontmatter.title}
                         className={classes.img}
@@ -201,7 +204,7 @@ const BlogWidget2 = () => {
               </div>
             )}
           </Hidden>
-          <Hidden smDown>
+          <Hidden mdDown>
             <div className={classes.container} key={`blogPreview${idx}`}>
               {idx > 1 && (
                 <div className={classes.flexItem}>
@@ -209,7 +212,7 @@ const BlogWidget2 = () => {
                     <GatsbyImage
                       image={getImage(
                         elem.node.frontmatter.featuredImageSmall.childImageSharp
-                          .fluid
+                          .gatsbyImageData
                       )}
                       alt={elem.node.frontmatter.title}
                       className={classes.img}
@@ -248,7 +251,7 @@ const BlogWidget2 = () => {
                     <GatsbyImage
                       image={getImage(
                         elem.node.frontmatter.featuredImageSmall.childImageSharp
-                          .fluid
+                          .gatsbyImageData
                       )}
                       alt={elem.node.frontmatter.title}
                       className={classes.img}

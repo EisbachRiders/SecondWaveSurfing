@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
     },
   },
-
   copyright: {
     width: "100%",
     [theme.breakpoints.up("sm")]: {

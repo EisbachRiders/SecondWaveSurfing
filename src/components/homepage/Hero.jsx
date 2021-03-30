@@ -6,11 +6,11 @@ import Hidden from "@material-ui/core/Hidden"
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "relative",
-    height: "100vh - 98px",
+    height: "100vh",
   },
   img: {
-    height: "100vh",
-    marginTop: -98,
+    width: "100%",
+    height: "100%",
   },
 }))
 
@@ -27,7 +27,7 @@ export default function Hero() {
           className={classes.img}
         />
       </Hidden>
-      <Hidden smDown>
+      <Hidden mdDown>
         <StaticImage
           src="../../assets/websiteImages/hero.png"
           alt="surfers running into water"

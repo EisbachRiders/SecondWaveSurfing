@@ -10,7 +10,7 @@ import New from "../components/homepage/New"
 
 const Homepage = () => {
   return (
-    <Layout>
+    <Layout headerVariant="transparent">
       <SEO />
       <Hero />
       <BrandsWidget />

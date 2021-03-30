@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 0 15px 0",
     fontFamily: "secondary",
   },
-  img: { width: "75%", margin: "0 auto", marginBottom: 30 },
+  imgContainer: { width: "75%", margin: "0 auto", marginBottom: 30 },
   text: {
     textAlign: "center",
   },

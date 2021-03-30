@@ -18,43 +18,53 @@ const useStyles = makeStyles((theme) => ({
 export default function Highlights() {
   const classes = useStyles()
   const { i18n } = useTranslation()
+  const imageDE = (
+    <StaticImage
+      src="../../assets/websiteImages/sustainable-surf-solutions-de.png"
+      alt="sustainable surf solutions"
+      placeholder="blurred"
+      className={classes.img}
+    />
+  )
+  const imageEN = (
+    <StaticImage
+      src="../../assets/websiteImages/sustainable-surf-solutions-en.png"
+      alt="sustainable surf solutions"
+      placeholder="blurred"
+      className={classes.img}
+    />
+  )
+  const mobileDE = (
+    <StaticImage
+      src="../../assets/websiteImages/sustainable-surf-solutions-mobile-de.png"
+      alt="sustainable surf solutions"
+      placeholder="blurred"
+      className={classes.img}
+    />
+  )
+  const mobileEN = (
+    <StaticImage
+      src="../../assets/websiteImages/sustainable-surf-solutions-mobile-en.png"
+      alt="sustainable surf solutions"
+      placeholder="blurred"
+      className={classes.img}
+    />
+  )
 
   return (
     <Container className={classes.container}>
-      <Hidden smDown>
-        {i18n.language === "de" ? (
-          <StaticImage
-            src="../../assets/websiteImages/sustainable-surf-solutions-de.png"
-            alt="sustainable surf solutions"
-            placeholder="blurred"
-            className={classes.img}
-          />
-        ) : (
-          <StaticImage
-            src="../../assets/websiteImages/sustainable-surf-solutions-en.png"
-            alt="sustainable surf solutions"
-            placeholder="blurred"
-            className={classes.img}
-          />
-        )}
-      </Hidden>
-      <Hidden mdUp>
-        {i18n.language === "de" ? (
-          <StaticImage
-            src="../../assets/websiteImages/sustainable-surf-solutions-mobile-de.png"
-            alt="sustainable surf solutions"
-            placeholder="blurred"
-            className={classes.img}
-          />
-        ) : (
-          <StaticImage
-            src="../../assets/websiteImages/sustainable-surf-solutions-mobile-en.png"
-            alt="sustainable surf solutions"
-            placeholder="blurred"
-            className={classes.img}
-          />
-        )}
-      </Hidden>
+      {i18n.language === "de" && (
+        <>
+          <Hidden smDown>{imageDE}</Hidden>
+          <Hidden smUp>{mobileDE}</Hidden>
+        </>
+      )}
+      {i18n.language === "en" && (
+        <>
+          <Hidden smDown>{imageEN}</Hidden>
+          <Hidden smUp>{mobileEN}</Hidden>
+        </>
+      )}
     </Container>
   )
 }
