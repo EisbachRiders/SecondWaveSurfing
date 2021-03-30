@@ -132,7 +132,7 @@ export default function EisbachRiders() {
           <div className={classes.titleHolder}>
             <div className={classes.circle}>
               <StaticImage
-                src="../../../assets/logos/eisbach-riders.png"
+                src="../../assets/logos/eisbach-riders.png"
                 alt="er logo"
                 placeholder="blurred"
                 className={classes.logo}

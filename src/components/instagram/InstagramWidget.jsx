@@ -86,7 +86,9 @@ export default function InstagramWidget() {
           rel="noopener noreferrer"
         >
           <GatsbyImage
-            image={getImage(elem.node.localFile.childImageSharp.fluid)}
+            image={getImage(
+              elem.node.localFile.childImageSharp.gatsbyImageData
+            )}
             alt={`instagram ${idx}`}
             className={classes.img}
           />

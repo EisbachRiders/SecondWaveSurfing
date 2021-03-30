@@ -329,7 +329,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       <GatsbyImage
                         image={getImage(
                           elem.node.frontmatter.featuredImageSmall
-                            .childImageSharp.fluid
+                            .childImageSharp.gatsbyImageData
                         )}
                         alt={`blog image ${idx}`}
                         className={classes.blogImgFirst}
@@ -339,7 +339,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       <GatsbyImage
                         image={getImage(
                           elem.node.frontmatter.featuredImage.childImageSharp
-                            .fluid
+                            .gatsbyImageData
                         )}
                         alt={`blog image ${idx}`}
                         className={classes.blogImgFirst}
@@ -370,7 +370,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                           <GatsbyImage
                             image={getImage(
                               elem.node.frontmatter.featuredImageSmall
-                                .childImageSharp.fluid
+                                .childImageSharp.gatsbyImageData
                             )}
                             alt={`blog image ${idx}`}
                             className={classes.blogImg}
@@ -386,7 +386,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             <GatsbyImage
                               image={getImage(
                                 elem.node.frontmatter.featuredImageSmall
-                                  .childImageSharp.fluid
+                                  .childImageSharp.gatsbyImageData
                               )}
                               alt={`blog image ${idx}`}
                               className={classes.blogImg}
@@ -435,7 +435,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             <GatsbyImage
                               image={getImage(
                                 elem.node.frontmatter.featuredImageSmall
-                                  .childImageSharp.fluid
+                                  .childImageSharp.gatsbyImageData
                               )}
                               alt={`blog image ${idx}`}
                               className={classes.blogImg}

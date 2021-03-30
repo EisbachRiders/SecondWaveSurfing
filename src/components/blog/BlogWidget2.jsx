@@ -142,7 +142,7 @@ const BlogWidget2 = () => {
                           elem.node.frontmatter.featuredImageSmall
                             .childImageSharp.fluid
                         )}
-                        alt={elem.path}
+                        alt={elem.node.frontmatter.title}
                         className={classes.img}
                       />
                     ) : (
@@ -185,7 +185,7 @@ const BlogWidget2 = () => {
                           elem.node.frontmatter.featuredImageSmall
                             .childImageSharp.fluid
                         )}
-                        alt={elem.path}
+                        alt={elem.node.frontmatter.title}
                         className={classes.img}
                       />
                     ) : (
@@ -211,7 +211,7 @@ const BlogWidget2 = () => {
                         elem.node.frontmatter.featuredImageSmall.childImageSharp
                           .fluid
                       )}
-                      alt={elem.path}
+                      alt={elem.node.frontmatter.title}
                       className={classes.img}
                     />
                   ) : (
@@ -250,7 +250,7 @@ const BlogWidget2 = () => {
                         elem.node.frontmatter.featuredImageSmall.childImageSharp
                           .fluid
                       )}
-                      alt={elem.path}
+                      alt={elem.node.frontmatter.title}
                       className={classes.img}
                     />
                   ) : (

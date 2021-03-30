@@ -125,7 +125,7 @@ export default function GreenFix() {
           <div className={classes.titleHolder}>
             <div className={classes.circle}>
               <StaticImage
-                src="../../../assets/logos/greenfix.png"
+                src="../../assets/logos/greenfix.png"
                 alt="greenfix logo"
                 placeholder="blurred"
                 className={classes.logo}

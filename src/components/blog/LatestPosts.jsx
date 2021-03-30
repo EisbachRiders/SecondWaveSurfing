@@ -19,9 +19,11 @@ export default function LatestPosts() {
               tags
               featuredImageSmall {
                 childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    width: 400
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                  )
                 }
               }
             }

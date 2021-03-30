@@ -132,7 +132,7 @@ export default function Gnarwall() {
           <div className={classes.titleHolder}>
             <div className={classes.circle}>
               <StaticImage
-                src="../../../assets/logos/gnarwall.png"
+                src="../../assets/logos/gnarwall.png"
                 alt="gnarwall logo"
                 placeholder="blurred"
                 className={classes.logo}

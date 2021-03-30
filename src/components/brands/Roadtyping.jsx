@@ -132,7 +132,7 @@ export default function Roadtyping() {
           <div className={classes.titleHolder}>
             <div className={classes.circle}>
               <StaticImage
-                src="../../../assets/logos/roadtyping-logo"
+                src="../../assets/logos/roadtyping-logo.jpg"
                 alt="roadtyping logo"
                 placeholder="blurred"
                 className={classes.logo}

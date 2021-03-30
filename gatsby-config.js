@@ -37,6 +37,7 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-image",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
@@ -109,7 +110,6 @@ module.exports = {
         icon: `${__dirname}/src/assets/logos/logo.png`,
       },
     },
-    "gatsby-plugin-image",
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

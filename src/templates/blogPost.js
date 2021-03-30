@@ -138,7 +138,8 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
               <Hidden smUp>
                 <GatsbyImage
                   image={getImage(
-                    mdx.frontmatter.featuredImageSmall.childImageSharp.fluid
+                    mdx.frontmatter.featuredImageSmall.childImageSharp
+                      .gatsbyImageData
                   )}
                   alt={mdx.frontmatter.title}
                   className={classes.featuredImg}
@@ -147,7 +148,8 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
               <Hidden smDown>
                 <GatsbyImage
                   image={getImage(
-                    mdx.frontmatter.featuredImage.childImageSharp.fluid
+                    mdx.frontmatter.featuredImage.childImageSharp
+                      .gatsbyImageData
                   )}
                   alt={mdx.frontmatter.title}
                   className={classes.featuredImg}
@@ -202,16 +204,20 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 400
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
         featuredImageSmall {
           childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 400
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }

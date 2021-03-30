@@ -1,9 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { makeStyles } from "@material-ui/styles"
 import Container from "../ui/Container"
-import logo from "../../assets/logos/logo.png"
 
 const useStyles = makeStyles((theme) => ({
   logo: {
@@ -59,72 +57,66 @@ const useStyles = makeStyles((theme) => ({
 export default function LinkTree() {
   const classes = useStyles()
 
-  const data = useStaticQuery(graphql`
-    query {
-      shop: file(
-        relativePath: { eq: "sustainable-surf-solutions-mobile-en.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-      onePercent: file(
-        relativePath: {
-          eq: "eisbach-riders-joins-1-percent-for-the-planet.png"
-        }
-      ) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-      recycledFins: file(relativePath: { eq: "quickLockAD-mobile.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-      gnarwall: file(relativePath: { eq: "gnarwall-surfboard-hanging.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-      provideSlide: file(relativePath: { eq: "provideTheSlide.png" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-    }
-  `)
-
   const links = [
     {
       title: "SWS Shop",
-      img: "shop",
       link: "https://secondwavesurfing.com/shop/",
+      img: (
+        <StaticImage
+          src="../../assets/websiteImages/sustainable-surf-solutions-mobile-en.png"
+          alt="SWS Shop"
+          className={classes.img}
+        />
+      ),
     },
     {
       title: "1% for the Planet",
-      img: "onePercent",
       link:
         "https://secondwavesurfing.com/blog/eisbach-riders-joins-1-percent-for-the-planet/",
+      img: (
+        <StaticImage
+          src="../../assets/websiteImages/eisbach-riders-joins-1-percent-for-the-planet.png"
+          alt="1% for the Planet"
+          className={classes.img}
+        />
+      ),
     },
     {
       title: "Recycled Quick-Lock Touring Fin",
-      img: "recycledFins",
       link:
         "https://secondwavesurfing.com/blog/eisbach-riders-a-touring-fin-made-of-recycled-waste-material-for-stand-up-paddling-with-the-quick-lock-system/",
+      img: (
+        <StaticImage
+          src="../../assets/websiteImages/quickLockAD-mobile.png"
+          alt="Recycled Quick-Lock Touring Fin"
+          className={classes.img}
+        />
+      ),
     },
 
     {
       title: "Surfboard Hangers from Gnarwall",
-      img: "gnarwall",
       link:
         "https://secondwavesurfing.com/blog/product-insights-gnarwall-surfboard-hangers-from-SHEPPSolutions/",
+      img: (
+        <StaticImage
+          src="../../assets/websiteImages/gnarwall-surfboard-hanging.jpg"
+          alt="Surfboard Hangers from Gnarwall"
+          className={classes.img}
+        />
+      ),
     },
     {
       title: "Provide the Slide",
-      img: "provideSlide",
       link:
         "https://secondwavesurfing.com/blog/provide-the-slide-collecting-and-donating-surfboards-for-liberia/",
+      img: (
+        <StaticImage
+          src="../../assets/websiteImages/provideTheSlide.png"
+          alt="Provide the Slide"
+          className={classes.img}
+        />
+      ),
     },
   ]
 
@@ -134,18 +126,17 @@ export default function LinkTree() {
       alignItems="center"
       flexDirection="column"
     >
-      <img src={logo} alt="logo" className={classes.logo}></img>
+      <StaticImage
+        src="../../assets/logos/logo.png"
+        alt="logo"
+        className={classes.logo}
+      />
       <h1 className={classes.h1}>Second Wave Surfing</h1>
       <div className={classes.container}>
         {links.map((elem, idx) => (
           <div className={classes.item} key={`link${idx}`}>
             <a href={elem.link} target="_blank" rel="noreferrer noopener">
-              <GatsbyImage
-                image={getImage(data[elem.img].childImageSharp.fluid)}
-                alt={elem.title}
-                className={classes.img}
-              />
-
+              {elem.img}
               <p className={classes.text}>{elem.title}</p>
             </a>
           </div>
