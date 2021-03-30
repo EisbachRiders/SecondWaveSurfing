@@ -73,9 +73,11 @@ const BlogWidget = () => {
               tags
               featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    width: 400
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                  )
                 }
               }
             }
@@ -97,7 +99,8 @@ const BlogWidget = () => {
             {elem.node.frontmatter.featuredImage ? (
               <GatsbyImage
                 image={getImage(
-                  elem.node.frontmatter.featuredImage.childImageSharp.fluid
+                  elem.node.frontmatter.featuredImage.childImageSharp
+                    .gatsbyImageData
                 )}
                 alt={elem.path}
                 className={classes.img}
