@@ -107,13 +107,13 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#FEF9C7`,
         display: `minimal-ui`,
-        icon: `src/assets/logos/logo.png`,
+        icon: `src/assets/logos/SWlogo.png`,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
     // `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-top-layout",
