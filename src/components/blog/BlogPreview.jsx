@@ -1,5 +1,5 @@
 import React from "react"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
 import placeholder from "../../assets/websiteImages/blogPlaceholder.jpg"
@@ -55,13 +55,13 @@ export default function BlogPreview({ post, idx }) {
   return (
     <>
       <div className={classes.container}>
-        <Img
-          alt={post.node.frontmatter.title}
-          fluid={
+        <GatsbyImage
+          image={getImage(
             post.node.frontmatter.featuredImageSmall
               ? post.node.frontmatter.featuredImageSmall.childImageSharp.fluid
               : placeholder
-          }
+          )}
+          alt={post.node.frontmatter.title}
           className={classes.img}
         />
         <div className={classes.flexItem}>

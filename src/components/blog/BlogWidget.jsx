@@ -1,10 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
-import PlaceholderImg from "../../assets/shopCategory/surfer-at-eisbach.jpg"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,19 +95,18 @@ const BlogWidget = () => {
         {data.allMdx.edges.map((elem, idx) => (
           <div className={classes.container} key={`blogPreview${idx}`}>
             {elem.node.frontmatter.featuredImage ? (
-              <Img
-                fluid={
+              <GatsbyImage
+                image={getImage(
                   elem.node.frontmatter.featuredImage.childImageSharp.fluid
-                }
+                )}
                 alt={elem.path}
-                placeholderStyle={{ backgroundColor: `lightgray` }}
                 className={classes.img}
-                imgStyle={{ objectPosition: "center center" }}
               />
             ) : (
-              <img
-                src={PlaceholderImg}
-                alt="surfer at eisbach"
+              <StaticImage
+                src="../../assets/shopCategory/surfer-at-eisbach.jpg"
+                alt="surfers at eisbach"
+                placeholder="blurred"
                 className={classes.img}
               />
             )}

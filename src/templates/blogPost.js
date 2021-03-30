@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { Link } from "gatsby-theme-material-ui"
@@ -136,20 +136,20 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
                 {t("blog.updated")} {mdx.frontmatter.date.split("T")[0]}
               </p>
               <Hidden smUp>
-                <Img
-                  alt={mdx.frontmatter.title}
-                  fluid={
+                <GatsbyImage
+                  image={getImage(
                     mdx.frontmatter.featuredImageSmall.childImageSharp.fluid
-                  }
-                  placeholderStyle={{ backgroundColor: `lightgray` }}
+                  )}
+                  alt={mdx.frontmatter.title}
                   className={classes.featuredImg}
                 />
               </Hidden>
               <Hidden smDown>
-                <Img
+                <GatsbyImage
+                  image={getImage(
+                    mdx.frontmatter.featuredImage.childImageSharp.fluid
+                  )}
                   alt={mdx.frontmatter.title}
-                  fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
-                  placeholderStyle={{ backgroundColor: `lightgray` }}
                   className={classes.featuredImg}
                 />
               </Hidden>

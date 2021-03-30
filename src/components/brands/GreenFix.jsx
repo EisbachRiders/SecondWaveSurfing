@@ -1,11 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
-import greenfix from "../../assets/logos/greenfix.png"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,12 +14,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     overflow: "hidden",
     marginTop: 30,
-  },
-  reverse: {
-    flexDirection: "row",
-    [theme.breakpoints.up("sm")]: {
-      flexDirection: "row-reverse",
-    },
   },
   textContainer: {
     flexBasis: "100%",
@@ -114,84 +106,57 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function GreenFix() {
+export default function GreenFix() {
   const classes = useStyles()
   const { t } = useTranslation()
 
-  const data = useStaticQuery(graphql`
-    query {
-      greenfix1: file(relativePath: { eq: "greenfix-wax-on-surfboard.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      greenfix2: file(relativePath: { eq: "surf-wax-warm-water.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  const brands = [
-    {
-      key: "greenfix",
-      name: "GreenFIX",
-      website: "https://secondwavesurfing.com/shop/brand/greenfix/",
-      logo: greenfix,
-    },
-  ]
+  const brand = {
+    key: "greenfix",
+    name: "GreenFIX",
+    website: "https://secondwavesurfing.com/shop/brand/greenfix/",
+  }
 
   return (
     <Container background="gray">
-      {brands.map((elem, idx) => (
-        <div className={classes.root} key={`brand${elem.name}`}>
-          <div className={classes.textContainer}>
-            <p className={classes.title}>{t(`brands.${elem.key}_category`)}</p>
-            <p className={classes.text}>{t(`brands.${elem.key}`)}</p>
-            <div className={classes.titleHolder}>
-              <div className={classes.circle}>
-                <img
-                  src={elem.logo}
-                  alt={`brand${elem.name}`}
-                  className={classes.logo}
-                />
-              </div>
-              <div>
-                <a className={classes.title2} href={elem.website}>
-                  {elem.name}
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className={classes.imgContainer}>
-            <Img
-              fluid={data[`${elem.key}1`].childImageSharp.fluid}
-              alt={`${elem.name} lifestyle`}
-              placeholderStyle={{ backgroundColor: `white` }}
-              className={classes.img}
-              imgStyle={{ objectPosition: "center center" }}
-            />
-          </div>
-          <Hidden smDown>
-            <div className={classes.imgContainer2}>
-              <Img
-                fluid={data[`${elem.key}2`].childImageSharp.fluid}
-                alt={`${elem.name} product`}
-                placeholderStyle={{ backgroundColor: `white` }}
-                className={classes.img2}
-                imgStyle={{ objectPosition: "center center" }}
+      <div className={classes.root}>
+        <div className={classes.textContainer}>
+          <p className={classes.title}>{t(`brands.${brand.key}_category`)}</p>
+          <p className={classes.text}>{t(`brands.${brand.key}`)}</p>
+          <div className={classes.titleHolder}>
+            <div className={classes.circle}>
+              <StaticImage
+                src="../../../assets/logos/greenfix.png"
+                alt="greenfix logo"
+                placeholder="blurred"
+                className={classes.logo}
               />
             </div>
-          </Hidden>
+            <div>
+              <a className={classes.title2} href={brand.website}>
+                {brand.name}
+              </a>
+            </div>
+          </div>
         </div>
-      ))}
+        <div className={classes.imgContainer}>
+          <StaticImage
+            src="../../assets/websiteImages/greenfix-wax-on-surfboard.png"
+            alt="greenfix wax on surfboard"
+            placeholder="blurred"
+            className={classes.img}
+          />
+        </div>
+        <Hidden smDown>
+          <div className={classes.imgContainer2}>
+            <StaticImage
+              src="../../assets/websiteImages/greenfix-warm-water-wax.jpg"
+              alt="greenfix warm water wax"
+              placeholder="blurred"
+              className={classes.img2}
+            />
+          </div>
+        </Hidden>
+      </div>
     </Container>
   )
 }
-
-export default GreenFix

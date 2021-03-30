@@ -29,7 +29,7 @@ import HeaderMenu from "./shop/HeaderMenu"
 const useStyles = makeStyles((theme) => ({
   appbar: {
     zIndex: 200,
-    background: "transparent",
+    backgroundColor: "transparent",
     boxShadow: "none",
   },
   transparentBackground: {
@@ -128,6 +128,7 @@ function Header() {
   const classes = useStyles()
   const anchorRef = useRef(null)
   const { t, i18n } = useTranslation()
+  const trigger = useScrollTrigger()
 
   const handleSetLang = () => {
     let newLng = i18n.language === "en" ? "de" : "en"
@@ -174,11 +175,6 @@ function Header() {
     prevOpen.current = openShop
   }, [openShop])
 
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  })
-
   const links = ["blog", "shop", "cart", "my-account"]
   const mobileLinks = []
   const shopCategories = [
@@ -192,7 +188,6 @@ function Header() {
 
   return (
     <AppBar
-      position="sticky"
       className={clsx(
         classes.appbar,
         trigger ? classes.colorBackground : classes.transparentBackground

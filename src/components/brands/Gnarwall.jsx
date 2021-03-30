@@ -113,14 +113,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Roadtyping() {
+export default function Gnarwall() {
   const classes = useStyles()
   const { t } = useTranslation()
 
   const brand = {
-    key: "roadtyping",
-    name: "Roadtyping",
-    website: "https://secondwavesurfing.com/shop/brand/roadtyping/",
+    key: "gnarwall",
+    name: "Gnarwall",
+    website: "https://secondwavesurfing.com/shop/brand/gnarwall/",
   }
 
   return (
@@ -132,8 +132,8 @@ export default function Roadtyping() {
           <div className={classes.titleHolder}>
             <div className={classes.circle}>
               <StaticImage
-                src="../../../assets/logos/roadtyping-logo"
-                alt="roadtyping logo"
+                src="../../../assets/logos/gnarwall.png"
+                alt="gnarwall logo"
                 placeholder="blurred"
                 className={classes.logo}
               />
@@ -147,8 +147,8 @@ export default function Roadtyping() {
         </div>
         <div className={classes.imgContainer}>
           <StaticImage
-            src="../../assets/websiteImages/roadtyping-card-and-clutter-on-desk.jpg"
-            alt="roadtyping card and clutter on desk"
+            src="../../assets/websiteImages/gnarwall-hangers-with-equipment.jpg"
+            alt="gnarwall hangers with equipment"
             placeholder="blurred"
             className={classes.img}
           />
@@ -156,8 +156,8 @@ export default function Roadtyping() {
         <Hidden smDown>
           <div className={classes.imgContainer2}>
             <StaticImage
-              src="../../assets/websiteImages/postkarte-surfboard.jpg"
-              alt="surfboard postcard"
+              src="../../assets/websiteImages/gnarwall-products.jpg"
+              alt="gnarwall products"
               placeholder="blurred"
               className={classes.img2}
             />

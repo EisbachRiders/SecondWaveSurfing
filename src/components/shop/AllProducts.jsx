@@ -1,6 +1,5 @@
 import React, { Fragment } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
@@ -103,21 +102,9 @@ const multipleOfFour = (array) => {
   return array
 }
 
-function AllProducts({ products, category }) {
+export default function AllProducts({ products, category }) {
   const classes = useStyles()
   const { t } = useTranslation()
-
-  const data = useStaticQuery(graphql`
-    query {
-      fileName: file(relativePath: { eq: "blogBanner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   const shopItems = (value) => {
     const section = multipleOfFour(value)
@@ -142,16 +129,15 @@ function AllProducts({ products, category }) {
     default:
       subcat = []
   }
-  console.log(products)
+
   return (
     <>
       <div className={classes.background}>
-        <Img
-          fluid={data.fileName.childImageSharp.fluid}
-          alt="street art"
-          placeholderStyle={{ backgroundColor: `blue` }}
+        <StaticImage
+          src="../../assets/websiteImages/surfers-walking-in-waves.jpg"
+          alt="surfers walking in waves"
+          placeholder="blurred"
           className={classes.backgroundImg}
-          imgStyle={{ objectPosition: "center center" }}
         />
         <div className={classes.backgroundContainer}>
           <h1 className={classes.h1}>{t(`product.${category}`)}</h1>
@@ -172,13 +158,6 @@ function AllProducts({ products, category }) {
           <>
             {subcat.map((elem) => (
               <Fragment key={`subcategory_${elem}`}>
-                {/* <Img
-                  fluid={data.img.childImageSharp.fluid}
-                  alt="street art"
-                  placeholderStyle={{ backgroundColor: `blue` }}
-                  className={classes.backgroundImg}
-                  // imgStyle={{ objectPosition: "center center" }}
-                /> */}
                 <div className={classes.subcat}>
                   <div className={classes.divider1} />
                   <p className={classes.subcatText}>{elem}</p>
@@ -205,5 +184,3 @@ function AllProducts({ products, category }) {
     </>
   )
 }
-
-export default AllProducts

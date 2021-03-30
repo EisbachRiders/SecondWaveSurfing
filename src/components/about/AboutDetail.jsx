@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import clsx from "clsx"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
@@ -44,34 +43,15 @@ const useStyles = makeStyles((theme) => ({
 function AboutDetail() {
   const classes = useStyles()
   const { t } = useTranslation()
-  const images = useStaticQuery(graphql`
-    query {
-      community: file(relativePath: { eq: "aboutCommunity.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      sustainability: file(relativePath: { eq: "aboutSustainability.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Container>
       <div className={clsx(classes.flex, classes.reverse)}>
-        <Img
-          fluid={images.community.childImageSharp.fluid}
-          alt="wave"
-          placeholderStyle={{ backgroundColor: `lightgray` }}
+        <StaticImage
+          src="../../assets/websiteImages/picking-up-trash-in-river.jpg"
+          alt="picking up trash in river"
+          placeholder="blurred"
           className={classes.img}
-          imgStyle={{ objectPosition: "center center" }}
         />
         <div className={classes.text}>
           <p className={classes.title}>{t("common.community")}</p>
@@ -83,12 +63,11 @@ function AboutDetail() {
           <p className={classes.title}>{t("common.sustainability")}</p>
           <p>{t("about.sustainability")}</p>
         </div>
-        <Img
-          fluid={images.sustainability.childImageSharp.fluid}
-          alt="wave"
-          placeholderStyle={{ backgroundColor: `lightgray` }}
+        <StaticImage
+          src="../../assets/websiteImages/trash-found-at-beach.jpg"
+          alt="trash found at beach"
+          placeholder="blurred"
           className={classes.img}
-          imgStyle={{ objectPosition: "center center" }}
         />
       </div>
     </Container>

@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -47,29 +46,17 @@ const useStyles = makeStyles((theme) => ({
 export default function Sidebar() {
   const classes = useStyles()
   const { t } = useTranslation()
-  const data = useStaticQuery(graphql`
-    query {
-      fileName: file(relativePath: { eq: "aboutUs.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <>
       <Paper className={classes.paper} square elevation={0}>
         <p className={classes.title}>{t("common.about")}</p>
         <div className={classes.imgContainer}>
-          <Img
-            fluid={data.fileName.childImageSharp.fluid}
-            alt="2 friends sitting together"
-            placeholderStyle={{ backgroundColor: `lightgray` }}
+          <StaticImage
+            src="../../assets/websiteImages/surfer-looking-out-over-beach-with-t-shirt.jpg"
+            alt="surfers looking out over beach with t-shirt"
+            placeholder="blurred"
             className={classes.img}
-            imgStyle={{ objectPosition: "center center" }}
           />
         </div>
         <p className={classes.text}>{t("sidebar.about")}</p>

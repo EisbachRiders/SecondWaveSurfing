@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function ShopCategories() {
+export default function ShopCategories() {
   const classes = useStyles()
   const { t } = useTranslation()
   const data = useStaticQuery(graphql`
@@ -91,10 +91,7 @@ function ShopCategories() {
         edges {
           node {
             childImageSharp {
-              fluid {
-                originalName
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
             }
           }
         }
@@ -125,20 +122,19 @@ function ShopCategories() {
               )}
               key={`category${elem.cat}`}
             >
-              <Img
-                fluid={
+              <GatsbyImage
+                image={getImage(
                   data.allFile.edges.find(
                     (img) =>
                       img.node.childImageSharp.fluid.originalName ===
                       `${elem.path}.jpg`
                   ).node.childImageSharp.fluid
-                }
+                )}
                 alt={elem.path}
                 className={clsx(
                   classes.img,
                   idx === 0 ? classes.imgBig : classes.imgSmall
                 )}
-                imgStyle={{ objectPosition: "center center" }}
               />
               <div className={classes.textbox}>
                 <p className={clsx(classes.text, classes.title)}>
@@ -158,5 +154,3 @@ function ShopCategories() {
     </Container>
   )
 }
-
-export default ShopCategories

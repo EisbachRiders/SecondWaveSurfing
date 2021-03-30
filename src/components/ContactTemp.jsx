@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
@@ -94,25 +93,6 @@ function ContactTemp() {
   const [isSnackbarOpen, setSnackbar] = useState(false)
   const [notification, setNotification] = useState("success")
   const [isLoading, setLoading] = useState(false)
-
-  const data = useStaticQuery(graphql`
-    query {
-      banner: file(relativePath: { in: "blogBanner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bannerMobile: file(relativePath: { in: "blogBannerMobile.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   const handleChange = (name) => (event) => {
     if (!isTouched) {
@@ -214,21 +194,19 @@ function ContactTemp() {
       </Snackbar>
       <div className={classes.banner}>
         <Hidden smUp>
-          <Img
-            alt={`surfers sitting in water`}
-            fluid={data.bannerMobile.childImageSharp.fluid}
-            placeholderStyle={{ backgroundColor: `lightgray` }}
+          <StaticImage
+            src="../../assets/websiteImages/surfers-walking-in-waves-small.jpg"
+            alt="surfers walking in waves"
+            placeholder="blurred"
             className={classes.bannerImg}
-            imgStyle={{ objectPosition: "top center" }}
           />
         </Hidden>
         <Hidden xsDown>
-          <Img
-            alt={`surfers sitting in water`}
-            fluid={data.banner.childImageSharp.fluid}
-            placeholderStyle={{ backgroundColor: `lightgray` }}
+          <StaticImage
+            src="../../assets/websiteImages/surfers-walking-in-waves.jpg"
+            alt="surfers walking in waves"
+            placeholder="blurred"
             className={classes.bannerImg}
-            imgStyle={{ objectPosition: "top center" }}
           />
         </Hidden>
       </div>

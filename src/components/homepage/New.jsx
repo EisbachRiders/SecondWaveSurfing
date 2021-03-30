@@ -1,6 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
+
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -93,40 +93,11 @@ const useStyles = makeStyles((theme) => ({
   marginTop: {
     marginTop: 14,
   },
-  img3: {
-    marginBottom: 30,
-  },
 }))
 
-function New() {
+export default function New() {
   const classes = useStyles()
   const { t } = useTranslation()
-
-  const data = useStaticQuery(graphql`
-    query {
-      image1: file(relativePath: { eq: "waxzam-surfboard-in-field.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      image2: file(relativePath: { eq: "waxzam-box.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      image3: file(relativePath: { eq: "quickLockAD.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Container className={classes.container}>
@@ -134,12 +105,11 @@ function New() {
 
       <div className={classes.innerContainer}>
         <div className={classes.flexItemImg}>
-          <Img
-            fluid={data.image1.childImageSharp.fluid}
-            alt="brands"
-            placeholderStyle={{ backgroundColor: `white` }}
+          <StaticImage
+            src="../../assets/websiteImages/waxzam-surfboard-in-field.jpg"
+            alt="waxzam surfboard in field"
+            placeholder="blurred"
             className={classes.img1}
-            imgStyle={{ objectPosition: "center center" }}
           />
           <div className={classes.buttonContainer}>
             <Button
@@ -158,12 +128,11 @@ function New() {
             aria-label="shop wax zam wax"
             href="https://secondwavesurfing.com/shop/product/wax-zam-surf-wax/"
           >
-            <Img
-              fluid={data.image2.childImageSharp.fluid}
-              alt="brands"
-              placeholderStyle={{ backgroundColor: `white` }}
+            <StaticImage
+              src="../../assets/websiteImages/waxzam-box.png"
+              alt="waxzam box"
+              placeholder="blurred"
               className={classes.img2}
-              imgStyle={{ objectPosition: "center center" }}
             />
           </Button>
           <div className={classes.textContainer}>
@@ -183,5 +152,3 @@ function New() {
     </Container>
   )
 }
-
-export default New

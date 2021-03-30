@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "../ui/Container"
@@ -35,30 +34,17 @@ function About() {
   const classes = useStyles()
   const { t } = useTranslation()
 
-  const data = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "brands.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Container
       alignItems="center"
       justifyContent="spaceAround"
       background="gray"
     >
-      <Img
-        fluid={data.image.childImageSharp.fluid}
-        alt="brands"
-        backgroundColor="lightgray"
+      <StaticImage
+        src="../../assets/websiteImages/brands.png"
+        alt="all brands"
+        placeholder="blurred"
         className={classes.img}
-        imgStyle={{ objectPosition: "center center" }}
       />
       <div className={classes.flexItem}>
         <p className={classes.tagline}>{t("homepage.heroSubtitle")}</p>

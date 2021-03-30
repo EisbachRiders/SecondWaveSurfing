@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { makeStyles } from "@material-ui/styles"
 import Container from "../ui/Container"
 import logo from "../../assets/logos/logo.png"
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function LinkTree() {
+export default function LinkTree() {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
@@ -65,9 +65,7 @@ function LinkTree() {
         relativePath: { eq: "sustainable-surf-solutions-mobile-en.png" }
       ) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       onePercent: file(
@@ -76,30 +74,22 @@ function LinkTree() {
         }
       ) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       recycledFins: file(relativePath: { eq: "quickLockAD-mobile.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       gnarwall: file(relativePath: { eq: "gnarwall-surfboard-hanging.jpg" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       provideSlide: file(relativePath: { eq: "provideTheSlide.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
     }
@@ -150,13 +140,12 @@ function LinkTree() {
         {links.map((elem, idx) => (
           <div className={classes.item} key={`link${idx}`}>
             <a href={elem.link} target="_blank" rel="noreferrer noopener">
-              <Img
-                fluid={data[elem.img].childImageSharp.fluid}
+              <GatsbyImage
+                image={getImage(data[elem.img].childImageSharp.fluid)}
                 alt={elem.title}
-                placeholderStyle={{ backgroundColor: `white` }}
                 className={classes.img}
-                imgStyle={{ objectPosition: "center center" }}
               />
+
               <p className={classes.text}>{elem.title}</p>
             </a>
           </div>
@@ -165,5 +154,3 @@ function LinkTree() {
     </Container>
   )
 }
-
-export default LinkTree
