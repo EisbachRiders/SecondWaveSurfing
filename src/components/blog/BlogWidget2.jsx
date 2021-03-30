@@ -1,11 +1,10 @@
 import React, { Fragment } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-theme-material-ui"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
-import PlaceholderImg from "../../assets/shopCategory/surfer-at-eisbach.jpg"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     fontSize: 16,
     [theme.breakpoints.up("md")]: {
+      fontSize: 14,
+    },
+    [theme.breakpoints.up("lg")]: {
       fontSize: 18,
     },
   },
@@ -111,9 +113,11 @@ const BlogWidget2 = () => {
               tags
               featuredImageSmall {
                 childImageSharp {
-                  fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    width: 400
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP]
+                  )
                 }
               }
             }
@@ -136,20 +140,19 @@ const BlogWidget2 = () => {
                 {idx === 0 && (
                   <div className={classes.flexItem}>
                     {elem.node.frontmatter.featuredImageSmall ? (
-                      <Img
-                        fluid={
+                      <GatsbyImage
+                        image={getImage(
                           elem.node.frontmatter.featuredImageSmall
-                            .childImageSharp.fluid
-                        }
-                        alt={elem.path}
-                        placeholderStyle={{ backgroundColor: `lightgray` }}
+                            .childImageSharp.gatsbyImageData
+                        )}
+                        alt={elem.node.frontmatter.title}
                         className={classes.img}
-                        imgStyle={{ objectPosition: "center center" }}
                       />
                     ) : (
-                      <img
-                        src={PlaceholderImg}
-                        alt="surfer at eisbach"
+                      <StaticImage
+                        src="../../assets/shopCategory/surfer-at-eisbach.jpg"
+                        alt="surfers at eisbach"
+                        placeholder="blurred"
                         className={classes.img}
                       />
                     )}
@@ -180,20 +183,19 @@ const BlogWidget2 = () => {
                 {idx === 1 && (
                   <div className={classes.flexItem}>
                     {elem.node.frontmatter.featuredImageSmall ? (
-                      <Img
-                        fluid={
+                      <GatsbyImage
+                        image={getImage(
                           elem.node.frontmatter.featuredImageSmall
-                            .childImageSharp.fluid
-                        }
-                        alt={elem.path}
-                        placeholderStyle={{ backgroundColor: `lightgray` }}
+                            .childImageSharp.gatsbyImageData
+                        )}
+                        alt={elem.node.frontmatter.title}
                         className={classes.img}
-                        imgStyle={{ objectPosition: "center center" }}
                       />
                     ) : (
-                      <img
-                        src={PlaceholderImg}
-                        alt="surfer at eisbach"
+                      <StaticImage
+                        src="../../assets/shopCategory/surfer-at-eisbach.jpg"
+                        alt="surfers at eisbach"
+                        placeholder="blurred"
                         className={classes.img}
                       />
                     )}
@@ -202,25 +204,24 @@ const BlogWidget2 = () => {
               </div>
             )}
           </Hidden>
-          <Hidden smDown>
+          <Hidden mdDown>
             <div className={classes.container} key={`blogPreview${idx}`}>
               {idx > 1 && (
                 <div className={classes.flexItem}>
                   {elem.node.frontmatter.featuredImageSmall ? (
-                    <Img
-                      fluid={
+                    <GatsbyImage
+                      image={getImage(
                         elem.node.frontmatter.featuredImageSmall.childImageSharp
-                          .fluid
-                      }
-                      alt={elem.path}
-                      placeholderStyle={{ backgroundColor: `lightgray` }}
+                          .gatsbyImageData
+                      )}
+                      alt={elem.node.frontmatter.title}
                       className={classes.img}
-                      imgStyle={{ objectPosition: "center center" }}
                     />
                   ) : (
-                    <img
-                      src={PlaceholderImg}
-                      alt="surfer at eisbach"
+                    <StaticImage
+                      src="../../assets/shopCategory/surfer-at-eisbach.jpg"
+                      alt="surfers at eisbach"
+                      placeholder="blurred"
                       className={classes.img}
                     />
                   )}
@@ -247,20 +248,19 @@ const BlogWidget2 = () => {
               {idx < 2 && (
                 <div className={classes.flexItem}>
                   {elem.node.frontmatter.featuredImageSmall ? (
-                    <Img
-                      fluid={
+                    <GatsbyImage
+                      image={getImage(
                         elem.node.frontmatter.featuredImageSmall.childImageSharp
-                          .fluid
-                      }
-                      alt={elem.path}
-                      placeholderStyle={{ backgroundColor: `lightgray` }}
+                          .gatsbyImageData
+                      )}
+                      alt={elem.node.frontmatter.title}
                       className={classes.img}
-                      imgStyle={{ objectPosition: "center center" }}
                     />
                   ) : (
-                    <img
-                      src={PlaceholderImg}
-                      alt="surfer at eisbach"
+                    <StaticImage
+                      src="../../assets/shopCategory/surfer-at-eisbach.jpg"
+                      alt="surfers at eisbach"
+                      placeholder="blurred"
                       className={classes.img}
                     />
                   )}

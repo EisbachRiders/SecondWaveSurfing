@@ -113,14 +113,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function EisbachRiders() {
+export default function Gnarwall() {
   const classes = useStyles()
   const { t } = useTranslation()
 
   const brand = {
-    key: "er",
-    name: "Eisbach Riders",
-    website: "https://secondwavesurfing.com/shop/brand/eisbach-riders/",
+    key: "gnarwall",
+    name: "Gnarwall",
+    website: "https://secondwavesurfing.com/shop/brand/gnarwall/",
   }
 
   return (
@@ -132,8 +132,8 @@ export default function EisbachRiders() {
           <div className={classes.titleHolder}>
             <div className={classes.circle}>
               <StaticImage
-                src="../../assets/logos/eisbach-riders.png"
-                alt="er logo"
+                src="../../assets/logos/gnarwall.png"
+                alt="gnarwall logo"
                 placeholder="blurred"
                 className={classes.logo}
               />
@@ -147,8 +147,8 @@ export default function EisbachRiders() {
         </div>
         <div className={classes.imgContainer}>
           <StaticImage
-            src="../../assets/websiteImages/person-putting-on-surfboard-leash.jpg"
-            alt="surfer putting on surfboard leash"
+            src="../../assets/websiteImages/gnarwall-hangers-with-equipment.jpg"
+            alt="gnarwall hangers with equipment"
             placeholder="blurred"
             className={classes.img}
           />
@@ -156,8 +156,8 @@ export default function EisbachRiders() {
         <Hidden smDown>
           <div className={classes.imgContainer2}>
             <StaticImage
-              src="../../assets/websiteImages/fiberglass-double-tab-fin-all-colors.jpg"
-              alt="all colors of fiberglass double tab fins"
+              src="../../assets/websiteImages/gnarwall-products.jpg"
+              alt="gnarwall products"
               placeholder="blurred"
               className={classes.img2}
             />

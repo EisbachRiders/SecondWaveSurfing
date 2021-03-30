@@ -20,22 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/assets/logos`,
-        name: `logos`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/assets/websiteImages`,
-        name: `websiteImages`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `shopCategory`,
-        path: `${__dirname}/src/assets/shopCategory`,
+        path: `${__dirname}/src/assets`,
       },
     },
     {
@@ -52,6 +37,7 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-image",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
@@ -75,12 +61,12 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: "gatsby-source-wordpress-experimental",
-    //   options: {
-    //     url: `https://blog.eisbach-riders.com/graphql`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-wordpress",
+      options: {
+        url: `http://sandbox.secondwavesurfing.com/graphql`,
+      },
+    },
     {
       resolve: `gatsby-source-instagram`,
       options: {
@@ -128,23 +114,18 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    `gatsby-plugin-feed-mdx`,
+    // `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-sitemap`,
-    "gatsby-plugin-emotion",
+    "gatsby-plugin-top-layout",
     {
-      resolve: `gatsby-theme-material-ui`,
+      resolve: "gatsby-plugin-material-ui",
+      // If you want to use styled components you should change the injection order.
       options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: `Raleway`,
-                variants: [`300`, `400`, `500`],
-              },
-            ],
-          },
-        },
+        // stylesProvider: {
+        //   injectFirst: true,
+        // },
       },
     },
+    "gatsby-plugin-emotion",
   ],
 }

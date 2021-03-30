@@ -1,6 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles"
-import "../app.css"
-import "../../static/fonts/fonts.css"
+import "./css/app.css"
 
 // fin: "#00d7a2",
 // finDk: "#00be8f",

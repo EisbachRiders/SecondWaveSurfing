@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -82,34 +81,67 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function ShopCategories() {
+export default function ShopCategories() {
   const classes = useStyles()
   const { t } = useTranslation()
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { sourceInstanceName: { eq: "shopCategory" } }) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                originalName
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+
   const big = [
-    { cat: "sup", path: "sup-on-lake-bavaria" },
-    { cat: "rapidSurfing", path: "surfer-at-eisbach" },
+    {
+      cat: "sup",
+      img: (
+        <StaticImage
+          src="../../assets/shopCategory/sup-on-lake-bavaria.jpg"
+          alt="sup on lake"
+        />
+      ),
+    },
+    {
+      cat: "rapidSurfing",
+      img: (
+        <StaticImage
+          src="../../assets/shopCategory/surfer-at-eisbach.jpg"
+          alt="surfer at eisbach"
+        />
+      ),
+    },
   ]
   const small = [
-    { cat: "fins", path: "fiberglass-single-tab-on-rocks-at-beach" },
-    { cat: "leashes", path: "surfer-putting-on-blue-leash-at-beach" },
-    { cat: "apparel", path: "girl-sitting-at-lake" },
-    { cat: "accessories", path: "surfboards-hanging-on-wall" },
+    {
+      cat: "fins",
+      img: (
+        <StaticImage
+          src="../../assets/shopCategory/fiberglass-single-tab-on-rocks-at-beach.jpg"
+          alt="fiberglass fin on rocky beach"
+        />
+      ),
+    },
+    {
+      cat: "leashes",
+      img: (
+        <StaticImage
+          src="../../assets/shopCategory/surfer-putting-on-blue-leash-at-beach.jpg"
+          alt="surfer putting on blue leash at beach"
+        />
+      ),
+    },
+    {
+      cat: "apparel",
+      img: (
+        <StaticImage
+          src="../../assets/shopCategory/girl-sitting-at-lake.jpg"
+          alt="girl with eisbach riders t-shirt sitting at lake"
+        />
+      ),
+    },
+    {
+      cat: "accessories",
+      img: (
+        <StaticImage
+          src="../../assets/shopCategory/surfboards-hanging-on-wall.jpg"
+          alt="surfboards hanging on wall"
+        />
+      ),
+    },
   ]
   const boxes = [big, small]
 
@@ -125,21 +157,15 @@ function ShopCategories() {
               )}
               key={`category${elem.cat}`}
             >
-              <Img
-                fluid={
-                  data.allFile.edges.find(
-                    (img) =>
-                      img.node.childImageSharp.fluid.originalName ===
-                      `${elem.path}.jpg`
-                  ).node.childImageSharp.fluid
-                }
-                alt={elem.path}
+              <div
                 className={clsx(
                   classes.img,
                   idx === 0 ? classes.imgBig : classes.imgSmall
                 )}
-                imgStyle={{ objectPosition: "center center" }}
-              />
+              >
+                {elem.img}
+              </div>
+
               <div className={classes.textbox}>
                 <p className={clsx(classes.text, classes.title)}>
                   {t(`shop.${elem.cat}`)}
@@ -158,5 +184,3 @@ function ShopCategories() {
     </Container>
   )
 }
-
-export default ShopCategories

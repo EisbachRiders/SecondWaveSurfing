@@ -41,16 +41,20 @@ export const pageQuery = graphql`
             tags
             featuredImage {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 400
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
             featuredImageSmall {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 400
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }

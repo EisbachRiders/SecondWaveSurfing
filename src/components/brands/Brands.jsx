@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Gnarwall from "./Gnarwall"
@@ -52,31 +51,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Brands() {
+export default function Brands() {
   const classes = useStyles()
   const { t } = useTranslation()
-
-  const data = useStaticQuery(graphql`
-    query {
-      header: file(relativePath: { eq: "blogBanner.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <>
       <div className={classes.headerContainer}>
-        <Img
-          fluid={data.header.childImageSharp.fluid}
-          alt="surfers walking on beach"
-          placeholderStyle={{ backgroundColor: `lightgray` }}
+        <StaticImage
+          src="../../assets/websiteImages/surfers-walking-in-waves.jpg"
+          alt="surfers walking in waves"
+          placeholder="blurred"
           className={classes.backgroundImg}
-          imgStyle={{ objectPosition: "center center" }}
         />
         <div className={classes.backgroundContainer}>
           <h1 className={classes.h1}>{t("links.brands")}</h1>
@@ -92,5 +78,3 @@ function Brands() {
     </>
   )
 }
-
-export default Brands

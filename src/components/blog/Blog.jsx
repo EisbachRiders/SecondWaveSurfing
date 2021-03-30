@@ -1,24 +1,24 @@
 import React, { Fragment } from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image"
+import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { Link } from "gatsby-theme-material-ui"
-import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Paper from "@material-ui/core/Paper"
 import Hidden from "@material-ui/core/Hidden"
 import Button from "@material-ui/core/Button"
-import Container from "../ui/Container"
-import Sidebar from "./Sidebar"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
+import Container from "../ui/Container"
+import Sidebar from "./Sidebar"
 
 const useStyles = makeStyles((theme) => ({
   banner: {
     height: 150,
     [theme.breakpoints.up("sm")]: {
       height: 300,
+      marginTop: 122,
     },
   },
   bannerImg: {
@@ -259,45 +259,28 @@ const useStyles = makeStyles((theme) => ({
 const Blog = ({ posts, tag, numPages, currentPage }) => {
   const classes = useStyles()
   const { t } = useTranslation()
-  const data = useStaticQuery(graphql`
-    query {
-      banner: file(relativePath: { in: "blogBanner.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      bannerMobile: file(relativePath: { in: "blogBannerMobile.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+
   const tags = ["home", "lifestyle", "travel", "gear", "community"]
 
   return (
     <>
       <div className={classes.banner}>
         <Hidden smUp>
-          <Img
-            alt={`surfers sitting in water`}
-            fluid={data.bannerMobile.childImageSharp.fluid}
-            placeholderStyle={{ backgroundColor: `lightgray` }}
+          <StaticImage
+            src="../../assets/websiteImages/surfers-walking-in-waves-small.jpg"
+            alt="surfers walking in waves"
+            objectPosition="center center"
+            placeholder="blurred"
             className={classes.bannerImg}
-            imgStyle={{ objectPosition: "top center" }}
           />
         </Hidden>
         <Hidden xsDown>
-          <Img
-            alt={`surfers sitting in water`}
-            fluid={data.banner.childImageSharp.fluid}
-            placeholderStyle={{ backgroundColor: `lightgray` }}
+          <StaticImage
+            src="../../assets/websiteImages/surfers-walking-in-waves.jpg"
+            alt="surfers walking in waves"
+            objectPosition="top center"
+            placeholder="blurred"
             className={classes.bannerImg}
-            imgStyle={{ objectPosition: "top center" }}
           />
         </Hidden>
       </div>
@@ -346,22 +329,22 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                   </Link>
                   <div className={classes.imgContainer}>
                     <Hidden lgUp>
-                      <Img
-                        alt={`blog image ${idx}`}
-                        fluid={
+                      <GatsbyImage
+                        image={getImage(
                           elem.node.frontmatter.featuredImageSmall
-                            .childImageSharp.fluid
-                        }
+                            .childImageSharp.gatsbyImageData
+                        )}
+                        alt={`blog image ${idx}`}
                         className={classes.blogImgFirst}
                       />
                     </Hidden>
                     <Hidden lgDown>
-                      <Img
-                        alt={`blog image ${idx}`}
-                        fluid={
+                      <GatsbyImage
+                        image={getImage(
                           elem.node.frontmatter.featuredImage.childImageSharp
-                            .fluid
-                        }
+                            .gatsbyImageData
+                        )}
+                        alt={`blog image ${idx}`}
                         className={classes.blogImgFirst}
                       />
                     </Hidden>
@@ -387,12 +370,12 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                           to={elem.node.fields.slug}
                           className={classes.blogImgLink}
                         >
-                          <Img
-                            alt={`blog image ${idx}`}
-                            fluid={
+                          <GatsbyImage
+                            image={getImage(
                               elem.node.frontmatter.featuredImageSmall
-                                .childImageSharp.fluid
-                            }
+                                .childImageSharp.gatsbyImageData
+                            )}
+                            alt={`blog image ${idx}`}
                             className={classes.blogImg}
                           />
                         </Link>
@@ -403,12 +386,12 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             to={elem.node.fields.slug}
                             className={classes.blogImgLink}
                           >
-                            <Img
-                              alt={`blog image ${idx}`}
-                              fluid={
+                            <GatsbyImage
+                              image={getImage(
                                 elem.node.frontmatter.featuredImageSmall
-                                  .childImageSharp.fluid
-                              }
+                                  .childImageSharp.gatsbyImageData
+                              )}
+                              alt={`blog image ${idx}`}
                               className={classes.blogImg}
                             />
                           </Link>
@@ -452,12 +435,12 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             to={elem.node.fields.slug}
                             className={classes.blogImgLink}
                           >
-                            <Img
-                              alt={`blog image ${idx}`}
-                              fluid={
+                            <GatsbyImage
+                              image={getImage(
                                 elem.node.frontmatter.featuredImageSmall
-                                  .childImageSharp.fluid
-                              }
+                                  .childImageSharp.gatsbyImageData
+                              )}
+                              alt={`blog image ${idx}`}
                               className={classes.blogImg}
                             />
                           </Link>

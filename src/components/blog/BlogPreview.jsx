@@ -1,8 +1,7 @@
 import React from "react"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-theme-material-ui"
 import { makeStyles } from "@material-ui/core/styles"
-import placeholder from "../../assets/websiteImages/blogPlaceholder.jpg"
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -55,15 +54,23 @@ export default function BlogPreview({ post, idx }) {
   return (
     <>
       <div className={classes.container}>
-        <Img
-          alt={post.node.frontmatter.title}
-          fluid={
-            post.node.frontmatter.featuredImageSmall
-              ? post.node.frontmatter.featuredImageSmall.childImageSharp.fluid
-              : placeholder
-          }
-          className={classes.img}
-        />
+        {post.node.frontmatter.featuredImageSmall ? (
+          <GatsbyImage
+            image={getImage(
+              post.node.frontmatter.featuredImageSmall.childImageSharp
+                .gatsbyImageData
+            )}
+            alt={post.node.frontmatter.title}
+            className={classes.img}
+          />
+        ) : (
+          <StaticImage
+            src="../../assets/websiteImages/blogPlaceholder.jpg"
+            alt="surfers walking in waves"
+            placeholder="blurred"
+            className={classes.bannerImg}
+          />
+        )}
         <div className={classes.flexItem}>
           <p className={classes.tag}>
             {post.node.frontmatter.tags ? post.node.frontmatter.tags[0] : ""}

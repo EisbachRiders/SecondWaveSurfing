@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
@@ -33,41 +32,21 @@ const useStyles = makeStyles((theme) => ({
 function Founders() {
   const classes = useStyles()
   const { t } = useTranslation()
-  const images = useStaticQuery(graphql`
-    query {
-      robin: file(relativePath: { eq: "robin.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      michi: file(relativePath: { eq: "michi.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Container justifyContent="spaceBetween" className={classes.container}>
-      <Img
-        fluid={images.robin.childImageSharp.fluid}
-        alt="wave"
-        placeholderStyle={{ backgroundColor: `lightgray` }}
+      <StaticImage
+        src="../../assets/websiteImages/headshot-robin.jpg"
+        alt="headshot robin"
+        placeholder="blurred"
         className={classes.img}
-        imgStyle={{ objectPosition: "center center" }}
       />
       <Hidden mdUp>
-        <Img
-          fluid={images.michi.childImageSharp.fluid}
-          alt="wave"
-          placeholderStyle={{ backgroundColor: `lightgray` }}
+        <StaticImage
+          src="../../assets/websiteImages/headshot-michi.png"
+          alt="headshot michi"
+          placeholder="blurred"
           className={classes.img}
-          imgStyle={{ objectPosition: "center center" }}
         />
       </Hidden>
       <div className={classes.flexItem}>
@@ -76,12 +55,11 @@ function Founders() {
         <p>{t("about.founders3")}</p>
       </div>
       <Hidden smDown>
-        <Img
-          fluid={images.michi.childImageSharp.fluid}
-          alt="wave"
-          placeholderStyle={{ backgroundColor: `lightgray` }}
+        <StaticImage
+          src="../../assets/websiteImages/headshot-michi.png"
+          alt="headshot michi"
+          placeholder="blurred"
           className={classes.img}
-          imgStyle={{ objectPosition: "center center" }}
         />
       </Hidden>
     </Container>

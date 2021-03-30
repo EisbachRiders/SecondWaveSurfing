@@ -1,6 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
@@ -13,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width: "100%",
+    height: "100%",
     maxHeight: 600,
   },
   header: {
@@ -49,40 +49,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Trends() {
+export default function Trends() {
   const classes = useStyles()
   const { t } = useTranslation()
-
-  const data = useStaticQuery(graphql`
-    query {
-      image1: file(relativePath: { eq: "van-der-waal-surf-grip.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-      image2: file(relativePath: { eq: "gnarwall-surfboard-hanging.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <Container className={classes.container}>
       <h2 className={classes.header}>{t("homepage.trends")}</h2>
       <div className={classes.innerContainer}>
         <div className={classes.flexItem}>
-          <Img
-            fluid={data.image1.childImageSharp.fluid}
-            alt="brands"
-            backgroundColor="lightgray"
+          <StaticImage
+            src="../../assets/websiteImages/van-der-waal-surf-grip.png"
+            alt="van der waal surf grip"
+            placeholder="blurred"
             className={classes.img}
-            imgStyle={{ objectPosition: "center center" }}
           />
           <div className={classes.textContainer}>
             <p className={classes.text}> {t("homepage.trends1")}</p>
@@ -98,12 +78,11 @@ function Trends() {
           </div>
         </div>
         <div className={classes.flexItem}>
-          <Img
-            fluid={data.image2.childImageSharp.fluid}
-            alt="brands"
-            backgroundColor="lightgray"
+          <StaticImage
+            src="../../assets/websiteImages/gnarwall-surfboard-hanging.jpg"
+            alt="gnarwall surfboard hanging"
+            placeholder="blurred"
             className={classes.img}
-            imgStyle={{ objectPosition: "center center" }}
           />
           <div className={classes.textContainer}>
             <p className={classes.text}>{t("homepage.trends2")}</p>
@@ -122,5 +101,3 @@ function Trends() {
     </Container>
   )
 }
-
-export default Trends

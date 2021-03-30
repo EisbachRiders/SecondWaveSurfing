@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import { Link } from "gatsby-theme-material-ui"
@@ -136,20 +136,22 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
                 {t("blog.updated")} {mdx.frontmatter.date.split("T")[0]}
               </p>
               <Hidden smUp>
-                <Img
+                <GatsbyImage
+                  image={getImage(
+                    mdx.frontmatter.featuredImageSmall.childImageSharp
+                      .gatsbyImageData
+                  )}
                   alt={mdx.frontmatter.title}
-                  fluid={
-                    mdx.frontmatter.featuredImageSmall.childImageSharp.fluid
-                  }
-                  placeholderStyle={{ backgroundColor: `lightgray` }}
                   className={classes.featuredImg}
                 />
               </Hidden>
               <Hidden smDown>
-                <Img
+                <GatsbyImage
+                  image={getImage(
+                    mdx.frontmatter.featuredImage.childImageSharp
+                      .gatsbyImageData
+                  )}
                   alt={mdx.frontmatter.title}
-                  fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
-                  placeholderStyle={{ backgroundColor: `lightgray` }}
                   className={classes.featuredImg}
                 />
               </Hidden>
@@ -202,16 +204,20 @@ export const pageQuery = graphql`
         description
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 400
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
         featuredImageSmall {
           childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 400
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
           }
         }
       }

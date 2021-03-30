@@ -1,12 +1,10 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
-import roadtyping from "../../assets/logos/roadtyping-logo.jpg"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -115,87 +113,57 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Roadtyping() {
+export default function Roadtyping() {
   const classes = useStyles()
   const { t } = useTranslation()
 
-  const data = useStaticQuery(graphql`
-    query {
-      img1: file(relativePath: { eq: "roadtyping-lifestyle.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      img2: file(relativePath: { eq: "postkarte-surfboard.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  const brands = [
-    {
-      key: "roadtyping",
-      name: "Roadtyping",
-      website: "https://secondwavesurfing.com/shop/brand/roadtyping/",
-      logo: roadtyping,
-    },
-  ]
+  const brand = {
+    key: "roadtyping",
+    name: "Roadtyping",
+    website: "https://secondwavesurfing.com/shop/brand/roadtyping/",
+  }
 
   return (
     <Container background="gray">
-      {brands.map((elem, idx) => (
-        <div
-          className={clsx(classes.root, classes.reverse)}
-          key={`brand${elem.name}`}
-        >
-          <div className={classes.textContainer}>
-            <p className={classes.title}>{t(`brands.${elem.key}_category`)}</p>
-            <p className={classes.text}>{t(`brands.${elem.key}`)}</p>
-            <div className={classes.titleHolder}>
-              <div className={classes.circle}>
-                <img
-                  src={elem.logo}
-                  alt={`brand${elem.name}`}
-                  className={classes.logo}
-                />
-              </div>
-              <div>
-                <a className={classes.title2} href={elem.website}>
-                  {elem.name}
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className={classes.imgContainer}>
-            <Img
-              fluid={data.img1.childImageSharp.fluid}
-              alt={`${elem.name} lifestyle`}
-              placeholderStyle={{ backgroundColor: `white` }}
-              className={classes.img}
-              imgStyle={{ objectPosition: "center center" }}
-            />
-          </div>
-          <Hidden smDown>
-            <div className={classes.imgContainer2}>
-              <Img
-                fluid={data.img2.childImageSharp.fluid}
-                alt={`${elem.name} product`}
-                placeholderStyle={{ backgroundColor: `white` }}
-                className={classes.img2}
-                imgStyle={{ objectPosition: "center center" }}
+      <div className={clsx(classes.root, classes.reverse)}>
+        <div className={classes.textContainer}>
+          <p className={classes.title}>{t(`brands.${brand.key}_category`)}</p>
+          <p className={classes.text}>{t(`brands.${brand.key}`)}</p>
+          <div className={classes.titleHolder}>
+            <div className={classes.circle}>
+              <StaticImage
+                src="../../assets/logos/roadtyping-logo.jpg"
+                alt="roadtyping logo"
+                placeholder="blurred"
+                className={classes.logo}
               />
             </div>
-          </Hidden>
+            <div>
+              <a className={classes.title2} href={brand.website}>
+                {brand.name}
+              </a>
+            </div>
+          </div>
         </div>
-      ))}
+        <div className={classes.imgContainer}>
+          <StaticImage
+            src="../../assets/websiteImages/roadtyping-card-and-clutter-on-desk.jpg"
+            alt="roadtyping card and clutter on desk"
+            placeholder="blurred"
+            className={classes.img}
+          />
+        </div>
+        <Hidden smDown>
+          <div className={classes.imgContainer2}>
+            <StaticImage
+              src="../../assets/websiteImages/postkarte-surfboard.jpg"
+              alt="surfboard postcard"
+              placeholder="blurred"
+              className={classes.img2}
+            />
+          </div>
+        </Hidden>
+      </div>
     </Container>
   )
 }
-
-export default Roadtyping

@@ -1,12 +1,10 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { StaticImage } from "gatsby-plugin-image"
 import { useTranslation } from "react-i18next"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
 import Hidden from "@material-ui/core/Hidden"
 import Container from "../ui/Container"
-import waxzam from "../../assets/logos/waxzam.png"
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -123,87 +121,57 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Waxzam() {
+export default function Waxzam() {
   const classes = useStyles()
   const { t } = useTranslation()
 
-  const data = useStaticQuery(graphql`
-    query {
-      img1: file(relativePath: { eq: "waxzam-surfboard-in-field.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      img2: file(relativePath: { eq: "waxzam-cold.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  const brands = [
-    {
-      key: "waxzam",
-      name: "WAX Z'AM",
-      website: "https://secondwavesurfing.com/shop/brand/wax-zam/",
-      logo: waxzam,
-    },
-  ]
+  const brand = {
+    key: "waxzam",
+    name: "WAX Z'AM",
+    website: "https://secondwavesurfing.com/shop/brand/wax-zam/",
+  }
 
   return (
     <Container background="gray">
-      {brands.map((elem, idx) => (
-        <div
-          className={clsx(classes.root, classes.reverse)}
-          key={`brand${elem.name}`}
-        >
-          <div className={classes.textContainer}>
-            <p className={classes.title}>{t(`brands.${elem.key}_category`)}</p>
-            <p className={classes.text}>{t(`brands.${elem.key}`)}</p>
-            <div className={classes.titleHolder}>
-              <div className={classes.circle}>
-                <img
-                  src={elem.logo}
-                  alt={`brand${elem.name}`}
-                  className={classes.logo}
-                />
-              </div>
-              <div>
-                <a className={classes.title2} href={elem.website}>
-                  {elem.name}
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className={classes.imgContainer}>
-            <Img
-              fluid={data.img1.childImageSharp.fluid}
-              alt={`${elem.name} lifestyle`}
-              placeholderStyle={{ backgroundColor: `white` }}
-              className={classes.img}
-              imgStyle={{ objectPosition: "center center" }}
-            />
-          </div>
-          <Hidden smDown>
-            <div className={classes.imgContainer2}>
-              <Img
-                fluid={data.img2.childImageSharp.fluid}
-                alt={`${elem.name} product`}
-                placeholderStyle={{ backgroundColor: `white` }}
-                className={classes.img2}
-                imgStyle={{ objectPosition: "center center" }}
+      <div className={clsx(classes.root, classes.reverse)}>
+        <div className={classes.textContainer}>
+          <p className={classes.title}>{t(`brands.${brand.key}_category`)}</p>
+          <p className={classes.text}>{t(`brands.${brand.key}`)}</p>
+          <div className={classes.titleHolder}>
+            <div className={classes.circle}>
+              <StaticImage
+                src="../../assets/logos/waxzam.png"
+                alt="waxzam logo"
+                placeholder="blurred"
+                className={classes.logo}
               />
             </div>
-          </Hidden>
+            <div>
+              <a className={classes.title2} href={brand.website}>
+                {brand.name}
+              </a>
+            </div>
+          </div>
         </div>
-      ))}
+        <div className={classes.imgContainer}>
+          <StaticImage
+            src="../../assets/websiteImages/waxzam-surfboard-in-field.jpg"
+            alt="waxzam surfboard in field"
+            placeholder="blurred"
+            className={classes.img}
+          />
+        </div>
+        <Hidden smDown>
+          <div className={classes.imgContainer2}>
+            <StaticImage
+              src="../../assets/websiteImages/waxzam-cold.jpg"
+              alt="waxzam cold"
+              placeholder="blurred"
+              className={classes.img2}
+            />
+          </div>
+        </Hidden>
+      </div>
     </Container>
   )
 }
-
-export default Waxzam

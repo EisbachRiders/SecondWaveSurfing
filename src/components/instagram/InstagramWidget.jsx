@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-theme-material-ui"
 import clsx from "clsx"
 import { makeStyles } from "@material-ui/core/styles"
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width: "100%",
+    height: "100%",
     opacity: 1,
   },
   marginBottom: {
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const InstagramWidget = () => {
+export default function InstagramWidget() {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
@@ -64,9 +65,11 @@ const InstagramWidget = () => {
             id
             localFile {
               childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  width: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }
@@ -87,12 +90,14 @@ const InstagramWidget = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Img
-            fluid={elem.node.localFile.childImageSharp.fluid}
+          <GatsbyImage
+            image={getImage(
+              elem.node.localFile.childImageSharp.gatsbyImageData
+            )}
             alt={`instagram ${idx}`}
-            placeholderStyle={{ backgroundColor: `lightgray` }}
             className={classes.img}
           />
+
           <div className={classes.overlay}>
             <div className={classes.likesContainer}>
               <FavoriteIcon className={classes.icon} />
@@ -104,5 +109,3 @@ const InstagramWidget = () => {
     </div>
   )
 }
-
-export default InstagramWidget
