@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import Blog from "../components/blog/Blog"
 
@@ -8,7 +8,7 @@ export default function BlogListTemplate({ data: { allMdx }, pageContext }) {
   const { currentPage, numPages } = pageContext
   return (
     <Layout>
-      <SEO />
+      <Seo />
       <Blog
         posts={allMdx.edges}
         numPages={numPages}

@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import Hero from "../components/homepage/Hero"
 import Trends from "../components/homepage/Trends"
@@ -11,7 +11,7 @@ import New from "../components/homepage/New"
 const Homepage = () => {
   return (
     <Layout headerVariant="transparent">
-      <SEO />
+      <Seo />
       <Hero />
       <BrandsWidget />
       <Highlights />

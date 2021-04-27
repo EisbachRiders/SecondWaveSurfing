@@ -1,5 +1,5 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Layout from "../components/Layout"
 import AboutTemp from "../components/about/AboutTemp"
 import ContactTemp from "../components/ContactTemp"
@@ -7,7 +7,7 @@ import ContactTemp from "../components/ContactTemp"
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO />
+      <Seo />
       <AboutTemp />
       <ContactTemp />
     </Layout>

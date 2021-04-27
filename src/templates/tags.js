@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Blog from "../components/blog/Blog"
 
 const Tags = ({ pageContext, data }) => {
@@ -10,7 +10,7 @@ const Tags = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO />
+      <Seo />
       <Blog
         posts={edges}
         tag={tag}

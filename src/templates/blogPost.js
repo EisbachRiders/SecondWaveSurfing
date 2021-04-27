@@ -10,7 +10,7 @@ import Hidden from "@material-ui/core/Hidden"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Container from "../components/ui/Container"
 import Sidebar from "../components/blog/Sidebar"
 
@@ -123,7 +123,7 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description || mdx.excerpt}
       />

@@ -61,16 +61,34 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: "gatsby-source-wordpress",
-      options: {
-        url: `http://sandbox.secondwavesurfing.com/graphql`,
-      },
-    },
+    // {
+    //   resolve: "gatsby-source-wordpress",
+    //   options: {
+    //     url: `https://secondwavesurfing.com/shop/graphql`,
+    //     schema: {
+    //       perPage: 20, // currently set to 100
+    //       requestConcurrency: 5, // currently set to 15
+    //       previewRequestConcurrency: 2, // currently set to 5
+    //     },
+    //     type: {
+    //       Products: {
+    //         where: `supportedTypesOnly: true`,
+    //       },
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `27192288280`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://secondwavesurfing.us19.list-manage.com/subscribe/post?u=37a2f35f3b8bc53ace7af50eb&amp;id=7bdc6b47ed",
+        timeout: 3500,
       },
     },
     {
@@ -108,9 +126,12 @@ module.exports = {
         theme_color: `#FEF9C7`,
         display: `minimal-ui`,
         icon: `src/assets/logos/SWlogo.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
-    `gatsby-plugin-offline`,
+    "gatsby-plugin-offline",
     `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
