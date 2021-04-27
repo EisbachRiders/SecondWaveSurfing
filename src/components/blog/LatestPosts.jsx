@@ -27,9 +27,7 @@ export default function LatestPosts() {
                 }
               }
             }
-            fields {
-              slug
-            }
+            slug
           }
         }
       }

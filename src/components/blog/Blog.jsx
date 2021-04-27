@@ -319,10 +319,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       ? elem.node.frontmatter.tags[0]
                       : ""}
                   </Typography>
-                  <Link
-                    to={elem.node.fields.slug}
-                    className={classes.blogTitleLink}
-                  >
+                  <Link to={elem.node.slug} className={classes.blogTitleLink}>
                     <Typography className={classes.blogTitle}>
                       {elem.node.frontmatter.title}
                     </Typography>
@@ -349,10 +346,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       />
                     </Hidden>
                     <div className={classes.buttonContainer}>
-                      <Link
-                        to={elem.node.fields.slug}
-                        className={classes.blogImgLink}
-                      >
+                      <Link to={elem.node.slug} className={classes.blogImgLink}>
                         <Button variant="contained" color="primary">
                           {t("blog.more")}
                         </Button>
@@ -367,7 +361,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                     <Fragment key={`blog_${elem.node.frontmatter.title}`}>
                       <Hidden smUp>
                         <Link
-                          to={elem.node.fields.slug}
+                          to={elem.node.slug}
                           className={classes.blogImgLink}
                         >
                           <GatsbyImage
@@ -383,7 +377,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                       <Hidden xsDown>
                         {idx % 2 !== 0 && (
                           <Link
-                            to={elem.node.fields.slug}
+                            to={elem.node.slug}
                             className={classes.blogImgLink}
                           >
                             <GatsbyImage
@@ -414,7 +408,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                             : ""}
                         </Typography>
                         <Link
-                          to={elem.node.fields.slug}
+                          to={elem.node.slug}
                           className={classes.blogTitleLink}
                         >
                           <Typography className={classes.blogTitle}>
@@ -422,17 +416,14 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                           </Typography>
                         </Link>
                         <p>{elem.node.frontmatter.description}</p>
-                        <Link
-                          to={elem.node.fields.slug}
-                          className={classes.readMore}
-                        >
+                        <Link to={elem.node.slug} className={classes.readMore}>
                           {t("blog.more")}
                         </Link>
                       </Paper>
                       <Hidden xsDown>
                         {idx % 2 === 0 && (
                           <Link
-                            to={elem.node.fields.slug}
+                            to={elem.node.slug}
                             className={classes.blogImgLink}
                           >
                             <GatsbyImage

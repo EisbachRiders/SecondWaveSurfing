@@ -58,9 +58,7 @@ export const pageQuery = graphql`
               }
             }
           }
-          fields {
-            slug
-          }
+          slug
         }
       }
     }

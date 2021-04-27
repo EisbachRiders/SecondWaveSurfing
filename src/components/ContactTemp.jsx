@@ -195,7 +195,7 @@ function ContactTemp() {
       <div className={classes.banner}>
         <Hidden smUp>
           <StaticImage
-            src="../../assets/websiteImages/surfers-walking-in-waves-small.jpg"
+            src="../assets/websiteImages/surfers-walking-in-waves-small.jpg"
             alt="surfers walking in waves"
             placeholder="blurred"
             className={classes.bannerImg}
@@ -203,7 +203,7 @@ function ContactTemp() {
         </Hidden>
         <Hidden xsDown>
           <StaticImage
-            src="../../assets/websiteImages/surfers-walking-in-waves.jpg"
+            src="../assets/websiteImages/surfers-walking-in-waves.jpg"
             alt="surfers walking in waves"
             placeholder="blurred"
             className={classes.bannerImg}

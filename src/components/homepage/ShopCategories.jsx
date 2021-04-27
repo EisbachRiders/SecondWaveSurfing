@@ -128,7 +128,7 @@ export default function ShopCategories() {
       cat: "apparel",
       img: (
         <StaticImage
-          src="../../assets/shopCategory/girl-sitting-at-lake.jpg"
+          src="../../assets/shopCategory/girl-sitting-at-lake.png"
           alt="girl with eisbach riders t-shirt sitting at lake"
         />
       ),

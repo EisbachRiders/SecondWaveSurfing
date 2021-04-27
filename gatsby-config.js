@@ -77,12 +77,21 @@ module.exports = {
     //     },
     //   },
     // },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `27192288280`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `27192288280`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `27192288280`,
+    //     instagram_id: "10111630678898158",
+    //     access_token:
+    //       "EAAEdGXeE73oBAFREkj4uZCat9dlrLHUe2ZCOnnVDXHMXZCf0glGHoocgIHHKMg32DQ2ZCqfteRwknejxYVYxnKFZAEYnnC5N4ZC2mbWLrOWZAPnE25uTmxVgjJjVo3TX2ivTGDV65caXl2FM0oQySgopwfjt2D3y6SCZCb46bT9OvER3HgeLcVFPDwnRZCiguSGBHZBVHXXZBCgRpHF5bApRupnaonLupNn36vj7m7GNhRQOAZDZD",
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {

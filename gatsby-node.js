@@ -22,9 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
@@ -35,52 +33,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
-            fields {
-              slug
-            }
+            slug
             frontmatter {
               tags
             }
           }
           next {
-            fields {
-              slug
-            }
+            slug
           }
           previous {
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
       tagsGroup: allMdx {
         group(field: frontmatter___tags) {
           fieldValue
-        }
-      }
-      products(where: { supportedTypesOnly: true }) {
-        edges {
-          node {
-            name
-            link
-            productTags {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            productCategories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            slug
-            shortDescription
-          }
         }
       }
     }
@@ -104,17 +72,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages, posts, and tags
   pages.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
+      path: node.slug,
       component: pageTemplate,
       context: { id: node.id },
     })
   })
 
   posts.forEach(({ node, previous, next }) => {
-    const previousSlug = previous ? previous.fields.slug : null
-    const nextSlug = next ? next.fields.slug : null
+    const previousSlug = previous ? previous.slug : null
+    const nextSlug = next ? next.slug : null
     createPage({
-      path: node.fields.slug,
+      path: node.slug,
       component: blogPostTemplate,
       context: { id: node.id, previous: previousSlug, next: nextSlug },
     })
@@ -160,89 +128,114 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Create product category pages
-  createPage({
-    path: "/products",
-    component: productCategoryTemplate,
-    context: { products: products, category: "products" },
-  })
-  createPage({
-    path: "/products/surfboard-fins",
-    component: productCategoryTemplate,
-    context: { products: fins, category: "surfboard-fins" },
-  })
-  createPage({
-    path: "/products/sup-longboard-fins",
-    component: productCategoryTemplate,
-    context: { products: sup, category: "sup-longboard-fins" },
-  })
-  createPage({
-    path: "/products/leashes",
-    component: productCategoryTemplate,
-    context: { products: leashes, category: "leashes" },
-  })
-  createPage({
-    path: "/products/accessories",
-    component: productCategoryTemplate,
-    context: { products: accessories, category: "accessories" },
-  })
-  createPage({
-    path: "/products/apparel",
-    component: productCategoryTemplate,
-    context: { products: apparel, category: "apparel" },
-  })
-  // Create individual product pages
-  fins.forEach(({ node }) => {
-    createPage({
-      path: `products/${node.slug}`,
-      component: productTemplate,
-      context: { product: node },
-    })
-  })
+  //   createPage({
+  //     path: "/products",
+  //     component: productCategoryTemplate,
+  //     context: { products: products, category: "products" },
+  //   })
+  //   createPage({
+  //     path: "/products/surfboard-fins",
+  //     component: productCategoryTemplate,
+  //     context: { products: fins, category: "surfboard-fins" },
+  //   })
+  //   createPage({
+  //     path: "/products/sup-longboard-fins",
+  //     component: productCategoryTemplate,
+  //     context: { products: sup, category: "sup-longboard-fins" },
+  //   })
+  //   createPage({
+  //     path: "/products/leashes",
+  //     component: productCategoryTemplate,
+  //     context: { products: leashes, category: "leashes" },
+  //   })
+  //   createPage({
+  //     path: "/products/accessories",
+  //     component: productCategoryTemplate,
+  //     context: { products: accessories, category: "accessories" },
+  //   })
+  //   createPage({
+  //     path: "/products/apparel",
+  //     component: productCategoryTemplate,
+  //     context: { products: apparel, category: "apparel" },
+  //   })
+  //   // Create individual product pages
+  //   fins.forEach(({ node }) => {
+  //     createPage({
+  //       path: `products/${node.slug}`,
+  //       component: productTemplate,
+  //       context: { product: node },
+  //     })
+  //   })
 
-  leashes.forEach(({ node }) => {
-    createPage({
-      path: `products/${node.slug}`,
-      component: productTemplate,
-      context: { product: node },
-    })
-  })
+  //   leashes.forEach(({ node }) => {
+  //     createPage({
+  //       path: `products/${node.slug}`,
+  //       component: productTemplate,
+  //       context: { product: node },
+  //     })
+  //   })
 
-  sup.forEach(({ node }) => {
-    createPage({
-      path: `products/${node.slug}`,
-      component: productTemplate,
-      context: { product: node },
-    })
-  })
+  //   sup.forEach(({ node }) => {
+  //     createPage({
+  //       path: `products/${node.slug}`,
+  //       component: productTemplate,
+  //       context: { product: node },
+  //     })
+  //   })
 
-  accessories.forEach(({ node }) => {
-    createPage({
-      path: `products/${node.slug}`,
-      component: productTemplate,
-      context: { product: node },
-    })
-  })
+  //   accessories.forEach(({ node }) => {
+  //     createPage({
+  //       path: `products/${node.slug}`,
+  //       component: productTemplate,
+  //       context: { product: node },
+  //     })
+  //   })
 
-  apparel.forEach(({ node }) => {
-    createPage({
-      path: `products/${node.slug}`,
-      component: productTemplate,
-      context: { product: node },
-    })
-  })
-}
+  //   apparel.forEach(({ node }) => {
+  //     createPage({
+  //       path: `products/${node.slug}`,
+  //       component: productTemplate,
+  //       context: { product: node },
+  //     })
+  //   })
+  // }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === "Mdx") {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: "slug",
-      node,
-      // Generated value based on filepath with "blog" prefix. you
-      // don't need a separating "/" before the value because
-      // createFilePath returns a path with the leading "/".
-      value: value,
-    })
+  exports.onCreateNode = ({ node, actions, getNode }) => {
+    const { createNodeField } = actions
+    if (node.internal.type === "Mdx") {
+      const value = createFilePath({ node, getNode })
+      createNodeField({
+        name: "slug",
+        node,
+        // Generated value based on filepath with "blog" prefix. you
+        // don't need a separating "/" before the value because
+        // createFilePath returns a path with the leading "/".
+        value: value,
+      })
+    }
   }
 }
+// products(where: { supportedTypesOnly: true }) {
+//   edges {
+//     node {
+//       name
+//       link
+//       productTags {
+//         edges {
+//           node {
+//             name
+//           }
+//         }
+//       }
+//       productCategories {
+//         edges {
+//           node {
+//             name
+//           }
+//         }
+//       }
+//       slug
+//       shortDescription
+//     }
+//   }
+// }

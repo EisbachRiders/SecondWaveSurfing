@@ -53,9 +53,7 @@ export const blogListQuery = graphql`
               }
             }
           }
-          fields {
-            slug
-          }
+          slug
         }
       }
     }

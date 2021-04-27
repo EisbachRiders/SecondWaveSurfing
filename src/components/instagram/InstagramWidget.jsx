@@ -56,31 +56,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function InstagramWidget() {
   const classes = useStyles()
-  const data = useStaticQuery(graphql`
-    query {
-      allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 6) {
-        edges {
-          node {
-            likes
-            id
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 100
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP]
-                )
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allInstaNode(sort: { fields: timestamp, order: DESC }, limit: 6) {
+  //       edges {
+  //         node {
+  //           likes
+  //           id
+  //           localFile {
+  //             childImageSharp {
+  //               gatsbyImageData(
+  //                 width: 100
+  //                 placeholder: BLURRED
+  //                 formats: [AUTO, WEBP]
+  //               )
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <div className={classes.root}>
-      {data.allInstaNode.edges.map((elem, idx) => (
+      {/* {data.allInstaNode.edges.map((elem, idx) => (
         <Link
           key={`instagram_photo_${idx}`}
           className={clsx(classes.flexItem, {
@@ -105,7 +105,7 @@ export default function InstagramWidget() {
             </div>
           </div>
         </Link>
-      ))}
+      ))} */}
     </div>
   )
 }

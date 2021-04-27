@@ -75,7 +75,7 @@ export default function BlogPreview({ post, idx }) {
           <p className={classes.tag}>
             {post.node.frontmatter.tags ? post.node.frontmatter.tags[0] : ""}
           </p>
-          <Link to={`${post.node.fields.slug}`} className={classes.link}>
+          <Link to={`${post.node.slug}`} className={classes.link}>
             {post.node.frontmatter.title}
           </Link>
         </div>

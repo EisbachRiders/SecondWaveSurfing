@@ -121,9 +121,7 @@ const BlogWidget2 = () => {
                 }
               }
             }
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
@@ -169,7 +167,7 @@ const BlogWidget2 = () => {
                       {elem.node.frontmatter.tags[0]}
                     </p>
                     <Link
-                      to={elem.node.fields.slug}
+                      to={elem.node.slug}
                       className={idx === 2 ? classes.link2 : classes.link}
                     >
                       {elem.node.frontmatter.title}
@@ -235,7 +233,7 @@ const BlogWidget2 = () => {
                 <div className={classes.innerContent}>
                   <p className={classes.tag}>{elem.node.frontmatter.tags[0]}</p>
                   <Link
-                    to={elem.node.fields.slug}
+                    to={elem.node.slug}
                     className={idx === 2 ? classes.link2 : classes.link}
                   >
                     {elem.node.frontmatter.title}

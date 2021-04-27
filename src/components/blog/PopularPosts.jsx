@@ -27,9 +27,7 @@ export default function PopularPosts() {
                 }
               }
             }
-            fields {
-              slug
-            }
+            slug
           }
         }
       }

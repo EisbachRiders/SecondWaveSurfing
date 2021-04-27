@@ -81,9 +81,7 @@ const BlogWidget = () => {
                 }
               }
             }
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
@@ -115,7 +113,7 @@ const BlogWidget = () => {
             )}
             <div className={classes.content}>
               <p className={classes.tag}>{elem.node.frontmatter.tags[0]}</p>
-              <Link to={elem.node.fields.slug} className={classes.link}>
+              <Link to={elem.node.slug} className={classes.link}>
                 {elem.node.frontmatter.title}
               </Link>
             </div>
