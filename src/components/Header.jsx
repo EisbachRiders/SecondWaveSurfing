@@ -264,22 +264,14 @@ function Header({ headerVariant }) {
                 >
                   {elem === "cart" ? (
                     <a
-                      href={
-                        i18n.language === "de"
-                          ? "https://secondwavesurfing.com/shop/de/einkaufswagen/"
-                          : "https://secondwavesurfing.com/shop/cart/"
-                      }
+                      href={"https://secondwavesurfing.com/shop/cart/"}
                       className={classes.link}
                     >
                       {t(`links.${elem}`)}
                     </a>
                   ) : elem === "my-account" ? (
                     <a
-                      href={
-                        i18n.language === "de"
-                          ? "https://secondwavesurfing.com/shop/de/mein-account/"
-                          : "https://secondwavesurfing.com/shop/my-account/"
-                      }
+                      href={"https://secondwavesurfing.com/shop/my-account/"}
                       className={classes.link}
                     >
                       {t(`links.${elem}`)}
@@ -292,11 +284,7 @@ function Header({ headerVariant }) {
                         aria-haspopup="true"
                         onMouseOver={handleToggleShop}
                         classes={{ root: classes.link }}
-                        href={
-                          i18n.language === "de"
-                            ? "https://secondwavesurfing.com/shop/de/"
-                            : "https://secondwavesurfing.com/shop/"
-                        }
+                        href={"https://secondwavesurfing.com/shop/"}
                         className={clsx(classes.link, classes.buttonOverride)}
                       >
                         {elem}
@@ -328,11 +316,7 @@ function Header({ headerVariant }) {
                                   {shopCategories.map((elem) => (
                                     <a
                                       key={`product_link_${elem.en}`}
-                                      href={
-                                        i18n.language === "de"
-                                          ? `https://secondwavesurfing.com/shop/de/produkt-kategorie/${elem.de}/`
-                                          : `https://secondwavesurfing.com/shop/product-category/${elem.en}/`
-                                      }
+                                      href={`https://secondwavesurfing.com/shop/product-category/${elem.en}/`}
                                       className={classes.shopLink}
                                     >
                                       <MenuItem onClick={handleCloseShop}>
@@ -342,11 +326,7 @@ function Header({ headerVariant }) {
                                   ))}
                                   <a
                                     key={`product_link_${elem.en}`}
-                                    href={
-                                      i18n.language === "de"
-                                        ? `https://secondwavesurfing.com/shop/de/produkte/`
-                                        : `https://secondwavesurfing.com/shop/products/`
-                                    }
+                                    href={`https://secondwavesurfing.com/shop/products/`}
                                     className={classes.shopLink}
                                   >
                                     <MenuItem onClick={handleCloseShop}>
