@@ -1,0 +1,90 @@
+﻿---
+title: Urban Surf Guide for Landlocked Surfers in Europe
+date: "2021-09-15T00:00:00Z"
+description: "We surfers have a close, spiritual connection to the ocean. But if the ocean is not just around the corner, we are happy to have at least a river wave or a wavepool nearby to pursue our passion. Therefore, we have summarized the five best urban surf spots in Europe for you."
+label: "article"
+featuredImage: ./images/urban-surf-guide-for-landlocked-surfers-in-europe
+featuredImageSmall: ./images/urban-surf-guide-for-landlocked-surfers-in-europe
+tags: ["surf", "travel"]
+---
+
+import imgEisbach from "./images/land-locked-surfing-at-eisbach-munich"
+import imgAlmkanal from "./images/land-locked-surfing-at-almkanal-salzburg"
+import imgThun from "./images/land-locked-surfing-at-obere-schleuse-thun"
+import ImageContainer from "../../components/blog/ImageContainer.jsx"
+
+Whoever said you must fly to the highly sought-after Portuguese, French, or Spanish surf havens for fantastic European surf experiences must have been a terrible liar. **Epic and memorable surf holidays in Europe** aren’t exclusive to the highly sought-after surfing destinations in Europe anymore.
+
+**Urban surfing** is the new norm and it’s sweeping across Europe’s cities like a tornado. For urbanite adrenaline junkies, who couldn’t have found a better excuse to leave their cozy apartments, the thrill of catching artificial waves at home is too irresistible to ignore. It is trendy, perfect for Insta-worthy shots, way cooler, more exciting, less trodden-by-many.
+
+This **new fun phenomenon** is fueled by such innovative creations as **city peelers, lakeside lumps, and man-made swells.** And much like typical surfing, urban surfing in Europe is adrenaline-pumping. Artificial waves, created on specially designed surfaces, using cutting-edge technologies, all for those who wouldn’t prefer to surf the conventional waves.
+
+And it is a welcome relief for **landlocked surfers** in Europe who wouldn’t have to journey for miles to surf the best waves. **Munich** is already becoming an unlikely **surfing Mecca**, slowly rivaling the traditional European surf favorites.
+
+# Surf at the best beach-less destination in Europe
+
+Some of the **best river surfing waves** can be experienced in **Germany’s Munich’s Isar River**, where surfing diehards nowadays refer to as the Mecca of river surfing. **Swiss surfers** only have to visit **Obere Schleuse in Thun** for a dose of nature surfing, while **Salzburg’s Almkanal** is small but **magical**. And if you are looking for **classic artificial waves** in **Europe**, you only have to go to Austria or Bratislava.
+
+Let's take a look at why these **five spots** are such fantastic urban surf spots today.
+
+## 1. Munich’s Eisbach
+
+<ImageContainer
+  img1={imgEisbach}
+  alt1="Surf in urban surf mecca Munich."
+  caption1="Surf in urban surf mecca Munich"
+/>
+
+It’s crazy that this Bavarian city, now one of the world’s more unlikely surfing capitals, is the de facto **urban surfing Mecca.** It’s even more absurd that surfing, a practice popularized by intrepid wetsuit-wearing adventurers, started in the 70s, but remained illegal until 2010.
+
+This little small branching off downtown **Munich’s Isar River** offers some of the **finest rapid surfing** experiences for the city’s surfing community. It has around 1,000 active surfers who love taking on the river’s erratic waves, mostly one inconsistent one at a time.
+
+**Surfing in the Eisbach** never inspires the thrill and experience that popular global surf destinations guarantee. The **water is cold and shallow** and the river can be dangerous to inexperienced surfers, or those who don’t know how to surf in a river.
+
+**The Eisbach** usually has a **strong current** **without** any affixed **exit points.** Furthermore, it’s often a preserve for **professional and experienced surfers** who can better handle the risks the waters pose. But, as far as the wave type of this watery entertainment goes, it is possible to catch a **wave** that’s **one meter** high.
+
+## 2. Thun, Switzerland
+
+<ImageContainer
+  img1={imgThun}
+  alt1="Surf the fast-flowing waters in Thun."
+  caption1="Surf the fast-flowing waters in Thun (©Peter Schad/Unsplash)"
+/>
+
+**River Surfing** in the middle of **Thun** could sound bizarre until you arrive at **Obere Schleuse** in Thun and see the amount of fun water lovers derive in the fast-flowing waters of the river. Here, **experienced surfers** arrive fully set with their surfboards, eager to surf right at the heart of the town.
+
+**The greatest attraction** isn’t the picturesque churches, centuries’ old bridges, and castles that the river slices its way through. Neither is the idyllic stretch of turquoise water rushing down from the medieval town up north to the woodlands down south and the lush gardens that give the town its beautiful look.
+
+What draws many to Thun are the **rapid surfing waters** gushing down through the bridge to create swirls that surfers delight most surfing in. **River Aare** is popular because it offers **two types of river surf waves - Hydraulic Jumps and Sheet Flows.**
+
+## 3. Almkanal, Salzburg
+
+<ImageContainer
+  img1={imgAlmkanal}
+  alt1="You can experience a A 10-foot and 3-meter wide wave at Almkanal in Salzburg."
+  caption1="You can experience a A 10-foot and 3-meter wide wave at Almkanal in Salzburg (©Balthasar Staehli/Unsplash)"
+/>
+
+Yes, it is now possible to meet professional surfers, **catch a wave**, and have endless fun in the water in **landlocked Austria.** The country’s fourth-largest city is an absolute gift that every surfer would die to visit, especially given just how beautiful it feels playing in one of **the world’s narrowest wave rides.**
+
+**A 10-foot, 3-meter wide** wave may sound too good to be true. But, that is exactly what you get surfing at the oldest canal system in Central Europe. Ask any Salzburg river surfer and you will be amazed at just how thrilling it feels catching the **waves** as they **run endlessly.**
+
+This **surfers’ paradise** is found right at the heart of the beautiful **Gneiss section of Salzburg.** And surfing is an **all-year-round** affair, even though summer is when the entire section swells with fun-lovers. The best part of it all is how this urban surf spot is friendly to both the **inexperienced** and the **seasoned surfers.**
+
+## 4. The Riverwave, Austria
+
+
+There’s no better way to experience the charming waters of **Europe’s biggest artificial river wave** than surfing on it. And that’s precisely what [The Riverwave](https://www.theriverwave.com/) gained its fame amongst the country’s massive urban surfing population and many of those who fly in for a slice of the thrill.
+
+A 5-minute drive from the Rosenhof, this little destination has it all. **Rapid surfing waves**, which can be adjusted to different sizes, perfect weather for an **all-year-round surfing** experience, and the freedom that **newbies and pros** enjoy.
+
+One of the coolest things about surfing in **The Riverwave** definitely has to be the sheer size of a **wave** one can encounter. A massive **10-meter wide, 1.5-meter high** surfable wave that any lover of beach-less surf spots would delight in, served just right. And there’s also a beautiful viewing area complete with drinks shops and fast food stalls.
+
+## 5. Cunovo Wave, Bratislava
+
+
+You will never know how awesome it feels surfing at truly **classic artificial waves in Europe** unless you try the [Areál Divoká Voda](https://www.divokavoda.sk/aktivity-sport/surfing/). Designing and constructing this wonder took two engineers – an Austrian and Slovakian – an incredible two years.
+
+It is an expertly **built wave**, cool and inviting with an almost invisible look, yet pretty adjustable to agree to **different levels** and offer varying **levels of speeds and steepness.** It is pretty easy to catch a 5’8” wave, paddleboard on it, and have fun right at the country’s greatest urban surf spot.
+
+This surf destination is conveniently **located at Čunovo Surfova Vlna, Bratislava**, and has severally played host to high-octane championships. The river is **surfable almost every day** and even though the entire place is artificial, dangers are always inherent. **The water** is up to **50-meter deep** and it’s almost normal for the real fin-eater wave that’s common in this water body to cause head injuries.
