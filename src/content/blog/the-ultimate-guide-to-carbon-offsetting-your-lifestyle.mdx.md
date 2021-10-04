@@ -1,0 +1,106 @@
+﻿---
+title: 
+The ultimate guide to carbon offsetting your lifestyle
+date: "2021-10-05T00:00:00Z"
+description: "Whether we like it or not, each of us produces new greenhouse gas emissions every day, contributing to man-made climate change.  Carbon offsetting programs allow individuals and companies to invest in environmental projects around the world to offset their own carbon footprint. In our guide, we take a closer look at this and introduce you to various carbon offset projects."
+label: "article"
+featuredImage: ./images/the-ultimate-guide-to-carbon-offsetting-your-lifestyle.jpg
+featuredImageSmall: ./images/the-ultimate-guide-to-carbon-offsetting-your-lifestyle.jpg
+tags: ["lifestyle", "community"]
+---
+
+import imgWindturbines from "./images/wind-energy-is-considered-renewable-energy.jpg"
+import imgPlantingtrees from "./images/planting-trees-to-offset-your-carbon-emission.jpg"
+import ImageContainer from "../../components/blog/ImageContainer.jsx"
+
+**Climate change** is one of the most serious environmental threats we’re facing today. As our carbon footprints are increasing while we’re becoming more aware of what effect this has on our planet, we’re looking for solutions.
+
+Besides the obvious and most effective route of reducing our **carbon footprint** by limiting the activities that release **greenhouse gasses**, we’re also looking for ways to mitigate our actions in situations when you can’t quite stop the activity that has a negative environmental impact.
+
+This is where **carbon offsetting** comes into play.
+
+# What is carbon offsetting?
+
+<ImageContainer
+  img1={imgWindturbines}
+  alt1="Wind turbines are playing an increasingly important role in supplying our world with clean and sustainable energy."
+  caption1="Wind turbines are playing an increasingly important role in supplying our world with clean and sustainable energy (©Appolinary K./Unsplash)"
+/>
+
+**Carbon offsetting** allows individuals and businesses to **invest** in an **environmental project**, such as **renewable energy or reforestation**, which are meant to **balance** out their **carbon footprint** in a specific area to reach neutrality.
+
+First, the emissions emitted by a specific activity such as aviation are calculated. Then, the carbon offsetting programme estimates how big your donation to one of the environmental projects needs to be, so that the sum can lead to the capturing of the same amount of emissions as you emitted in the first place.
+
+Generally, these **environmental projects** are usually **based** in **developing countries**, with the goal of preventing or reducing future emissions.
+
+You may wish to offset the entire footprint of your lifestyle and **go carbon neutral**, or a specific activity such as flights, other transportation or the shipment of goods.
+
+## Types of carbon offsetting projects
+
+As we mentioned before, **carbon offsetting initiatives** support specific projects designed to aid in mitigating climate change and reducing our carbon footprint in the future. Generally, the type of carbon offsetting project you choose will determine how effective the offset will be.
+
+Some of the best carbon offsetting activities are **investments into renewable energy infrastructure**, as the progress towards carbon neutrality can be easily tracked and calculated. While these projects don’t capture the carbon emissions we’ve created, they **help reduce the carbon footprint of humanity** for years to come. It’s always best to invest in carbon offsets focused on investing in **solar or wind power**, rather than biomass, which comes with more environmental challenges.
+
+Another promising initiative of carbon offsetting is the **investment in energy efficiency**. This, similarly, to investment into green energy, doesn’t make promises of capturing your emissions from the air. For example, some of these initiatives involve the instalment of energy-efficient cooking stoves in developing countries with high air pollution levels. However, there is also an ethical dilemma tied to improving the energy efficiency of third-world countries via carbon offsets. Critics of offsetting argue that this way, we’re throwing the responsibility of reducing emissions on people in developing countries, while we continue to live our luxurious, high-footprint lifestyle.
+
+# Does carbon offsetting really work?
+
+<ImageContainer
+  img1={imgPlantingtrees}
+  alt1="Planting trees to offset your carbon emissions is tempting but can climate change be stopped so easily?"
+  caption1="Planting trees to offset your carbon emissions is tempting but can climate change be stopped so easily (©Evan Wise/Unsplash)"
+/>
+
+As you may have sensed from the previous section, **carbon offsetting** seems to be a **divisive topic** in the sustainability community. While we’ve discussed some efficient ways of offsetting your carbon footprint and reaching carbon neutrality in the above sections, other methods are more problematic. The **planting of trees** and investments in **forestry projects** are among the **most problematic approaches.**
+
+This is mainly due to the **uncertainty** of whether these solutions will have **any long-term effects**. While trees capture CO2, they only do so temporarily. They’ll continue to absorb CO2 as they grow, but once they reach their maximum size, they won’t capture any more. To ensure the **emissions stay in the tree**, we need to ensure that the tree will remain for potentially **hundreds of years**, which can be very difficult to achieve in today’s world. **Tree planting projects** have also been tied to [ethical scandals](http://repository.essex.ac.uk/7271/) in the past, which involved the **eviction of locals** from their land to make space for trees planted to offset our emissions.
+
+Although this method of offsetting has many rightful criticisms, most carbon offsetting schemes are leaning away from forestry projects, instead **focusing on renewable energy investments** or **energy efficiency projects**, which are much more reliable, **non-controversial and efficient**.
+
+All things considered; you **can’t use carbon offsetting** as an excuse to continue to **lead a wasteful lifestyle** – that’s when carbon offsets become problematic. Despite the notion established by some carbon offsetting initiatives – that the offsets somehow undo your actions – we **can’t effectively erase these emissions** we’ve created by any form of carbon offsetting. What these offsets should be viewed as, to encourage and healthy approach to our carbon footprint, is an **investment** into making the **world more sustainable in the future**, after we occasionally take an unsustainable action.
+
+Once we reconceptualise carbon offsetting into this form, much of the controversy disappears and you can start thinking about the different ways to offset your lifestyle.
+
+# How much does it cost to offset your lifestyle?
+
+If you’re looking for an exact answer on **how much it would cost you to offset your lifestyle**, we’re afraid we’ll disappoint you – the prices vary widely based on the different projects undertaken. However, for the sake of giving you a better idea of how much it could possibly cost to offset your footprint, fees [around 10€ or $12](https://www.theguardian.com/environment/2011/sep/16/carbon-offset-projects-carbon-emissions) per ton of CO2 are most typical if you’re looking at the average price.
+
+Considering this price point, offsetting a direct, return flight from London to New York on economy class would cost you 16.75€. It would cost you [4.65€](http://www.surfscience.com/topics/surfing-lifestyle/life-as-a-surfer/environmental-impact-of-surfing-surfboards/) to offset the CO2 emissions created through the lifecycle of an epoxy 9’1 longboard. If an average American wanted to offset their yearly CO2 emissions, it would cost them [204.67€](https://www.theguardian.com/environment/datablog/2009/sep/02/carbon-emissions-per-person-capita), compared to [100.27€](https://www.theguardian.com/environment/datablog/2009/sep/02/carbon-emissions-per-person-capita) for the average Brit.
+
+# Carbon offsetting projects to support
+
+## Offsetting project certifications
+
+One of the easiest ways to recognise if a **carbon offsetting project is reliable** is to look for **certifications** about its efficiency. As almost all carbon offsetting schemes are now verified by some kind of third-party certification, it can be hard to know which ones are truly reliable and which ones not so much.
+
+[The Gold Standard](https://www.goldstandard.org/) is the **highest possible award** a carbon offsetting project can receive. It currently [certifies 19.6%](https://www.forest-trends.org/publications/raising-ambition/) of global carbon offsetting projects. Since certifications are often only listed as acronyms, you’ll find **The Gold Standard** listed as GS, or GS VERs. We highly recommend looking for this particular certification if purchasing carbon offsets.
+
+## 3 reliable carbon offsetting projects
+
+### [Native energy](https://native.eco)
+
+**Native energy** offers offsets for individuals and businesses alike. The platform is easy to use, offering the option to **offset monthly, quarterly, yearly** or as a one-time purchase. They often have multiple projects happening and you can choose which particular one to contribute to.
+
+It has been **awarded** an array of third-party certifications, including Gold Standard, Verified Carbon Standard, Climate Action Reserve, American Carbon Registry, Plan Vivo, Climate, and Community & Biodiversity Alliance.
+
+### [Sustainable Travel International](https://sustainabletravel.org/)
+
+If you’re looking to **offset emissions from a flight**, this is currently the best offsetting scheme to turn to. It enables you to input the details of your journey and calculates your exact impact, as well as a price for the adequate offset.
+
+All of their **projects are certified** by, among other third parties, Gold Standard, Verified Carbon Standard, and Plan Vivo.
+
+### [MyClimate](https://www.myclimate.org/)
+
+If you’re looking to **offset** a specific area of your life, such as your **car, groceries, energy consumption**, or an event you’re hosting, this offsetting provider makes it easy.
+
+All carbon offsetting projects funded via **My Climate** are **certified** by several third parties, including Clean Development Mechanism, Gold Standard, or Plan Vivo.
+
+## An alternative approach: take charge of your own offsets
+
+Perhaps, you haven’t found what you were looking for in the carbon emissions offsetting projects you looked at and want to try offsetting a different way. In that case, you may want to think about **donating your money** to **projects** that have a high chance of **reducing emissions** but aren’t a part of any official offsetting schemes.
+
+These are a lot harder to track and aren’t really considered carbon offsets by definition, but they’re a great option if the concept of carbon offsets available in the market today doesn’t sound too hot to you. It gives you more liberty over where your money goes and the option to also **support change** at a governmental level.
+
+### The takeawy
+
+If you want to offset your carbon footprint, you should, however you should ask yourself if you couldn't have reduced or even avoided your emissions before. **Just be aware that offsetting is not the ultimate solution to combat climate change. Avoiding and reducing should therefore definitely be the focus**. We go into more detail about this in our guide on how to incorporate [Zero waste, recycling, upcycling and composting](https://secondwavesurfing.com/blog/zero-waste-upcycling-recycling-composting-how-to-incorporate-them-into-your-lifestyle) into your lifestyle. Check it out!
