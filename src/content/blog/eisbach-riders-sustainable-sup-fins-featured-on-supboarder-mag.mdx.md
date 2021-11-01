@@ -1,0 +1,79 @@
+﻿---
+title: Eisbach Riders sustainable SUP fins featured on SUPboarder
+date: "2021-11-02T00:00:00Z"
+description: "The SUPboarder team around Will took a glimpse at the Eisbach Riders sustainable SUP fin range and summarized their insights in a short video. Take a look!"
+label: "article"
+featuredImage: ./images/eisbach-riders-sustainable-fin-range-overview.jpg
+featuredImageSmall: ./images/eisbach-riders-sustainable-fin-range-overview.jpg
+tags: ["gear"]
+---
+
+import imgQuickLockTouring from "./images/eisbach-riders-sustainable-fin-quick-lock-fin-packaging.jpg"
+import imgUSBoxTouring from "./images/eisbach-riders-sustainable-fin-touring-us-box-lifestyle.jpg"
+import imgUSBoxClassic from "./images/eisbach-riders-sustainable-fin-9-inch-us-box-grass.jpg"
+import imgUSBoxClassicPaddling from "./images/eisbach-riders-sustainable-fin-9-inch-us-box-lifestyle-winter.jpg"
+import imgERSUPFins from "./images/eisbach-riders-sustainable-fin-range.jpg"
+import ImageContainer from "../../components/blog/ImageContainer.jsx"
+
+In one of their recent videos, Will and the team from [**SUPboarder**](https://supboardermag.com/2021/10/04/eisbach-riders-sustainable-sup-fins-accessories-first-look/) took a glipmse at the **Eisbach Riders sustainable fin range**. In the video they give their first impressions and offer as well as a little insight into how fins are made.
+
+<<embed video: https://www.youtube.com/watch?v=ISOsFnQxOyY >>
+
+
+All products from the Sustainable line are **developed and produced in southern Germany** and use the latest technology for molding injection. The fins are made of **recycled waste material from the car industry** to reduce the carbon footprint of the production. This contributes to the efforts of Eisbach Riders to protect the environment as part of the [**1% for the Planet community.**](https://secondwavesurfing.com/blog/eisbach-riders-joins-1-percent-for-the-planet)
+
+
+# The sustainable SUP fin range
+
+<ImageContainer
+  img1={imgERSUPFins}
+  alt1="Overview of the current ER sustaianable SUP fin range"
+  caption1="Overview of the current ER sustaianable SUP fin range (© SUPboarder)"
+/>
+
+
+## The Quick Lock touring fin
+
+<ImageContainer
+  img1={imgQuickLockTouring}
+  alt1="Comes in sustainable packaging produced in Germany"
+  caption1="Comes in sustainable packaging produced in Germany (© Eisbach Riders)"
+/>
+
+This massive [touring fin](https://secondwavesurfing.com/shop/product/essential-quick-lock-touring-fin/) fits all standard hard or inflatable boards SUP boards with the Quick Lock, Smart Lock or Flip Lock system, like from manufactures like Bluefin, Thurso Surf, Gul Paddleboard and iRocker.
+
+The **larger surface area** of the touring fin gives the paddler more sideways stability by drawing out the turn, making paddling in a straight line easier. This is a great fin shape for paddlers that want a super stable fin and **great straight-line performance**. Compared to out-of-the-box fins where you have to change the paddle side every 3-4 strokes, this touring fin allows you to **double the number of strokes per side**. [Read more about the story here.](https://secondwavesurfing.com/blog/eisbach-riders-a-touring-fin-made-of-recycled-waste-material-for-stand-up-paddling-with-the-quick-lock-system)
+
+Available at [Second Wave Surfing for 37.90€](https://secondwavesurfing.com/shop/product/essential-quick-lock-touring-fin/).
+
+
+## The US-Box touring fin
+
+<ImageContainer
+  img1={imgUSBoxTouring}
+  alt1="Great straight-line performance for paddling trips"
+  caption1="Great straight-line performance for paddling trips (© Eisbach Riders)"
+/>
+
+The [US-Box touring fin](https://secondwavesurfing.com/shop/product/sustainable-single-fin-touring-us-box/) features the same design characteristics as the Quick-Lock version: extra **large surface area** for improved **straight-line performance**.
+
+Available at [Second Wave Surfing for 37.90€](https://secondwavesurfing.com/shop/product/sustainable-single-fin-touring-us-box/).
+
+
+
+
+## The 9.0" Classic US-Box
+
+<ImageContainer
+  img1={imgUSBoxClassic}
+  alt1="A popular single fin choice, the 9.0" classic rake fin is favored for its all-around performance capabilities."
+  caption1="A popular single fin choice, the 9.0" classic rake fin is favored for its all-around performance capabilities. (© Eisbach Riders)"
+  img1={imgUSBoxClassicPaddling}
+  alt1="Fits any SUP or surboard with US-Box"
+  caption1="Fits any SUP or surboard with US-Box (© Eisbach Riders)"
+/>
+
+A popular single fin choice, the **[9.0" classic rake fin](https://secondwavesurfing.com/shop/product/sustainable-single-fin-us-box/)** is favored for its all-around performance capabilities. It keeps your speed and responds on the fly. The fin feels great with long sweeping turns and still provide plenty of hold in the tail while you cruise down the line. The **rake fin** will work in boards of all shapes and sizes and in almost any surf conditions. The rake fin has a wider base but with more tip than the flex fin and can be ridden as a single or as a 2+1 setup.
+
+Available at [Second Wave Surfing for 35.90€](https://secondwavesurfing.com/shop/product/sustainable-single-fin-us-box/).
+
