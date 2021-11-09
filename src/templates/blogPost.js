@@ -31,8 +31,11 @@ const useStyles = makeStyles((theme) => ({
   },
   featuredImg: {
     marginBottom: 30,
+    width: "100%",
+    height: 300,
     [theme.breakpoints.up("sm")]: {
       marginBottom: 60,
+      height: 500,
     },
   },
   nav: {
@@ -87,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     flexBasis: "100%",
     marginBottom: 30,
+    marginTop: 100,
     [theme.breakpoints.up("md")]: {
       flexBasis: "65%",
       marginBottom: 0,
@@ -100,6 +104,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     flexBasis: "100%",
+    marginTop: 100,
     [theme.breakpoints.up("md")]: {
       flexBasis: "30%",
     },
@@ -143,9 +148,10 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
                   )}
                   alt={mdx.frontmatter.title}
                   className={classes.featuredImg}
+                  quality={100}
                 />
               </Hidden>
-              <Hidden smDown>
+              <Hidden mdDown>
                 <GatsbyImage
                   image={getImage(
                     mdx.frontmatter.featuredImage.childImageSharp
@@ -153,6 +159,7 @@ export default function BlogPostTemplate({ data: { mdx }, pageContext }) {
                   )}
                   alt={mdx.frontmatter.title}
                   className={classes.featuredImg}
+                  quality={100}
                 />
               </Hidden>
               <MDXProvider components={shortcodes}>

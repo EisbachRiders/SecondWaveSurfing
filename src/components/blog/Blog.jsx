@@ -333,6 +333,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                         )}
                         alt={`blog image ${idx}`}
                         className={classes.blogImgFirst}
+                        quality={100}
                       />
                     </Hidden>
                     <Hidden lgDown>
@@ -343,6 +344,7 @@ const Blog = ({ posts, tag, numPages, currentPage }) => {
                         )}
                         alt={`blog image ${idx}`}
                         className={classes.blogImgFirst}
+                        quality={100}
                       />
                     </Hidden>
                     <div className={classes.buttonContainer}>
