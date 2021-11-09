@@ -1,0 +1,135 @@
+﻿---
+title: Everything you should know about ocean plastic
+date: "2021-10-14T00:00:00Z"
+description: "By now, everyone has probably heard that there is a problem with plastic in the ocean. The fact is that our oceans are drowning in plastic waste. From fishing nets to packaging waste to tiny particles invisible to the naked eye. Virtually everything that our modern society has produced in terms of plastic products can be found in the oceans. One of the reasons we're looking at this very topic in this blog post and taking a look at why not all plastic is the same."
+label: "article"
+featuredImage: ./images/everything-you-should-know-about-ocean-plastic.jpg
+featuredImageSmall: ./images/everything-you-should-know-about-ocean-plastic.jpg
+tags: ["lifestyle"]
+---
+
+import imgCommonplastic from "./images/common-ocean-plastic.jpg"
+import imgWorstplastic from "./images/worst-types-of-plastic.jpg"
+import imgUnseenplastic from "./images/ocean-plastic-pollution-we-dont-see.jpg"
+import imgDecomposeplastic from "./images/ocean-plastic-decomposes.jpg"
+import imgImpactoceanplastic from "./images/impact-of-ocean-plastic-on-our-world.jpg"
+import imgPlasticfree from "./images/plastic-free-lifestyle.jpg"
+import imgPlasticprojects from "./images/projects-tackling-plastic-pollution.jpg"
+import ImageContainer from 
+"../../components/blog/ImageContainer.jsx"
+
+**Ocean plastic** – you’ve surely heard some information about how much of a problem it’s becoming. However, in today’s fast-paced world, we often scroll by the news headlines before taking the time to read the full story of the **impact of plastic pollution on life** on Earth.
+
+In this article, we’ll share some of the **most important things to know about ocean plastic**, so that you can make better-informed decisions and **live a more eco-conscious life**.
+
+# The most common ocean plastic
+
+<ImageContainer
+  img1={imgCommonplastic}
+  alt1="Straws and plastic bags pollute the world's oceans, but they are not the greatest evil."
+  caption1="Straws and plastic bags pollute the world's oceans, but they are not the greatest evil (©John Cameron/Unsplash)"
+/>
+
+First things first, we need to talk about the **most common plastic items polluting the ocean**. Often from news headlines and zero waste blogs, it may seem like most of this plastic pollution is composed of plastic **straws or bags**. While these items certainly do make up a share of the ocean plastic, there are **some that constitute a much larger problem**.
+
+Most importantly, it isn’t all post-consumer waste (items we throw in the trash after using them). A **large portion of plastic** found in the ocean is of **industrial origin**, with **industrial fishing** at the forefront. For example, [46% of the Great Pacific Garbage Patch](https://www.seashepherdglobal.org/latest-news/marine-debris-plastic-fishing-gear/) – a **plastic island the size of Texas floating** in the Pacific Ocean – is made up of **fishing nets**.
+
+# What are the worst types of plastic?
+
+<ImageContainer
+  img1={imgWorstplastic}
+  alt1="Only 9% of all plastic is recycled."
+  caption1="Only 9% of all plastic is recycled (©Angela Compagnone/Unsplash)"
+/>
+
+The term **plastic** doesn’t just refer to one material – but rather to a **group of materials** with similar properties and manufacturing. **Some** plastics are **more damaging** to the environment than others.
+
+The **non-recyclable varieties** could be considered one of the **most unsustainable ones**, as they lack the ability to be repurposed. However, it’s a bit more complex than that. After all, only [9% of all plastic is recycled](https://www.nationalgeographic.com/news/2017/07/plastic-produced-recycling-waste-ocean-trash-debris-environment/), even though much more than that 9% are recyclable plastics.
+
+Another candidate for **worst types of plastic** are those which are only used once – **single-use plastics**. They pollute the world for who knows how long, only to be used for a few minutes. Lastly, plastics such as **PVC**, which release the most harmful particles when decomposing, could be **another candidate**.
+
+Therefore, the question really isn’t ‘what’s the worst type of plastic?’, rather than **‘which type of plastic isn’t the worst?’**. Although **plastic** recycling is still very limited, as illustrated by the **9% recycling rate**, recycled plastic is the most sustainable plastic to exist – because it makes use of something that would otherwise go straight to landfill or the ocean.
+
+# Microplastics – the plastic pollution we don’t see
+
+<ImageContainer
+  img1={imgUnseenplastic}
+  alt1="The plastic you can't see: there are about 1.9 million pieces of plastic per square meter on the ocean floor."
+  caption1="The plastic you can't see: there are about 1.9 million pieces of plastic per square meter on the ocean floor (©Soren Funk/Unsplash)"
+/>
+
+Plastic pollution isn’t all visible. There are also **microscopic plastic particles** polluting our oceans, called **microplastics**. They’re smaller than 5mm in length and come from a variety of sources. These include **washing of synthetic clothing**, plastic waste in the landfill or ocean, microplastics **released from tires** on our cars and even **small plastics added to skincare and beauty products**.
+
+**Microplastics** are both a **cause and a consequence** of **ocean plastic**. They add to the overall pollution levels, but they also often come from ocean plastic. Our grasp of how many microplastics there are in the ocean is still limited. However, a recent study has found that there are [approximately 1.9 million plastic pieces per square meter](https://www.bbc.com/news/science-environment-52489126) on the ocean floor.
+
+# How long before plastic decomposes?
+
+<ImageContainer
+  img1={imgDecomposeplastic}
+  alt1="Plastic bottles last a particularly long time, sometimes taking 450 years to crush, but never decompose."
+  caption1="Plastic bottles last a particularly long time, sometimes taking 450 years to crush, but never decompose (©Nariman Mesharrafa/Unsplash)"
+/>
+
+This may come as a shock to you if you’d ever seen infographics about how long it takes for certain household items to decompose: **plastic _never_ decomposes**.
+
+What most of these estimates refer to is how long it takes for the piece of **plastic** to **fall apart into small** enough **particles** to not be visible to the naked eye. However, the plastic doesn’t disappear when that happens – it simply falls apart into **microplastics and nanoplastics** and continues to pollute our planet indefinitely.
+
+# Impact of ocean plastic on our world
+
+<ImageContainer
+  img1={imgImpactoceanplastic}
+  alt1="Plastic waste kills around one million seabirds every year."
+  caption1="Plastic waste kills around one million seabirds every year (©Tim Mossholde/Unsplash)"
+/>
+
+The **consequences of plastic pollution** on our world are **vast and complex**. Firstly, **larger plastic** pieces have a **physical impact on marine life**, which can get entangled in them leading to injury or death. **Smaller pieces** can also be ingested, leading to the horrifying news headlines about **sea creatures found dead with a stomach full of plastic** you may have been reading recently.
+
+Microplastics can also frequently be ingested by animals and, similarly to other plastic pieces ingested by wildlife, they can lead to starvation and death. However, there’s another potential danger associated with microplastic ingestion – they can tie other toxic substances to themselves, which are then ingested with them.
+
+All this **plastic also has a chemical impact on the ocean and its ecosystems**. **Plastic releases pollutants** into the water, along with **microplastics**, including **PCBs or DDT**. Additionally, because of the flow of water, these pollutants are quickly transported even into the most remote parts of the ocean.
+
+Lastly, all the ocean plastic also has an economic impact on our world. **Plastic litter** is **affecting** many industries from **tourism to fishing**. While arguably, the preservation of nature is superior to economic profitability, this is still something we should keep in mind.
+
+# Solving the plastic crisis
+
+<ImageContainer
+  img1={imgPlasticfree}
+  alt1="The path to a plastic-free life is not easy, but you can make a big difference with small steps, such as always carrying a cloth bag instead of choosing plastic bags."
+  caption1="The path to a plastic-free life is not easy, but you can make a big difference with small steps, such as always carrying a cloth bag instead of choosing plastic bags (©Mathilde Langevin/Unsplash)"
+/>
+
+## What can you do?
+
+Firstly, there are many different steps you can take towards limiting your **personal contribution to ocean pollution**. Here are a few different ways you can work towards a **plastic-free lifestyle**:
+
+- Stop buying plastic packaged in plastic.
+
+- Don’t buy any new synthetic clothing and reduce the washing of your existing synthetic clothing.
+
+- Skip bottled water and instead, invest in a reusable water bottle to refill on the go.
+
+- Reduce your consumption of seafood and stop supporting other industries polluting the ocean with plastic.
+
+- Educate yourself on which plastics can and cannot be recycled in your area and follow these instructions thoroughly.
+
+- When at the beach, pick up any beach litter.
+
+Of course, this isn’t an exhaustive list – just a few ideas from different areas to get you started.
+
+## Projects tackling plastic pollution
+
+<ImageContainer
+  img1={imgPlasticprojects}
+  alt1="The elimination of marine litter, one of the main objectives of most organizations that have declared war on plastic."
+  caption1="The elimination of marine litter, one of the main objectives of most organizations that have declared war on plastic (©Ocg/Unsplash)"
+/>
+
+As plastic pollution becomes more pressing, more **projects working to tackle it** are appearing. Supporting these is a good way to prevent more plastic from entering the ocean, as well as help with capturing the plastic pollution already there.
+
+Projects helping reduce our use of plastic include  [Plastic Free July](https://www.plasticfreejuly.org/). They’re working to **reduce plastic pollution by reducing demand for plastic** and **increasing consumer pressure on companies**. Other non-profit projects, such as **Greenpeace or Surfers Against Sewage** work on the governmental level, pushing for new legislative changes. Some **non-profits** also work in science and technology, including organisations such as **5 Gyres**, which drive the advancement of our knowledge and work to remove trash from the ocean.
+
+Lastly, we can’t forget about business efforts and new innovations in the field. These are pushing the expectations of commercial organisations forward, forcing the less sustainable competition to step up their sustainability game.
+
+### The takeawy
+
+Plastic is still an indispensable part of our world today. But there are ways to deal with it differently, for example by **recycling more**. An alternative to plastic could also be bio-based plastics. However, when biodegradable plastic bags came along, everyone was excited at first, until it was suddenly realized that they didn't decompose properly either.  A world completely without plastic is rather unrealistic, but everyone can ask himself or herself what **he or she can do for a more sustainable life**. In our last blog posts we [show you ways how you can either change your lifestyle](https://secondwavesurfing.com/blog/zero-waste-upcycling-recycling-composting-how-to-incorporate-them-into-your-lifestyle) or [how you can compensate your lifestyle](https://secondwavesurfing.com/blog/the-ultimate-guide-to-carbon-offsetting-your-lifestyle).  Take a look and maybe get inspired.
