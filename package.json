@@ -38,7 +38,7 @@
     "gatsby-source-instagram-all": "^3.0.5",
     "gatsby-source-wordpress": "^5.3.1",
     "gatsby-theme-material-ui": "^1.0.13",
-    "gatsby-transformer-remark": "^3.1.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^3.1.0",
     "i18next": "^20.1.0",
     "i18next-browser-languagedetector": "^6.1.0",
